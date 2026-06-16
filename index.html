@@ -393,23 +393,38 @@ function classifySeverity(q) {
 // Configure ENRICHMENT_URL to point to your server
 // ================================================================
 const ENRICHMENT_URL = localStorage.getItem('georisk_backend_url') || 'enrichment.json';
-let BASELINE = {};  // populated dynamically from backend
+let BASELINE = {
+  'Sudan':92,'Palestine':89,'Myanmar':84,'Mali':81,'Burkina Faso':79,'Somalia':78,
+  'Afghanistan':76,'Yemen':74,'Dem. Rep. Congo':72,'Central African Rep.':70,
+  'South Sudan':70,'Libya':68,'Syria':65,'Ukraine':64,'Haiti':63,'Iran':62,
+  'Ethiopia':58,'Iraq':56,'Lebanon':55,'North Korea':55,'Niger':54,'Chad':52,
+  'Nigeria':45,'Pakistan':44,'Eritrea':44,'Venezuela':43,'Cuba':38,'Russia':36,
+  'Colombia':34,'Mexico':34,'Egypt':32,'Turkey':30,'India':29,'Israel':48,
+  'United States of America':22,'Canada':14,'Australia':10,'New Zealand':13,
+  'United Kingdom':16,'France':18,'Germany':14,'Italy':18,'Spain':16,
+  'Poland':20,'Romania':18,'Hungary':22,'Serbia':26,'Bosnia and Herz.':24,
+  'Austria':12,'Belgium':14,'Netherlands':12,'Denmark':12,'Sweden':12,
+  'Norway':11,'Finland':13,'Iceland':10,'Ireland':10,'Portugal':14,
+  'Switzerland':8,'Luxembourg':9,'Singapore':8,'South Africa':32,
+  'Kenya':24,'Tanzania':18,'Ghana':16,'Morocco':20,'Jordan':20,
+  'Saudi Arabia':24,'Brazil':24,'Argentina':28,'Chile':14,'Uruguay':10,
+  'Peru':26,'China':28,'Taiwan':32,'South Korea':18,'Japan':12,
+  'Belarus':38,'Moldova':28,'Georgia':30,'Philippines':30,'Thailand':26,
+  'Indonesia':22,'Vietnam':20,'Malaysia':14,'Algeria':28,'Tunisia':24,
+  'Cameroon':40,'Mozambique':38,'Nicaragua':36,'Honduras':34,'Bolivia':26,
+  'Ecuador':28,'Greenland':12,'Mongolia':16,'Sri Lanka':26,'Bangladesh':32,
+};
 let enrichmentSources = {};
 
 async function fetchEnrichment() {
-  if (!ENRICHMENT_URL) {
-    logger('Enrichment backend not configured. Set URL via config panel.');
-    return;
-  }
   try {
     const resp = await fetch(ENRICHMENT_URL, { signal: AbortSignal.timeout(10000) });
     const data = await resp.json();
     enrichmentSources = data.sources || {};
     const countries = data.countries || {};
-    BASELINE = {};
+    // Override baseline with live ACLED/Metaculus scores
     for (const [c, info] of Object.entries(countries)) {
-      BASELINE[c] = info.score;
-      // Store metaculus details for tooltip enrichment
+      if (info.score > 0) BASELINE[c] = info.score;
       if (info.metaculus_markets && info.metaculus_markets.length) {
         if (!countryDetails[c]) countryDetails[c] = [];
         for (const m of info.metaculus_markets) {
@@ -420,9 +435,10 @@ async function fetchEnrichment() {
         }
       }
     }
-    logger(`Enrichment: ${Object.keys(BASELINE).length} pays via ${(enrichmentSources.acled?.configured ? 'ACLED' : '')} ${(enrichmentSources.metaculus?.configured ? '+ Metaculus' : enrichmentSources.metaculus?.questions > 0 ? '+ Metaculus (scraping)' : '')}`);
+    const nOverrides = Object.keys(countries).length;
+    logger(`Enrichment: ${nOverrides} pays mis à jour via ACLED/Metaculus`);
   } catch (e) {
-    logger('Enrichment backend non accessible: ' + e.message);
+    logger('Enrichment non disponible, baseline statique utilisé: ' + e.message);
   }
 }
 function logger(msg) { console.log('[GeoRisk]', msg); }
