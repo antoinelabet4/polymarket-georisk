@@ -405,7 +405,7 @@ let BASELINE = {
   'Mozambique':38,'Cuba':38,'Belarus':38,'Nicaragua':36,'Russia':36,
   'Liberia':36,'Sierra Leone':35,'Guinea':35,'Guinea-Bissau':35,
   // ── MODÉRÉ (20–34) ── tensions / risques structurels
-  'Colombia':34,'Mexico':34,'Honduras':34,'Côte d\\'Ivoire':33,"Côte d'Ivoire":33,
+  'Colombia':34,'Mexico':34,'Honduras':34,"Côte d'Ivoire":33,
   'Uganda':32,'Egypt':32,'South Africa':32,'Taiwan':32,'Bangladesh':32,'Guatemala':32,
   'Zimbabwe':30,'Turkey':30,'Georgia':30,'Philippines':30,'Azerbaijan':30,
   'India':29,'Algeria':28,'Armenia':28,'Moldova':28,'Djibouti':28,'Bolivia':26,
@@ -439,7 +439,9 @@ let enrichmentSources = {};
 
 async function fetchEnrichment() {
   try {
-    const resp = await fetch(ENRICHMENT_URL, { signal: AbortSignal.timeout(10000) });
+    const controller = new AbortController();
+    setTimeout(() => controller.abort(), 10000);
+    const resp = await fetch(ENRICHMENT_URL, { signal: controller.signal });
     const data = await resp.json();
     enrichmentSources = data.sources || {};
     const countries = data.countries || {};
