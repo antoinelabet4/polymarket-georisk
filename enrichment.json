@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-06-16T08:00:29.641Z",
+  "sources": {
+    "acled": {
+      "configured": true,
+      "countries": 0
+    },
+    "metaculus": {
+      "configured": false,
+      "questions": 0
+    }
+  },
+  "countries": {}
+}
