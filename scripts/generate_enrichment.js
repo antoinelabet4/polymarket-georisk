@@ -1,62 +1,43 @@
 /**
- * Génère enrichment.json — exécuté par GitHub Actions toutes les heures
- * Sources : ACLED (si credentials dispo) + Metaculus (scraping pages publiques)
+ * Génère enrichment.json — GitHub Actions (toutes les heures)
+ * Sources : ACLED (OAuth) + Metaculus (API token optionnel)
  */
 const https = require('https');
 const fs = require('fs');
 
 const ACLED_EMAIL = process.env.ACLED_EMAIL || '';
 const ACLED_PASSWORD = process.env.ACLED_PASSWORD || '';
+const METACULUS_TOKEN = process.env.METACULUS_TOKEN || '';
+
+function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
 
 // ── HTTP helpers ────────────────────────────────────────
-function get(url, headers = {}) {
+function httpsRequest(url, options = {}) {
   return new Promise((resolve, reject) => {
-    const req = https.get(url, {
-      headers: { 'User-Agent': 'GeoRisk-GHAction/1.0', ...headers },
-      timeout: 15000,
-    }, res => {
+    const urlObj = new URL(url);
+    const opts = {
+      hostname: urlObj.hostname,
+      path: urlObj.pathname + urlObj.search,
+      method: options.method || 'GET',
+      headers: { 'User-Agent': 'GeoRisk/1.0', ...options.headers },
+      timeout: 20000,
+    };
+    const req = https.request(opts, res => {
       if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
-        return get(res.headers.location, headers).then(resolve).catch(reject);
+        return httpsRequest(res.headers.location, options).then(resolve).catch(reject);
       }
       let body = '';
       res.on('data', c => body += c);
-      res.on('end', () => resolve(body));
+      res.on('end', () => resolve({ status: res.statusCode, body }));
     });
     req.on('error', reject);
     req.on('timeout', () => { req.destroy(); reject(new Error('timeout')); });
-  });
-}
-
-function post(url, data, headers = {}) {
-  return new Promise((resolve, reject) => {
-    const body = JSON.stringify(data);
-    const urlObj = new URL(url);
-    const req = https.request({
-      hostname: urlObj.hostname,
-      path: urlObj.pathname + urlObj.search,
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Content-Length': Buffer.byteLength(body), 'User-Agent': 'GeoRisk-GHAction/1.0', ...headers },
-      timeout: 15000,
-    }, res => {
-      let result = '';
-      res.on('data', c => result += c);
-      res.on('end', () => resolve(result));
-    });
-    req.on('error', reject);
-    req.on('timeout', () => { req.destroy(); reject(new Error('timeout')); });
-    req.write(body);
+    if (options.body) req.write(options.body);
     req.end();
   });
 }
 
-async function getJSON(url, headers) {
-  const body = await get(url, headers);
-  return JSON.parse(body);
-}
-
-function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
-
-// ── ACLED ───────────────────────────────────────────────
+// ── ACLED (OAuth) ───────────────────────────────────────
 const ACLED_REMAP = {
   'Democratic Republic of Congo': 'Dem. Rep. Congo',
   'Central African Republic': 'Central African Rep.',
@@ -67,37 +48,52 @@ const ACLED_REMAP = {
 
 async function fetchACLED() {
   if (!ACLED_EMAIL || !ACLED_PASSWORD) {
-    console.log('[ACLED] No credentials — skipping');
+    console.log('[ACLED] ✗ Credentials manquantes (ACLED_EMAIL + ACLED_PASSWORD)');
     return {};
   }
+
   try {
-    // Step 1: get OAuth token
-    console.log('[ACLED] Authenticating via OAuth...');
-    const authResp = await post('https://acleddata.com/api/auth/token', {
-      email: ACLED_EMAIL,
-      password: ACLED_PASSWORD,
+    // Step 1: OAuth token
+    console.log('[ACLED] Authentification OAuth...');
+    const authBody = `username=${encodeURIComponent(ACLED_EMAIL)}&password=${encodeURIComponent(ACLED_PASSWORD)}&grant_type=password&client_id=acled`;
+    const authResp = await httpsRequest('https://acleddata.com/oauth/token', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: authBody,
     });
-    const authData = JSON.parse(authResp);
+
+    const authData = JSON.parse(authResp.body);
+    if (authData.error) {
+      console.log(`[ACLED] ✗ Auth échouée: ${authData.error} — ${authData.error_description || ''}`);
+      return {};
+    }
     const token = authData.access_token;
     if (!token) {
-      console.log('[ACLED] Auth failed:', authResp.slice(0, 200));
+      console.log('[ACLED] ✗ Pas de token dans la réponse:', authResp.body.slice(0, 200));
       return {};
     }
-    console.log('[ACLED] Authenticated OK');
+    console.log('[ACLED] ✓ Token obtenu');
 
-    // Step 2: fetch conflict events (last 90 days)
+    // Step 2: fetch events (last 90 days)
     const since = new Date(Date.now() - 90 * 86400000).toISOString().slice(0, 10);
     const url = `https://acleddata.com/api/acled/read?event_date=${since}|&event_date_where=>&fields=country|event_type|fatalities&limit=10000`;
-    console.log('[ACLED] Fetching events since', since);
+    console.log(`[ACLED] Récupération événements depuis ${since}...`);
 
-    const dataResp = await get(url, { 'Authorization': `Bearer ${token}` });
-    const data = JSON.parse(dataResp);
-    const events = data.data || [];
+    const dataResp = await httpsRequest(url, {
+      headers: { 'Authorization': `Bearer ${token}` },
+    });
+
+    let data;
+    try { data = JSON.parse(dataResp.body); }
+    catch { console.log('[ACLED] ✗ Réponse non-JSON:', dataResp.body.slice(0, 200)); return {}; }
+
+    const events = data.data || data.results || [];
     if (!events.length) {
-      console.log('[ACLED] No events returned. Response:', dataResp.slice(0, 300));
+      console.log('[ACLED] ✗ 0 événements. Réponse:', dataResp.body.slice(0, 300));
       return {};
     }
 
+    // Step 3: score by country
     const counts = {};
     for (const ev of events) {
       let c = ev.country || '';
@@ -118,15 +114,16 @@ async function fetchACLED() {
     for (const [c, raw] of Object.entries(counts)) {
       scores[c] = Math.round(Math.min(100, (raw / max) * 95));
     }
-    console.log(`[ACLED] ${Object.keys(scores).length} countries scored from ${events.length} events`);
+    console.log(`[ACLED] ✓ ${Object.keys(scores).length} pays scorés à partir de ${events.length} événements`);
     return scores;
+
   } catch (e) {
-    console.error('[ACLED] Error:', e.message);
+    console.log(`[ACLED] ✗ Erreur: ${e.message}`);
     return {};
   }
 }
 
-// ── Metaculus ───────────────────────────────────────────
+// ── Metaculus (API token requis) ─────────────────────────
 const METACULUS_QS = [
   { id: 41138, country: 'Ukraine', sev: 'peace' },
   { id: 8636, country: 'Russia', sev: 'catastrophic' },
@@ -144,26 +141,35 @@ const SEV_COEFF = {
 };
 
 async function fetchMetaculus() {
-  console.log('[Metaculus] Scraping public pages...');
+  if (!METACULUS_TOKEN) {
+    console.log('[Metaculus] ○ Pas de token API (METACULUS_TOKEN). Scraping impossible (Cloudflare). Skipped.');
+    return [];
+  }
+
+  console.log('[Metaculus] Appel API avec token...');
   const results = [];
   for (const q of METACULUS_QS) {
     try {
-      const html = await get(`https://www.metaculus.com/questions/${q.id}/`);
-      const m = html.match(/(\d+(?:\.\d+)?)\s*%\s*chance/);
-      if (m) {
-        const prob = parseFloat(m[1]) / 100;
-        const tm = html.match(/<title>([^<]+)<\/title>/);
-        const title = tm ? tm[1].replace(/\s*\|.*/, '').trim() : `Metaculus #${q.id}`;
-        results.push({ source: 'metaculus', id: q.id, country: q.country, prob, severity: q.sev, title });
-        console.log(`  #${q.id}: ${(prob * 100).toFixed(0)}% → ${q.country} (${q.sev})`);
+      const resp = await httpsRequest(`https://www.metaculus.com/api/questions/${q.id}/`, {
+        headers: { 'Authorization': `Token ${METACULUS_TOKEN}` },
+      });
+      const data = JSON.parse(resp.body);
+      const prob = data.community_prediction?.full?.q2 ?? data.community_prediction?.q2;
+      if (prob != null) {
+        results.push({
+          source: 'metaculus', id: q.id, country: q.country,
+          prob, severity: q.sev, title: data.title || `Metaculus #${q.id}`,
+        });
+        console.log(`  ✓ #${q.id}: ${(prob * 100).toFixed(0)}% → ${q.country}`);
       } else {
-        console.log(`  #${q.id}: no probability found`);
+        console.log(`  ✗ #${q.id}: pas de prédiction`);
       }
     } catch (e) {
-      console.log(`  #${q.id}: failed (${e.message})`);
+      console.log(`  ✗ #${q.id}: ${e.message}`);
     }
-    await sleep(800);
+    await sleep(500);
   }
+  console.log(`[Metaculus] ${results.length} questions récupérées`);
   return results;
 }
 
@@ -194,8 +200,7 @@ function blend(acled, metaculus) {
     let score = a > 0 && m > 0 ? 0.6 * a + 0.4 * m : a > 0 ? a : m;
     result[c] = {
       score: Math.round(Math.min(100, Math.max(0, score))),
-      acled_score: a,
-      metaculus_score: Math.round(m),
+      acled_score: a, metaculus_score: Math.round(m),
       metaculus_markets: d.markets.sort((a, b) => b.contrib - a.contrib).slice(0, 5),
       sources: [...(a > 0 ? ['ACLED'] : []), ...(m > 0 ? ['Metaculus'] : [])],
     };
@@ -205,7 +210,13 @@ function blend(acled, metaculus) {
 
 // ── Main ────────────────────────────────────────────────
 async function main() {
-  console.log('=== Generating enrichment.json ===');
+  console.log('╔═══════════════════════════════════════╗');
+  console.log('║  Enrichment Data Generator            ║');
+  console.log('╚═══════════════════════════════════════╝');
+  console.log(`  ACLED:    ${ACLED_EMAIL ? '✓ credentials' : '✗ pas de credentials'}`);
+  console.log(`  Metaculus: ${METACULUS_TOKEN ? '✓ API token' : '○ pas de token'}`);
+  console.log('');
+
   const [acled, metaculus] = await Promise.all([fetchACLED(), fetchMetaculus()]);
   const countries = blend(acled, metaculus);
 
@@ -213,13 +224,13 @@ async function main() {
     timestamp: new Date().toISOString(),
     sources: {
       acled: { configured: !!ACLED_EMAIL, countries: Object.keys(acled).length },
-      metaculus: { configured: false, questions: metaculus.length },
+      metaculus: { configured: !!METACULUS_TOKEN, questions: metaculus.length },
     },
     countries,
   };
 
   fs.writeFileSync('enrichment.json', JSON.stringify(output, null, 2));
-  console.log(`\n✓ enrichment.json written: ${Object.keys(countries).length} countries`);
+  console.log(`\n✓ enrichment.json: ${Object.keys(countries).length} pays`);
 }
 
-main().catch(e => { console.error(e); process.exit(1); });
+main().catch(e => { console.error('Fatal:', e); process.exit(1); });
