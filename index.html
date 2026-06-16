@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Polymarket Geopolitical Risk Index — Sia</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --white:#FFFFFF;--light-gray:#F4F6FC;--navy:#173044;--cool-black:#0A151E;
+  --teal:#00DECC;--dark-teal:#077C84;--mid-teal:#00A2A3;--light-teal:#9FF3F0;
+  --cool-gray:#455669;--mid-gray:#8796A9;--border:#E4E8F0;--border-light:#EEF1F7;
+  --danger:#DC3545;--danger-bg:#FDE8EA;--warning:#E67E22;--warning-bg:#FEF3E2;
+  --safe:#0F9D58;--safe-bg:#E6F7ED;--info:#2563EB;--info-bg:#EBF0FE;
+  --purple:#7C3AED;--purple-bg:#F0EBFE;
+  --font:'Sora',-apple-system,sans-serif;--mono:'IBM Plex Mono',monospace;
+  --radius:16px;--radius-sm:10px;
+  --shadow:0 1px 3px rgba(0,0,0,0.04),0 1px 2px rgba(0,0,0,0.03);
+  --shadow-md:0 4px 12px rgba(0,0,0,0.06);
+}
+body{background:var(--light-gray);color:var(--cool-black);font-family:var(--font);line-height:1.55;-webkit-font-smoothing:antialiased}
+.app{max-width:1380px;margin:0 auto;padding:20px 28px 48px}
+
+/* Header */
+.header{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px;flex-wrap:wrap;gap:12px;padding-bottom:16px;border-bottom:2px solid var(--teal)}
+.header-brand{display:flex;align-items:center;gap:12px}
+.sia-logo{width:60px;height:28px}
+.header-title{font-size:18px;font-weight:700;color:var(--navy);letter-spacing:-0.3px}
+.header-title span{color:var(--dark-teal)}
+.header-sub{font-size:11px;color:var(--mid-gray);font-family:var(--mono);margin-top:1px}
+.header-right{display:flex;align-items:center;gap:8px}
+.badge{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;background:var(--white);border:1px solid var(--border);border-radius:20px;font-family:var(--mono);font-size:10px;color:var(--cool-gray);box-shadow:var(--shadow)}
+.dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.dot.live{background:var(--safe);animation:pulse 2s infinite}
+.dot.loading{background:var(--warning)}
+.dot.error{background:var(--danger);animation:none}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(15,157,88,0.3)}50%{box-shadow:0 0 0 5px rgba(15,157,88,0)}}
+.btn{display:inline-flex;align-items:center;gap:5px;padding:5px 12px;background:var(--white);border:1px solid var(--border);border-radius:20px;font-family:var(--mono);font-size:10px;color:var(--cool-gray);cursor:pointer;transition:all 0.15s;box-shadow:var(--shadow)}
+.btn:hover{border-color:var(--dark-teal);color:var(--dark-teal)}
+.btn.spinning svg{animation:spin .5s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* KPI Row */
+.kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:18px}
+.kpi{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:16px 18px;box-shadow:var(--shadow);transition:box-shadow 0.2s}
+.kpi:hover{box-shadow:var(--shadow-md)}
+.kpi-label{font-size:9px;font-family:var(--mono);text-transform:uppercase;letter-spacing:1.1px;color:var(--mid-gray);margin-bottom:5px}
+.kpi-val{font-family:var(--mono);font-size:28px;font-weight:600;color:var(--navy)}
+.kpi-sub{font-size:10px;color:var(--mid-gray);margin-top:2px;font-family:var(--mono)}
+.kpi.accent{border-left:3px solid var(--teal)}
+.kpi.accent .kpi-val{color:var(--dark-teal)}
+
+/* Map */
+.map-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);margin-bottom:18px;overflow:hidden}
+.map-bar{display:flex;justify-content:space-between;align-items:center;padding:12px 18px;border-bottom:1px solid var(--border-light)}
+.map-bar-title{font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:1.2px;color:var(--mid-gray)}
+.map-bar-title::before{content:'/';color:var(--teal);margin-right:6px;font-weight:600}
+.map-legend{display:flex;gap:12px;flex-wrap:wrap}
+.legend-item{display:flex;align-items:center;gap:4px;font-size:9px;font-family:var(--mono);color:var(--mid-gray)}
+.legend-swatch{width:12px;height:7px;border-radius:2px}
+.map-wrap{position:relative;width:100%;aspect-ratio:2.3/1;min-height:360px}
+#worldMap{width:100%;height:100%;display:block}
+#worldMap .country{stroke:var(--border);stroke-width:0.35;cursor:pointer;transition:opacity 0.1s,stroke-width 0.1s}
+#worldMap .country:hover{opacity:0.75;stroke-width:1;stroke:var(--navy)}
+.map-tooltip{position:absolute;background:var(--white);border:1px solid var(--border);border-radius:var(--radius-sm);padding:10px 14px;font-size:12px;pointer-events:none;opacity:0;transition:opacity 0.1s;z-index:20;box-shadow:var(--shadow-md);max-width:340px;color:var(--cool-black)}
+.map-tooltip.show{opacity:1}
+.tt-score{font-family:var(--mono);font-weight:600}
+.tt-sub{font-size:10px;color:var(--mid-gray);font-family:var(--mono);margin-top:2px}
+.tt-mkts{font-size:11px;color:var(--cool-gray);margin-top:5px;line-height:1.65;white-space:normal;max-width:300px}
+
+/* Content Grid */
+.content-grid{display:grid;grid-template-columns:1fr 320px;gap:14px;margin-bottom:18px}
+
+/* Cards */
+.card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:16px 18px;box-shadow:var(--shadow)}
+.card-title{font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:1.3px;color:var(--mid-gray);margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--border-light)}
+.card-title::before{content:'/';color:var(--teal);margin-right:6px;font-weight:600}
+
+/* Risk Bars */
+.risk-list{display:flex;flex-direction:column;gap:1px}
+.risk-item{display:flex;align-items:center;gap:10px;padding:7px 6px;border-radius:8px;transition:background 0.12s}
+.risk-item:hover{background:var(--light-gray)}
+.risk-flag{width:26px;height:26px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:9px;font-family:var(--mono);font-weight:600;flex-shrink:0}
+.risk-name{flex:1;font-size:12px;font-weight:500}
+.risk-mkts{font-size:9px;color:var(--mid-gray);font-family:var(--mono);width:40px;text-align:center}
+.risk-bar-wrap{width:56px;height:4px;background:var(--border-light);border-radius:2px;overflow:hidden}
+.risk-bar{height:100%;border-radius:2px;transition:width 0.7s ease}
+.risk-score{font-family:var(--mono);font-size:13px;font-weight:600;width:26px;text-align:right}
+
+/* Gauge */
+.gauge-row{display:flex;align-items:center;gap:14px}
+.gauge-ring{position:relative;width:74px;height:74px;flex-shrink:0}
+.gauge-ring svg{transform:rotate(-90deg)}
+.gauge-center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.gauge-center .g-val{font-family:var(--mono);font-size:20px;font-weight:600;color:var(--dark-teal)}
+.gauge-center .g-lbl{font-size:8px;color:var(--mid-gray);text-transform:uppercase;letter-spacing:0.6px;font-family:var(--mono)}
+.gauge-info{font-size:11px;color:var(--cool-gray);line-height:1.75}
+
+/* Stable */
+.stable-item{display:flex;align-items:center;gap:8px;padding:5px 0}
+.stable-iso{font-family:var(--mono);font-size:9px;color:var(--mid-gray);width:20px}
+.stable-name{flex:1;font-size:11px;color:var(--cool-gray)}
+.stable-score{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--safe)}
+
+/* Tabs */
+.tabs{display:flex;gap:4px;margin-bottom:12px;flex-wrap:wrap}
+.tab{padding:5px 12px;border-radius:8px;font-size:11px;font-weight:500;background:transparent;border:1px solid var(--border);color:var(--mid-gray);cursor:pointer;transition:all 0.12s;font-family:var(--font)}
+.tab:hover{border-color:var(--dark-teal);color:var(--dark-teal)}
+.tab.active{background:var(--navy);border-color:var(--navy);color:var(--white)}
+
+/* Markets */
+.markets-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:10px}
+.market-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px 16px;transition:all 0.12s;cursor:pointer;text-decoration:none;color:inherit;display:block}
+.market-card:hover{box-shadow:var(--shadow-md);border-color:var(--dark-teal);transform:translateY(-1px)}
+.market-tag{display:inline-block;padding:2px 8px;border-radius:4px;font-size:8px;font-weight:600;text-transform:uppercase;letter-spacing:0.4px;margin-bottom:6px}
+.market-tag.conflit{background:var(--danger-bg);color:var(--danger)}
+.market-tag.election{background:var(--info-bg);color:var(--info)}
+.market-tag.souverain{background:var(--warning-bg);color:var(--warning)}
+.market-tag.regime{background:var(--purple-bg);color:var(--purple)}
+.market-tag.diplomatie{background:#E0F7F6;color:var(--dark-teal)}
+.market-tag.geopolitique{background:var(--light-gray);color:var(--cool-gray)}
+.market-q{font-size:12px;font-weight:500;line-height:1.4;margin-bottom:8px}
+.market-prob{font-family:var(--mono);font-size:24px;font-weight:600}
+.market-prob.high{color:var(--danger)}
+.market-prob.mid{color:var(--warning)}
+.market-prob.low{color:var(--safe)}
+.market-meta{display:flex;justify-content:space-between;margin-top:8px;padding-top:7px;border-top:1px solid var(--border-light);font-size:9px;color:var(--mid-gray);font-family:var(--mono)}
+.market-countries{color:var(--dark-teal);font-weight:500}
+
+/* Method */
+.method-item{display:flex;gap:10px;padding:9px 0;border-bottom:1px solid var(--border-light);align-items:flex-start}
+.method-item:last-child{border-bottom:none}
+.method-num{width:22px;height:22px;border-radius:6px;flex-shrink:0;background:#E0F7F6;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:9px;font-weight:600;color:var(--dark-teal)}
+.method-text{font-size:11px;color:var(--cool-gray);line-height:1.45}
+
+/* Bottom */
+.bottom-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+
+/* Loading */
+.loading-box{display:flex;align-items:center;justify-content:center;gap:8px;padding:28px;color:var(--mid-gray);font-size:11px;font-family:var(--mono)}
+.spinner{width:14px;height:14px;border:2px solid var(--border);border-top-color:var(--dark-teal);border-radius:50%;animation:spin .5s linear infinite}
+
+/* Footer */
+.footer{margin-top:28px;padding-top:14px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;font-size:9px;color:var(--mid-gray);font-family:var(--mono);flex-wrap:wrap;gap:8px}
+
+/* Responsive */
+@media(max-width:1024px){.content-grid,.bottom-grid{grid-template-columns:1fr}.kpi-row{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.app{padding:12px}.kpi-row{grid-template-columns:1fr 1fr}.markets-grid{grid-template-columns:1fr}.map-wrap{min-height:240px;aspect-ratio:1.8/1}}
+
+.fade-in{opacity:0;transform:translateY(6px);transition:opacity 0.35s ease,transform 0.35s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+<div class="app">
+  <header class="header">
+    <div>
+      <div class="header-brand">
+        <svg class="sia-logo" viewBox="0 0 100 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <text x="0" y="30" font-family="Sora,sans-serif" font-weight="700" font-size="34" fill="#173044">Sia</text>
+          <line x1="72" y1="34" x2="82" y2="10" stroke="#00DECC" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+        <div>
+          <div class="header-title">Polymarket <span>Geopolitical Risk Index</span></div>
+          <div class="header-sub">Indicateur de stabilité pays · marchés de prédiction temps réel</div>
+        </div>
+      </div>
+    </div>
+    <div class="header-right">
+      <button class="btn" id="refreshBtn" onclick="refreshData()">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 2v6h-6"/><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M3 22v-6h6"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/></svg>Refresh
+      </button>
+      <div class="badge"><span class="dot loading" id="statusDot"></span><span id="statusText">Connexion...</span></div>
+    </div>
+  </header>
+
+  <div class="kpi-row fade-in">
+    <div class="kpi"><div class="kpi-label">Marchés géopolitiques</div><div class="kpi-val" id="kpi-markets">—</div><div class="kpi-sub" id="kpi-markets-sub"></div></div>
+    <div class="kpi"><div class="kpi-label">Pays couverts</div><div class="kpi-val" id="kpi-countries">—</div><div class="kpi-sub">Polymarket + enrichissement baseline</div></div>
+    <div class="kpi"><div class="kpi-label">Volume 24h</div><div class="kpi-val" id="kpi-volume">—</div><div class="kpi-sub">positions sur marchés géopolitiques</div></div>
+    <div class="kpi accent"><div class="kpi-label">Score risque moyen</div><div class="kpi-val" id="kpi-risk">—</div><div class="kpi-sub" id="kpi-risk-sub"></div></div>
+  </div>
+
+  <div class="map-card fade-in">
+    <div class="map-bar">
+      <div class="map-bar-title">Heatmap risque géopolitique · Score 0–100 · Pondération volume × direction du signal</div>
+      <div class="map-legend">
+        <div class="legend-item"><div class="legend-swatch" style="background:#1B7A3D"></div>&lt;20</div>
+        <div class="legend-item"><div class="legend-swatch" style="background:#7CA832"></div>20–40</div>
+        <div class="legend-item"><div class="legend-swatch" style="background:#D4A017"></div>40–60</div>
+        <div class="legend-item"><div class="legend-swatch" style="background:#D35D2A"></div>60–80</div>
+        <div class="legend-item"><div class="legend-swatch" style="background:#C0392B"></div>80+</div>
+        <div class="legend-item"><div class="legend-swatch" style="background:#E8ECF2"></div>N/A</div>
+      </div>
+    </div>
+    <div class="map-wrap" id="mapWrap">
+      <svg id="worldMap"></svg>
+      <div class="map-tooltip" id="mapTooltip"></div>
+    </div>
+  </div>
+
+  <div class="content-grid fade-in">
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <div class="card">
+        <div class="card-title">Top risques détectés · score pondéré par volume et direction</div>
+        <div class="risk-list" id="topRisks"><div class="loading-box"><div class="spinner"></div>Analyse en cours...</div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">Score global</div>
+        <div class="gauge-row">
+          <div class="gauge-ring">
+            <svg width="74" height="74" viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="42" fill="none" stroke="var(--border-light)" stroke-width="6"/>
+              <circle id="gaugeArc" cx="50" cy="50" r="42" fill="none" stroke="var(--teal)" stroke-width="6" stroke-dasharray="264" stroke-dashoffset="264" stroke-linecap="round" style="transition:stroke-dashoffset 1s ease"/>
+            </svg>
+            <div class="gauge-center"><span class="g-val" id="gaugeVal">—</span><span class="g-lbl">/ 100</span></div>
+          </div>
+          <div class="gauge-info" id="gaugeInfo">Chargement...</div>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <div class="card">
+        <div class="card-title">Zones les plus stables</div>
+        <div id="stableList"><div class="loading-box"><div class="spinner"></div></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">Limites et biais</div>
+        <div id="limitsList"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card fade-in" style="margin-bottom:18px">
+    <div class="card-title">Marchés Polymarket actifs · <span id="marketCount">0</span> marchés · classés par contribution au score</div>
+    <div class="tabs" id="tabs"></div>
+    <div class="markets-grid" id="marketsGrid"><div class="loading-box"><div class="spinner"></div>Gamma API...</div></div>
+  </div>
+
+  <div class="bottom-grid fade-in">
+    <div class="card">
+      <div class="card-title">Méthodologie</div>
+      <div id="methodList"></div>
+    </div>
+    <div class="card">
+      <div class="card-title">Sources</div>
+      <div id="sourcesList"></div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>POLYMARKET GEOPOLITICAL RISK INDEX <span style="color:var(--teal)">/</span> Données live Gamma API <span style="color:var(--teal)">/</span> Lecture seule</span>
+    <span id="enrichmentStatus" style="cursor:pointer" onclick="configBackend()">
+      <span style="color:var(--warning)">●</span> Enrichissement non configuré
+    </span>
+    <span>Sia <span style="color:var(--teal)">/</span> Polymarket utilisé sans VPN ni participation</span>
+  </div>
+</div>
+
+<script>
+// ================================================================
+// COUNTRY REGISTRY — regex word-boundary, leaders, geo landmarks
+// ================================================================
+const COUNTRIES = [
+  { name:'Iran',geo:'Iran',fr:'Iran',iso:'IR',
+    re:/\biran(?:ian)?\b|\bhormuz\b|\bkharg\s*island\b|\bpersian\s*gulf\b|\brouhani\b|\bpezeshkian\b/i },
+  { name:'United States of America',geo:'United States of America',fr:'États-Unis',iso:'US',
+    re:/\bunited\s+states\b|\bu\.?s\.?\s*[\-·x]|\bamerica(?:n)?\b|\btrump\b|\bbiden\b|\bproject\s+freedom\b/i },
+  { name:'Ukraine',geo:'Ukraine',fr:'Ukraine',iso:'UA',
+    re:/\bukrain(?:e|ian)\b|\bkyiv\b|\bzelensky\b|\bdonbas\b|\bcrimea\b/i },
+  { name:'Russia',geo:'Russia',fr:'Russie',iso:'RU',
+    re:/\brussia(?:n)?\b|\bmoscow\b|\bputin\b|\bkremlin\b/i },
+  { name:'China',geo:'China',fr:'Chine',iso:'CN',
+    re:/\bchina\b|\bchinese\b|\bbeijing\b|\bxi\s*jinping\b|\bsouth\s*china\s*sea\b/i },
+  { name:'Taiwan',geo:'Taiwan',fr:'Taïwan',iso:'TW',re:/\btaiwan(?:ese)?\b|\btaipei\b/i },
+  { name:'Israel',geo:'Israel',fr:'Israël',iso:'IL',
+    re:/\bisrael(?:i)?\b|\bnetanyahu\b|\bidf\b|\btel\s*aviv\b/i },
+  { name:'Palestine',geo:'Palestine',fr:'Palestine',iso:'PS',
+    re:/\bpalestin(?:e|ian)\b|\bgaza\b|\bhamas\b|\bwest\s*bank\b|\bunrwa\b/i },
+  { name:'North Korea',geo:'North Korea',fr:'Corée du Nord',iso:'KP',
+    re:/\bnorth\s*korea\b|\bdprk\b|\bkim\s*jong\b|\bpyongyang\b/i },
+  { name:'South Korea',geo:'South Korea',fr:'Corée du Sud',iso:'KR',
+    re:/\bsouth\s*korea(?:n)?\b|\bseoul\b/i },
+  { name:'Syria',geo:'Syria',fr:'Syrie',iso:'SY',re:/\bsyria(?:n)?\b|\bassad\b|\bdamascus\b/i },
+  { name:'Yemen',geo:'Yemen',fr:'Yémen',iso:'YE',
+    re:/\byemen(?:i)?\b|\bhouthi\b|\bsanaa\b|\bbab\s*el[\-\s]*mandeb\b/i },
+  { name:'Lebanon',geo:'Lebanon',fr:'Liban',iso:'LB',
+    re:/\blebanon\b|\blebanese\b|\bhezbollah\b|\bbeirut\b|\bqassem\b|\bnasrallah\b/i },
+  { name:'France',geo:'France',fr:'France',iso:'FR',re:/\bfrance\b|\bfrench\b|\bmacron\b/i },
+  { name:'Germany',geo:'Germany',fr:'Allemagne',iso:'DE',re:/\bgermany\b|\bgerman(?:y)?\b|\bberlin\b|\bbundestag\b/i },
+  { name:'United Kingdom',geo:'United Kingdom',fr:'Royaume-Uni',iso:'GB',
+    re:/\bunited\s*kingdom\b|\bbritain\b|\bbritish\b|\bstarmer\b|\bmakerfield\b/i },
+  { name:'India',geo:'India',fr:'Inde',iso:'IN',re:/\bindia(?:n)?\b|\bmodi\b|\bdelhi\b/i },
+  { name:'Pakistan',geo:'Pakistan',fr:'Pakistan',iso:'PK',re:/\bpakistan(?:i)?\b/i },
+  { name:'Venezuela',geo:'Venezuela',fr:'Venezuela',iso:'VE',
+    re:/\bvenezuela(?:n)?\b|\bmaduro\b|\bcaracas\b|\bmachado\b/i },
+  { name:'Argentina',geo:'Argentina',fr:'Argentine',iso:'AR',re:/\bargentin(?:a|e|ian)\b|\bmilei\b/i },
+  { name:'Brazil',geo:'Brazil',fr:'Brésil',iso:'BR',re:/\bbrazil(?:ian)?\b|\blula\b|\bbolsonaro\b/i },
+  { name:'Mexico',geo:'Mexico',fr:'Mexique',iso:'MX',re:/\bmexico\b|\bmexican\b/i },
+  { name:'Turkey',geo:'Turkey',fr:'Turquie',iso:'TR',re:/\bturk(?:ey|ish)\b|\berdogan\b|\bankara\b/i },
+  { name:'Sudan',geo:'Sudan',fr:'Soudan',iso:'SD',re:/\bsudan(?:ese)?\b(?!.*south)|\bkhartoum\b|\brsf\b|\bdarfur\b/i },
+  { name:'Somalia',geo:'Somalia',fr:'Somalie',iso:'SO',re:/\bsomalia(?:n)?\b|\bmogadishu\b/i },
+  { name:'Ethiopia',geo:'Ethiopia',fr:'Éthiopie',iso:'ET',re:/\bethiopia(?:n)?\b|\btigray\b/i },
+  { name:'Nigeria',geo:'Nigeria',fr:'Nigeria',iso:'NG',re:/\bnigeria(?:n)?\b/i },
+  { name:'South Africa',geo:'South Africa',fr:'Afrique du Sud',iso:'ZA',re:/\bsouth\s*africa\b/i },
+  { name:'Egypt',geo:'Egypt',fr:'Égypte',iso:'EG',re:/\begypt(?:ian)?\b|\bcairo\b|\bsuez\b/i },
+  { name:'Saudi Arabia',geo:'Saudi Arabia',fr:'Arabie Saoudite',iso:'SA',re:/\bsaudi\b|\briyadh\b/i },
+  { name:'Iraq',geo:'Iraq',fr:'Irak',iso:'IQ',re:/\biraq(?:i)?\b|\bbaghdad\b/i },
+  { name:'Afghanistan',geo:'Afghanistan',fr:'Afghanistan',iso:'AF',re:/\bafghan(?:istan)?\b|\bkabul\b|\btaliban\b/i },
+  { name:'Myanmar',geo:'Myanmar',fr:'Myanmar',iso:'MM',re:/\bmyanmar\b|\bburma\b|\bburmese\b/i },
+  { name:'Peru',geo:'Peru',fr:'Pérou',iso:'PE',re:/\bperu(?:vian)?\b|\blima\b/i },
+  { name:'Colombia',geo:'Colombia',fr:'Colombie',iso:'CO',re:/\bcolombia(?:n)?\b|\bbogota\b/i },
+  { name:'Japan',geo:'Japan',fr:'Japon',iso:'JP',re:/\bjapan(?:ese)?\b|\btokyo\b/i },
+  { name:'Canada',geo:'Canada',fr:'Canada',iso:'CA',re:/\bcanada\b|\bcanadian\b|\bcarney\b/i },
+  { name:'Australia',geo:'Australia',fr:'Australie',iso:'AU',re:/\baustralia(?:n)?\b/i },
+  { name:'Libya',geo:'Libya',fr:'Libye',iso:'LY',re:/\blib(?:ya|yan)\b|\btripoli\b/i },
+  { name:'Cuba',geo:'Cuba',fr:'Cuba',iso:'CU',re:/\bcuba(?:n)?\b|\bhavana\b|\bdíaz-canel\b/i },
+  { name:'Greenland',geo:'Greenland',fr:'Groenland',iso:'GL',re:/\bgreenland\b/i },
+];
+
+// ================================================================
+// TANGENTIAL MARKET FILTER — venue/communication/minor participation
+// ================================================================
+const TANGENTIAL_RE = [
+  /\bmeet(?:ing)?\s+(?:be\s+)?(?:next\s+)?in\b/i,
+  /\bspeak\s+to\b/i,
+  /\bmeet\s+with\b/i,
+  /\battend\s+the\s+G[78]\b/i,
+  /\bNobel\b/i,
+  /\bsend\s+warships\b/i,
+  /\btweet/i,
+  /\b(?:will|would)\s+\w+\s+(?:speak|call|talk)\b/i,
+];
+
+function isTangential(question) {
+  return TANGENTIAL_RE.some(re => re.test(question));
+}
+
+// ================================================================
+// RISK SIGNAL CLASSIFICATION
+// ================================================================
+const DANGER_RE = [
+  /\binvade/i, /\binvasion\b/i, /\bwar\b/i, /\bmilitary clash/i,
+  /\bstrike\b/i, /\bbomb/i, /\bmissile/i, /closes?\s+(?:its\s+)?airspace/i,
+  /\bblockade/i, /\bfalls?\b/i, /regime\s+fall/i, /\bcoup\b/i,
+  /\boverthrow/i, /\bescalat/i, /\boffensive/i,
+  /no\s+longer\s+under.*control/i, /\bclosed\b.*strait/i,
+  /\braid\b/i, /\bannex/i
+];
+const PEACE_RE = [
+  /peace\s+deal/i, /\bceasefire\b/i, /\bagreement\b/i,
+  /returns?\s+to\s+normal/i, /\blifted\b/i, /\bde-escalat/i,
+  /\bwithdraw/i, /nuclear\s+deal/i, /\baccords\b/i,
+  /agrees?\s+to\s+surrender/i, /\bdenucleariz/i,
+  /unrestricted\s+shipping/i
+];
+
+function riskDirection(q) {
+  for (const r of DANGER_RE) if (r.test(q)) return 'danger';
+  for (const r of PEACE_RE) if (r.test(q)) return 'peace';
+  return 'neutral';
+}
+
+// ================================================================
+// SEVERITY-BASED IMPACT CLASSIFICATION
+// The NATURE of the risk determines its weight, not the volume
+// ================================================================
+function classifySeverity(q) {
+  const l = q.toLowerCase();
+  if (/nato|otan|nuclear\s+weapon|world\s+war|extend.*conflict.*(?:nato|otan)/.test(l)) return {level:'CATASTROPHIQUE',coeff:240,inv:false};
+  if (/\binvade\b|\binvasion\b/.test(l)) return {level:'GUERRE',coeff:50,inv:false};
+  if (/hormuz|suez|bab\s*el|strait.*normal|unrestricted|blockade.*over/.test(l)) return {level:'VOIE MARITIME',coeff:30,inv:true};
+  if (/blockade/.test(l)) return {level:'VOIE MARITIME',coeff:30,inv:false};
+  if (/closes?\s+(?:its\s+)?airspace/.test(l)) return {level:'ESPACE AÉRIEN',coeff:25,inv:false};
+  if (/offensive|military\s+clash|\bstrike\b|\bbomb|\bmissile|escalad/.test(l)) return {level:'CONFLIT',coeff:27,inv:false};
+  if (/regime\s+fall|\bcoup\b|overthrow|no\s+longer.*control/.test(l)) return {level:'RÉGIME',coeff:35,inv:false};
+  if (/(?:still|toujours).*(?:power|pouvoir|leader)/.test(l)) return {level:'RÉGIME',coeff:42,inv:true};
+  if (/default|debt.*restructur/.test(l)) return {level:'SOUVERAIN',coeff:34,inv:false};
+  if (/sanction/.test(l)) return {level:'SANCTIONS',coeff:12,inv:false};
+  if (/peace\s+deal|ceasefire|agreement|withdraw|surrender|denucleariz|nuclear\s+deal/.test(l)) return {level:'PAIX',coeff:27,inv:true};
+  if (/election|vote|legislat|ballot/.test(l)) return {level:'ÉLECTION',coeff:12,inv:false};
+  return {level:'GÉO',coeff:8,inv:false};
+}
+
+// ================================================================
+// BASELINE RISK — enrichissement indices géopolitiques
+// ================================================================
+// ================================================================
+// ENRICHMENT: fetched dynamically from backend server
+// Configure ENRICHMENT_URL to point to your server
+// ================================================================
+const ENRICHMENT_URL = localStorage.getItem('georisk_backend_url') || 'enrichment.json';
+let BASELINE = {};  // populated dynamically from backend
+let enrichmentSources = {};
+
+async function fetchEnrichment() {
+  if (!ENRICHMENT_URL) {
+    logger('Enrichment backend not configured. Set URL via config panel.');
+    return;
+  }
+  try {
+    const resp = await fetch(ENRICHMENT_URL, { signal: AbortSignal.timeout(10000) });
+    const data = await resp.json();
+    enrichmentSources = data.sources || {};
+    const countries = data.countries || {};
+    BASELINE = {};
+    for (const [c, info] of Object.entries(countries)) {
+      BASELINE[c] = info.score;
+      // Store metaculus details for tooltip enrichment
+      if (info.metaculus_markets && info.metaculus_markets.length) {
+        if (!countryDetails[c]) countryDetails[c] = [];
+        for (const m of info.metaculus_markets) {
+          countryDetails[c].push({
+            q: m.title, prob: m.prob, contrib: m.contrib,
+            severity: m.severity, source: m.source, vol: 0
+          });
+        }
+      }
+    }
+    logger(`Enrichment: ${Object.keys(BASELINE).length} pays via ${(enrichmentSources.acled?.configured ? 'ACLED' : '')} ${(enrichmentSources.metaculus?.configured ? '+ Metaculus' : enrichmentSources.metaculus?.questions > 0 ? '+ Metaculus (scraping)' : '')}`);
+  } catch (e) {
+    logger('Enrichment backend non accessible: ' + e.message);
+  }
+}
+function logger(msg) { console.log('[GeoRisk]', msg); }
+
+
+const DECAY = [1.0, 0.7, 0.5, 0.3, 0.15];
+
+function categorize(q) {
+  const l = q.toLowerCase();
+  if (/war|invade|invasion|military|attack|strike|bomb|missile|ceasefire|combat|offensive|airspace|blockade|clash|raid/.test(l)) return {cat:'Conflits',tag:'conflit'};
+  if (/election|vote|president.*nomin|legislat|ballot/.test(l)) return {cat:'Élections',tag:'election'};
+  if (/default|debt|sanction|tariff|trade.war|embargo|restructur/.test(l)) return {cat:'Souverain',tag:'souverain'};
+  if (/regime|coup|overthrow|fall|out\s+(as|before|by)/.test(l)) return {cat:'Régime',tag:'regime'};
+  if (/peace deal|diplomatic|agreement|nuclear deal|accords|withdraw|surrender|denuclear/.test(l)) return {cat:'Diplomatie',tag:'diplomatie'};
+  return {cat:'Géopolitique',tag:'geopolitique'};
+}
+function matchCountries(text) { const s = new Set(); for (const c of COUNTRIES) if (c.re.test(text)) s.add(c.name); return [...s]; }
+function info(name) { return COUNTRIES.find(c => c.name === name); }
+
+function riskColor(s) {
+  if (s == null) return '#E8ECF2';
+  if (s >= 80) return '#C0392B'; if (s >= 60) return '#D35D2A';
+  if (s >= 40) return '#D4A017'; if (s >= 20) return '#7CA832'; return '#1B7A3D';
+}
+function scoreColor(s) {
+  if (s >= 60) return 'var(--danger)'; if (s >= 40) return 'var(--warning)';
+  if (s >= 20) return 'var(--dark-teal)'; return 'var(--safe)';
+}
+function riskLabel(s) {
+  if (s >= 70) return 'Critique'; if (s >= 45) return 'Élevé';
+  if (s >= 20) return 'Modéré'; return 'Faible';
+}
+
+let allMarkets = [], countryScores = {}, countryDetails = {}, worldGeo = null;
+
+async function fetchData() {
+  const dot = document.getElementById('statusDot'), txt = document.getElementById('statusText');
+  dot.className = 'dot loading'; txt.textContent = 'Chargement...';
+  try {
+    const [g1,g2,p1] = await Promise.all([
+      fetch('https://gamma-api.polymarket.com/events?tag_id=100265&active=true&closed=false&limit=100&order=volume24hr&ascending=false').then(r=>r.json()),
+      fetch('https://gamma-api.polymarket.com/events?tag_id=100265&active=true&closed=false&limit=100&offset=100&order=volume24hr&ascending=false').then(r=>r.json()),
+      fetch('https://gamma-api.polymarket.com/events?tag_id=2&active=true&closed=false&limit=100&order=volume24hr&ascending=false').then(r=>r.json()),
+    ]);
+    const seen = new Set(), events = [];
+    for (const e of [...g1,...g2,...p1]) { if (!seen.has(e.id)){seen.add(e.id);events.push(e);} }
+
+    allMarkets = [];
+    for (const ev of events) {
+      for (const m of (ev.markets||[])) {
+        if (!m.active || m.closed) continue;
+        const prices = JSON.parse(m.outcomePrices||'[]');
+        const yp = prices.length>0 ? parseFloat(prices[0]) : null;
+        if (yp==null||isNaN(yp)) continue;
+        const fullText = m.question+' '+(ev.title||'');
+        const countries = matchCountries(fullText);
+        if (!countries.length) continue;
+        if (isTangential(m.question)) continue;
+        const {cat,tag} = categorize(m.question);
+        const sev = classifySeverity(m.question);
+        const contrib = sev.inv ? (1 - yp) * sev.coeff : yp * sev.coeff;
+        allMarkets.push({
+          question:m.question,slug:m.slug,eventSlug:ev.slug,
+          prob:yp,contrib:Math.round(contrib*10)/10,severity:sev.level,inverted:sev.inv,
+          volume:parseFloat(m.volume||0),volume24hr:ev.volume24hr||0,
+          countries,cat,tag
+        });
+      }
+    }
+
+    // Group by event per country, keep max contrib per event
+    const countryEvents = {};
+    countryDetails = {};
+    for (const m of allMarkets) {
+      for (const c of m.countries) {
+        if (!countryEvents[c]) { countryEvents[c] = {}; countryDetails[c] = []; }
+        countryDetails[c].push({q:m.question,prob:m.prob,contrib:m.contrib,severity:m.severity,inv:m.inverted,vol:m.volume});
+        if (!countryEvents[c][m.eventSlug] || m.contrib > countryEvents[c][m.eventSlug].contrib) {
+          countryEvents[c][m.eventSlug] = m;
+        }
+      }
+    }
+
+    // Additive scoring: top 5 events with diminishing returns
+    const polyScores = {};
+    for (const [c, evts] of Object.entries(countryEvents)) {
+      const sorted = Object.values(evts).sort((a,b) => b.contrib - a.contrib);
+      const score = sorted.slice(0, 5).reduce((s, m, i) => s + m.contrib * (DECAY[i] || 0.1), 0);
+      polyScores[c] = { score: Math.min(100, Math.round(score)), n: Object.keys(evts).length };
+    }
+
+    // Blend with baseline
+    countryScores = {};
+    const all = new Set([...Object.keys(polyScores), ...Object.keys(BASELINE)]);
+    for (const c of all) {
+      const p = polyScores[c], b = BASELINE[c];
+      const n = p ? p.n : 0, ps = p ? p.score : 0;
+      let score, source;
+      if (n >= 5 && b != null) { score = 0.65*ps + 0.35*b; source = 'poly+base'; }
+      else if (n >= 3 && b != null) { score = 0.50*ps + 0.50*b; source = 'poly+base'; }
+      else if (n >= 1 && ps >= 15 && b != null) { score = 0.30*ps + 0.70*b; source = 'poly+base'; }
+      else if (n >= 1 && b != null) { score = 0.10*ps + 0.90*b; source = 'baseline'; }
+      else if (p) { score = ps; source = 'poly'; }
+      else if (b != null) { score = b; source = 'baseline'; }
+      else continue;
+      countryScores[c] = { score: Math.round(Math.min(100, Math.max(0, score))), core: n, source };
+    }
+
+    for (const c of Object.keys(countryDetails)) countryDetails[c].sort((a,b) => b.contrib - a.contrib);
+    dot.className = 'dot live';
+    txt.textContent = `Live · ${new Date().toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'})}`;
+    return {events:events.length, markets:allMarkets.length};
+  } catch(e) { dot.className='dot error'; txt.textContent='Erreur API'; throw e; }
+}
+
+// ================================================================
+// MAP
+// ================================================================
+const mapSvg=d3.select('#worldMap'), tooltip=document.getElementById('mapTooltip'), mapWrap=document.getElementById('mapWrap');
+function drawMap(world) {
+  const W=mapWrap.clientWidth, H=mapWrap.clientHeight;
+  if(!W||!H) return;
+  mapSvg.attr('viewBox',`0 0 ${W} ${H}`).attr('preserveAspectRatio','xMidYMid slice');
+  mapSvg.selectAll('*').remove();
+  mapSvg.append('rect').attr('width',W).attr('height',H).attr('fill','#F8FAFD').attr('rx',0);
+  const pad=14;
+  const proj=d3.geoNaturalEarth1().fitSize([W-pad*2,H-pad*2],world).translate([W/2,H/2]);
+  const path=d3.geoPath().projection(proj);
+  mapSvg.append('path').datum(d3.geoGraticule10()).attr('d',path).attr('fill','none').attr('stroke','#E4E8F0').attr('stroke-width',0.3);
+  mapSvg.selectAll('.country').data(world.features).enter().append('path')
+    .attr('class','country').attr('d',path)
+    .attr('fill',d=> {
+      const cs = countryScores[d.properties.name];
+      return cs ? riskColor(cs.score) : '#E8ECF2';
+    })
+    .on('mouseenter',function(ev,d){
+      const n=d.properties.name, cs=countryScores[n], inf=info(n), fr=inf?inf.fr:n;
+      const det=countryDetails[n]||[];
+      let h;
+      if(cs){
+        const srcLabel = cs.source === 'baseline' ? 'Enrichissement seul' : cs.core >= 5 ? `${cs.core} marchés (forte couverture)` : cs.core >= 2 ? `${cs.core} marchés + enrichissement` : cs.core >= 1 ? `${cs.core} marché + enrichissement` : 'Enrichissement seul';
+        h=`<strong>${fr}</strong> <span class="tt-score" style="color:${scoreColor(cs.score)}">${cs.score}/100</span>`;
+        h+=`<div class="tt-sub">${riskLabel(cs.score)} · ${srcLabel}</div>`;
+        if(det.length){
+          h+='<div class="tt-mkts">';
+          for(const m of det.slice(0,3)){
+            const col = m.contrib >= 20 ? '#DC3545' : m.contrib >= 10 ? '#E67E22' : '#077C84';
+            h+=`<span style="color:${col};font-weight:600">+${Math.round(m.contrib)}pts</span> ${m.q.substring(0,48)}${m.q.length>48?'…':''} <b>${(m.prob*100).toFixed(0)}%</b><br>`;
+          }
+          if(det.length>3) h+=`<span style="color:var(--mid-gray)">+ ${det.length-3} autre(s)</span>`;
+          h+='</div>';
+        }
+      } else { h=`<strong>${fr}</strong><div class="tt-sub">Aucune couverture Polymarket</div>`; }
+      tooltip.innerHTML=h; tooltip.classList.add('show');
+    })
+    .on('mousemove',function(ev){
+      const r=mapWrap.getBoundingClientRect();
+      let x=ev.clientX-r.left+14,y=ev.clientY-r.top-10;
+      if(x+260>r.width) x=ev.clientX-r.left-260;
+      if(y<0) y=10;
+      tooltip.style.left=x+'px'; tooltip.style.top=y+'px';
+    })
+    .on('mouseleave',()=>tooltip.classList.remove('show'));
+}
+async function loadMap(){
+  try{
+    const data=await d3.json('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json');
+    worldGeo=topojson.feature(data,data.objects.countries);
+    try{const tsv=await d3.tsv('https://cdn.jsdelivr.net/npm/world-atlas@1/world/110m.tsv');const m={};tsv.forEach(d=>{m[d.iso_n3]=d.name;});worldGeo.features.forEach(f=>{f.properties.name=m[f.id]||f.properties.name||'';});}catch(e){}
+    drawMap(worldGeo);
+    window.addEventListener('resize',()=>{if(worldGeo)drawMap(worldGeo);});
+  }catch(e){mapWrap.innerHTML='<div class="loading-box" style="height:100%">Carte non disponible</div>';}
+}
+
+// ================================================================
+// RENDER
+// ================================================================
+function anim(el,end,dur=900){const t0=performance.now();(function f(now){const p=Math.min((now-t0)/dur,1);el.textContent=Math.round((1-Math.pow(1-p,3))*end);if(p<1)requestAnimationFrame(f);})(performance.now());}
+
+function renderKPIs(stats){
+  const entries=Object.entries(countryScores);
+  const n=entries.length;
+  const avg=n>0?Math.round(entries.reduce((s,[,v])=>s+v.score,0)/n):0;
+  const polyCountries = entries.filter(([,v])=>v.core>0).length;
+  const seenEv=new Set(); let vol=0;
+  allMarkets.forEach(m=>{if(!seenEv.has(m.eventSlug)){seenEv.add(m.eventSlug);vol+=m.volume24hr;}});
+  anim(document.getElementById('kpi-markets'),allMarkets.filter(m=>!m.tangential).length);
+  anim(document.getElementById('kpi-countries'),n);
+  document.getElementById('kpi-volume').textContent='$'+(vol/1e6).toFixed(1)+'M';
+  anim(document.getElementById('kpi-risk'),avg);
+  document.getElementById('kpi-markets-sub').textContent=`${polyCountries} pays via Polymarket + ${n-polyCountries} via enrichissement`;
+  document.getElementById('kpi-risk-sub').textContent=riskLabel(avg)+' · pondéré volume + baseline';
+  document.getElementById('gaugeArc').setAttribute('stroke-dashoffset',264-(264*avg/100));
+  document.getElementById('gaugeVal').textContent=avg;
+  const col=scoreColor(avg);
+  document.getElementById('gaugeArc').setAttribute('stroke',col.startsWith('var')?getComputedStyle(document.documentElement).getPropertyValue(col.slice(4,-1)):col);
+  document.getElementById('gaugeInfo').innerHTML=`Niveau <strong style="color:${col}">${riskLabel(avg).toUpperCase()}</strong><br>${n} pays avec couverture<br>${stats.markets} marchés géo-attribués<br>Score pondéré par volume × direction`;
+}
+
+function renderTopRisks(){
+  const sorted=Object.entries(countryScores).sort((a,b)=>b[1].score-a[1].score).slice(0,12);
+  const el=document.getElementById('topRisks'); el.innerHTML='';
+  for(const [name,{score,core}] of sorted){
+    const inf=info(name), iso=inf?inf.iso:'??', fr=inf?inf.fr:name, col=scoreColor(score);
+    const srcTag = core >= 5 ? '◉' : core >= 1 ? '◐' : '○';
+    const d=document.createElement('div'); d.className='risk-item';
+    d.innerHTML=`<div class="risk-flag" style="background:${col.startsWith('var')?'':col};opacity:0.12;color:${col};border:1px solid ${col.startsWith('var')?'currentColor':'transparent'}">${iso}</div>
+      <div class="risk-name">${fr}</div>
+      <div class="risk-mkts" title="${core||0} marchés Polymarket">${srcTag} ${core||'—'}</div>
+      <div class="risk-bar-wrap"><div class="risk-bar" style="width:${score}%;background:${col}"></div></div>
+      <div class="risk-score" style="color:${col}">${score}</div>`;
+    // fix flag bg for css vars
+    const flag=d.querySelector('.risk-flag');
+    if(col.startsWith('var')){flag.style.background=`color-mix(in srgb, ${col} 12%, transparent)`;flag.style.borderColor=`color-mix(in srgb, ${col} 20%, transparent)`;}
+    el.appendChild(d);
+  }
+}
+
+function renderStables(){
+  const sorted=Object.entries(countryScores).filter(([,v])=>v.score<=20).sort((a,b)=>a[1].score-b[1].score).slice(0,6);
+  const el=document.getElementById('stableList'); el.innerHTML='';
+  for(const [name,{score}] of sorted){
+    const inf=info(name), fr=inf?inf.fr:name;
+    const d=document.createElement('div'); d.className='stable-item';
+    d.innerHTML=`<span class="stable-iso">${inf?.iso||'??'}</span><span class="stable-name">${fr}</span><span class="stable-score">${score}</span>`;
+    el.appendChild(d);
+  }
+  if(!sorted.length) el.innerHTML='<div style="font-size:10px;color:var(--mid-gray);padding:8px 0">Aucun pays ≤20 détecté</div>';
+}
+
+// Tabs + Markets
+let activeTab='Tous';
+const CATS=['Tous','Conflits','Diplomatie','Régime','Élections','Souverain','Géopolitique'];
+function renderTabs(){
+  const el=document.getElementById('tabs'); el.innerHTML='';
+  CATS.forEach(c=>{const b=document.createElement('button');b.className='tab'+(c===activeTab?' active':'');b.textContent=c;b.onclick=()=>{activeTab=c;renderTabs();renderMarkets();};el.appendChild(b);});
+}
+function renderMarkets(){
+  const f=activeTab==='Tous'?allMarkets:allMarkets.filter(m=>m.cat===activeTab);
+  const sorted=f.sort((a,b)=>b.contrib-a.contrib).slice(0,24);
+  const grid=document.getElementById('marketsGrid'); grid.innerHTML='';
+  document.getElementById('marketCount').textContent=allMarkets.length;
+  for(const m of sorted){
+    const pct=Math.round(m.prob*100), pc=pct>=65?'high':pct>=30?'mid':'low';
+    const ctrs=m.countries.map(c=>info(c)?.fr||c).join(', ');
+    const contribStr = m.contrib >= 1 ? `+${Math.round(m.contrib)} pts` : `+${m.contrib.toFixed(1)} pts`;
+    const contribColor = m.contrib >= 20 ? 'var(--danger)' : m.contrib >= 10 ? 'var(--warning)' : 'var(--dark-teal)';
+    const a=document.createElement('a');
+    a.className='market-card';a.href=`https://polymarket.com/event/${m.eventSlug}`;a.target='_blank';a.rel='noopener';
+    a.innerHTML=`<span class="market-tag ${m.tag}">${m.cat}</span>
+      <div class="market-q">${m.question}</div>
+      <div class="market-prob ${pc}">${pct}%</div>
+      <div class="market-meta"><span style="color:${contribColor};font-weight:600">${contribStr}</span><span class="market-countries">${ctrs}</span></div>`;
+    grid.appendChild(a);
+  }
+  if(!sorted.length) grid.innerHTML='<div style="padding:16px;text-align:center;color:var(--mid-gray);font-size:11px">Aucun marché</div>';
+}
+
+// Method + Sources + Limits
+const METHODS = [
+  'Collecte des probabilités brutes sur les marchés actifs (Gamma API, tags Geopolitics + Politics)',
+  'Classification par sévérité : CATASTROPHIQUE ×240 (OTAN, nucléaire), GUERRE ×50, VOIE MARITIME ×30, CONFLIT ×27, RÉGIME ×35, SOUVERAIN ×34, PAIX inversé ×27, ÉLECTION ×12',
+  'Contribution = probabilité × coefficient de sévérité. La nature du risque prime sur le volume du marché',
+  'Dédoublonnage par événement : 1 seul marché retenu par événement Polymarket (contribution max)',
+  'Agrégation additive avec rendements décroissants : top 5 événements par pays (×1.0, ×0.7, ×0.5, ×0.3, ×0.15)',
+  'Enrichissement baseline (ACLED, GPI, FSI) pour les pays sans couverture Polymarket',
+  'Score final = blend Polymarket + baseline, pondéré par la qualité de couverture',
+];
+document.getElementById('methodList').innerHTML=METHODS.map((t,i)=>`<div class="method-item"><div class="method-num">0${i+1}</div><div class="method-text">${t}</div></div>`).join('');
+
+const LIMITS = [
+  {icon:'◉',text:'<strong>Forte couverture Polymarket</strong> (≥5 marchés) : 65% signal marché + 35% baseline. Le score reflète principalement le consensus des parieurs.'},
+  {icon:'◐',text:'<strong>Couverture modérée</strong> (1–4 marchés) : pondération croissante du baseline. Signal Polymarket intégré mais contextualisé.'},
+  {icon:'○',text:'<strong>Enrichissement seul</strong> (0 marché) : score calibré sur indices géopolitiques (ACLED, GPI, Fragile States Index). Pas de signal forward-looking.'},
+  {icon:'⚠',text:'<strong>Biais Polymarket</strong> : surreprésentation des crises US-centrées (Iran, Ukraine). Les conflits africains sont sous-couverts par les marchés de prédiction.'},
+];
+document.getElementById('limitsList').innerHTML=LIMITS.map(l=>`<div class="method-item"><div class="method-num" style="background:var(--warning-bg);color:var(--warning)">${l.icon}</div><div class="method-text">${l.text}</div></div>`).join('');
+
+const SOURCES = [
+  {n:'Polymarket Gamma API',d:'Marchés de prédiction — données publiques, lecture seule, aucune participation'},
+  {n:'Tag Geopolitics #100265',d:'~600 marchés actifs : conflits, diplomatie, sanctions, régimes'},
+  {n:'Tag Politics #2',d:'Élections, transitions de pouvoir, politiques nationales'},
+  {n:'World Atlas TopoJSON',d:'Géométries pays pour choroplèthe'},
+];
+document.getElementById('sourcesList').innerHTML=SOURCES.map(s=>`<div class="method-item"><div class="method-num" style="background:var(--info-bg);color:var(--info)">⟁</div><div class="method-text"><strong>${s.n}</strong><br>${s.d}</div></div>`).join('');
+
+// ================================================================
+// INIT
+// ================================================================
+async function refreshData(){
+  document.getElementById('refreshBtn').classList.add('spinning');
+  try{await fetchEnrichment();const s=await fetchData();renderKPIs(s);renderTopRisks();renderStables();renderTabs();renderMarkets();if(worldGeo)drawMap(worldGeo);}catch(e){console.error(e);}
+  finally{document.getElementById('refreshBtn').classList.remove('spinning');}
+}
+async function init(){
+  loadMap();
+  // Fetch enrichment from backend (dynamic ACLED + Metaculus)
+  await fetchEnrichment();
+  try{const s=await fetchData();renderKPIs(s);renderTopRisks();renderStables();renderTabs();renderMarkets();if(worldGeo)drawMap(worldGeo);setTimeout(()=>{if(worldGeo)drawMap(worldGeo);},1500);}
+  catch(e){document.getElementById('topRisks').innerHTML='<div style="color:var(--danger);padding:10px;font-size:11px">Erreur API Polymarket</div>';document.getElementById('marketsGrid').innerHTML='<div style="color:var(--danger);padding:16px;text-align:center;font-size:11px">Connexion impossible</div>';}
+  // Show config status
+  const cfgEl = document.getElementById('enrichmentStatus');
+  if (cfgEl) {
+    const nBase = Object.keys(BASELINE).length;
+    if (nBase > 0) {
+      cfgEl.innerHTML = `<span style="color:var(--safe)">●</span> Backend connecté · ${nBase} pays enrichis`;
+    } else if (ENRICHMENT_URL) {
+      cfgEl.innerHTML = `<span style="color:var(--danger)">●</span> Backend non accessible`;
+    } else {
+      cfgEl.innerHTML = `<span style="color:var(--warning)">●</span> Backend non configuré · <a href="#" onclick="configBackend()" style="color:var(--teal)">Configurer</a>`;
+    }
+  }
+}
+
+// Config panel for backend URL
+function configBackend() {
+  const url = prompt('URL du backend enrichissement :\n(ex: http://ton-serveur:8080/api/enrichment)', ENRICHMENT_URL || 'http://localhost:8080/api/enrichment');
+  if (url !== null) {
+    localStorage.setItem('georisk_backend_url', url);
+    location.reload();
+  }
+}
+
+new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');}),{threshold:0.05}).observe(document.querySelector('.fade-in')||document.body);
+document.querySelectorAll('.fade-in').forEach(el=>new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');}),{threshold:0.05}).observe(el));
+init();
+</script>
+</body>
+</html>
