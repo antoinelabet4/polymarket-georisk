@@ -1,0 +1,29 @@
+name: Update Enrichment Data
+
+on:
+  schedule:
+    - cron: '0 * * * *'  # Toutes les heures
+  workflow_dispatch: {}    # Lancement manuel possible
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate enrichment.json
+        env:
+          ACLED_EMAIL: ${{ secrets.ACLED_EMAIL }}
+          ACLED_ACCESS_KEY: ${{ secrets.ACLED_ACCESS_KEY }}
+        run: node scripts/generate_enrichment.js
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add enrichment.json
+          git diff --staged --quiet || git commit -m "Update enrichment data [$(date -u +%Y-%m-%dT%H:%M)]"
+          git push
