@@ -6,7 +6,7 @@ const https = require('https');
 const fs = require('fs');
 
 const ACLED_EMAIL = process.env.ACLED_EMAIL || '';
-const ACLED_ACCESS_KEY = process.env.ACLED_ACCESS_KEY || '';
+const ACLED_PASSWORD = process.env.ACLED_PASSWORD || '';
 
 // ── HTTP helpers ────────────────────────────────────────
 function get(url, headers = {}) {
@@ -27,6 +27,28 @@ function get(url, headers = {}) {
   });
 }
 
+function post(url, data, headers = {}) {
+  return new Promise((resolve, reject) => {
+    const body = JSON.stringify(data);
+    const urlObj = new URL(url);
+    const req = https.request({
+      hostname: urlObj.hostname,
+      path: urlObj.pathname + urlObj.search,
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Content-Length': Buffer.byteLength(body), 'User-Agent': 'GeoRisk-GHAction/1.0', ...headers },
+      timeout: 15000,
+    }, res => {
+      let result = '';
+      res.on('data', c => result += c);
+      res.on('end', () => resolve(result));
+    });
+    req.on('error', reject);
+    req.on('timeout', () => { req.destroy(); reject(new Error('timeout')); });
+    req.write(body);
+    req.end();
+  });
+}
+
 async function getJSON(url, headers) {
   const body = await get(url, headers);
   return JSON.parse(body);
@@ -44,19 +66,35 @@ const ACLED_REMAP = {
 };
 
 async function fetchACLED() {
-  if (!ACLED_EMAIL || !ACLED_ACCESS_KEY) {
+  if (!ACLED_EMAIL || !ACLED_PASSWORD) {
     console.log('[ACLED] No credentials — skipping');
     return {};
   }
   try {
+    // Step 1: get OAuth token
+    console.log('[ACLED] Authenticating via OAuth...');
+    const authResp = await post('https://acleddata.com/api/auth/token', {
+      email: ACLED_EMAIL,
+      password: ACLED_PASSWORD,
+    });
+    const authData = JSON.parse(authResp);
+    const token = authData.access_token;
+    if (!token) {
+      console.log('[ACLED] Auth failed:', authResp.slice(0, 200));
+      return {};
+    }
+    console.log('[ACLED] Authenticated OK');
+
+    // Step 2: fetch conflict events (last 90 days)
     const since = new Date(Date.now() - 90 * 86400000).toISOString().slice(0, 10);
-    const url = `https://api.acleddata.com/acled/read?key=${ACLED_ACCESS_KEY}&email=${encodeURIComponent(ACLED_EMAIL)}&event_date=${since}|&event_date_where=>&fields=country|event_type|fatalities&limit=10000&terms=accept`;
+    const url = `https://acleddata.com/api/acled/read?event_date=${since}|&event_date_where=>&fields=country|event_type|fatalities&limit=10000`;
     console.log('[ACLED] Fetching events since', since);
 
-    const data = await getJSON(url);
+    const dataResp = await get(url, { 'Authorization': `Bearer ${token}` });
+    const data = JSON.parse(dataResp);
     const events = data.data || [];
     if (!events.length) {
-      console.log('[ACLED] No events returned');
+      console.log('[ACLED] No events returned. Response:', dataResp.slice(0, 300));
       return {};
     }
 
