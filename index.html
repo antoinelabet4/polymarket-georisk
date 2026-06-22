@@ -394,47 +394,42 @@ function classifySeverity(q) {
 // ================================================================
 const ENRICHMENT_URL = localStorage.getItem('georisk_backend_url') || 'enrichment.json';
 let BASELINE = {
-  // ── CRITIQUE (70+) ── zones de conflit armé actif
-  'Sudan':92,'Palestine':89,'Myanmar':84,'Mali':81,'Burkina Faso':79,'Somalia':78,
-  'Afghanistan':76,'Yemen':74,'Dem. Rep. Congo':72,'Central African Rep.':70,
-  'S. Sudan':70,'South Sudan':70,'Libya':68,'Syria':65,'Ukraine':64,'Haiti':63,'Iran':62,
-  'Ethiopia':58,'Iraq':56,'Burundi':55,'Lebanon':55,'Dem. Rep. Korea':55,'North Korea':55,
-  'Niger':54,'Chad':52,'Israel':48,
-  // ── ÉLEVÉ (35–49) ── instabilité politique / économique significative
-  'Nigeria':45,'Pakistan':44,'Eritrea':44,'Venezuela':43,'Cameroon':40,
-  'Mozambique':38,'Cuba':38,'Belarus':38,'Nicaragua':36,'Russia':36,
-  'Liberia':36,'Sierra Leone':35,'Guinea':35,'Guinea-Bissau':35,
-  // ── MODÉRÉ (20–34) ── tensions / risques structurels
-  'Colombia':34,'Mexico':34,'Honduras':34,"Côte d'Ivoire":33,
-  'Uganda':32,'Egypt':32,'South Africa':32,'Taiwan':32,'Bangladesh':32,'Guatemala':32,
-  'Zimbabwe':30,'Turkey':30,'Georgia':30,'Philippines':30,'Azerbaijan':30,
-  'India':29,'Algeria':28,'Armenia':28,'Moldova':28,'Djibouti':28,'Bolivia':26,
-  'Ecuador':28,'Argentina':28,'Congo':26,'Peru':26,'Sri Lanka':26,'Nepal':26,
-  'Serbia':26,'Macedonia':26,'Kosovo':26,'Bosnia and Herz.':24,'Dominican Rep.':24,
-  'Kenya':24,'Tunisia':24,'Cambodia':24,'Lao PDR':24,'Saudi Arabia':24,'Brazil':24,
-  'El Salvador':24,'Jamaica':24,'Gambia':24,'Mauritania':24,'Togo':24,
-  'United States':22,'United States of America':22,'Hungary':22,'Indonesia':22,
-  'Timor-Leste':22,'Eq. Guinea':22,'Tajikistan':22,
-  'Zambia':20,'Malawi':20,'Morocco':20,'Jordan':20,'Poland':20,'Vietnam':20,
-  'Madagascar':20,'Rwanda':20,'Benin':20,'Senegal':20,'Guyana':20,
-  // ── FAIBLE (<20) ── pays stables / démocraties consolidées
-  'Romania':18,'Italy':18,'Spain':16,'France':18,'Korea':16,'South Korea':16,
-  'United Kingdom':16,'Ghana':16,'Tanzania':18,'Botswana':14,'Namibia':14,
-  'Mongolia':16,'Kyrgyzstan':18,'Uzbekistan':18,'Turkmenistan':18,'Kazakhstan':16,
-  'Thailand':16,'Albania':16,'Montenegro':16,'Lesotho':16,'Swaziland':16,
-  'Bahamas':14,'Belize':14,'Canada':14,'Germany':14,'Czech Rep.':14,'Croatia':14,
-  'Chile':14,'Austria':12,'Malaysia':14,'Gabon':14,'Slovakia':14,'Bulgaria':16,
-  'Latvia':12,'Lithuania':12,'Estonia':12,'Slovenia':12,'Cyprus':12,
-  'Greenland':12,'Japan':12,'Brunei':12,'Papua New Guinea':22,'Fiji':14,
-  'Trinidad and Tobago':14,'Suriname':14,'Paraguay':16,'Angola':28,'W. Sahara':40,
-  'Somaliland':45,'N. Cyprus':18,'Costa Rica':12,'Panama':14,
-  'Belgium':14,'Netherlands':12,'Denmark':12,'Sweden':12,
-  'Norway':11,'Finland':13,'Iceland':10,'Ireland':10,'Portugal':14,
-  'Greece':18,'Australia':10,'New Zealand':13,'Switzerland':8,'Luxembourg':9,
-  'Singapore':8,'Uruguay':10,'China':28,
-  'United Arab Emirates':14,'Qatar':14,'Kuwait':16,'Oman':16,'Bhutan':14,
-  'Vanuatu':12,'Solomon Is.':14,'New Caledonia':12,
+  // Source: Global Peace Index 2026 (Institute for Economics & Peace, juin 2026)
+  // Conversion: risk = ((GPI_score - 1) / 3) ^ 0.7 × 100
+  // https://www.visionofhumanity.org/maps/
+  // 150+ pays couverts
+  'Russia':85,'Sudan':80,'Ukraine':80,'Israel':79,'Afghanistan':78,'South Sudan':78,
+  'S. Sudan':78,'Syria':77,'Yemen':77,'Mali':75,'Somalia':75,'Somaliland':75,
+  'Myanmar':73,'Pakistan':73,'Burkina Faso':72,'Palestine':72,'Niger':71,
+  'Dem. Rep. Korea':71,'North Korea':71,'Chad':69,'Haiti':69,'Iran':69,'Nigeria':69,
+  'Colombia':68,'Ethiopia':66,'Iraq':66,'Mexico':66,'Cameroon':65,
+  'United States':63,'United States of America':63,'Ecuador':63,'Venezuela':62,
+  'Kenya':60,'Lebanon':60,'W. Sahara':60,'Burundi':59,'Eritrea':59,'India':59,
+  'Uganda':59,'Libya':58,'Mozambique':58,'Brazil':57,'South Africa':56,'Benin':55,
+  'El Salvador':55,'China':54,'Congo':54,'Togo':54,'Bangladesh':53,
+  'Belarus':53,'Guinea':53,'Rwanda':53,'Egypt':52,'Mauritania':52,'Azerbaijan':51,
+  'Bahrain':51,'Cuba':51,'Nepal':51,'Nicaragua':50,'Peru':50,'Cambodia':49,
+  'Djibouti':49,'Eswatini':49,'France':49,'Gabon':49,'Guyana':49,'Honduras':49,
+  'Philippines':49,'Tanzania':49,'Thailand':49,'Algeria':48,'Bolivia':48,'Georgia':48,
+  'Saudi Arabia':48,'Zimbabwe':48,"Côte d'Ivoire":48,'Guatemala':47,'Lesotho':47,
+  'Liberia':47,'Malawi':46,'Panama':46,'Papua New Guinea':46,'Zambia':46,'Angola':45,
+  'Tunisia':45,'Argentina':44,'Ghana':44,'Indonesia':44,'Jamaica':44,'Senegal':44,
+  'Serbia':44,'Sierra Leone':44,'Jordan':43,'Morocco':43,'Sri Lanka':43,'Costa Rica':42,
+  'Namibia':42,'Paraguay':42,'Armenia':41,'Chile':41,'Greece':41,'Kosovo':41,
+  'Kyrgyzstan':41,'Laos':41,'Madagascar':41,'Moldova':41,'Oman':41,
+  'Korea':41,'South Korea':41,'Botswana':40,'Kuwait':40,'Tajikistan':40,
+  'Kazakhstan':39,'North Macedonia':39,'Romania':39,'Taiwan':38,'Uruguay':38,'Albania':37,
+  'Equatorial Guinea':37,'Italy':37,'Uzbekistan':37,'Vietnam':37,'Mongolia':36,'Germany':35,
+  'Qatar':35,'N. Cyprus':35,'Spain':34,'Bulgaria':33,'Lithuania':33,
+  'Poland':33,'Australia':32,'Latvia':32,'Mauritius':32,'Netherlands':31,'Bhutan':30,
+  'Canada':30,'Hungary':30,'Turkmenistan':30,'Malaysia':29,'Denmark':29,
+  'Finland':28,'Japan':28,'Czechia':29,'Czech Rep.':29,'Croatia':30,
+  'United Kingdom':30,'Estonia':33,'Ireland':23,'Austria':23,
+  'Portugal':26,'Singapore':26,'Greenland':13,'Slovenia':23,'Switzerland':23,
+  'New Zealand':22,'Belgium':29,'Norway':26,'Sweden':27,'Iceland':13,
+  'Luxembourg':20,'Dem. Rep. Congo':80,'Central African Rep.':73,'Bosnia and Herz.':40,
 };
+
 let enrichmentSources = {};
 
 async function fetchEnrichment() {
