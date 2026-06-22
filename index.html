@@ -431,6 +431,7 @@ let BASELINE = {
 };
 
 let enrichmentSources = {};
+const GPI_ORIGINAL = {...BASELINE}; // save GPI scores before enrichment
 
 async function fetchEnrichment() {
   try {
@@ -470,7 +471,7 @@ async function fetchEnrichment() {
     const nOverrides = Object.keys(countries).length;
     logger(`Enrichment: ${nOverrides} pays enrichis via ${enrichmentSources.manifold?.markets ? 'Manifold (' + enrichmentSources.manifold.markets + ' marchés)' : ''}${enrichmentSources.acled?.countries ? ' + ACLED (' + enrichmentSources.acled.countries + ' pays)' : ''}`);
   } catch (e) {
-    logger('Enrichment non disponible, baseline statique utilisé: ' + e.message);
+    logger('Enrichment non disponible, baseline GPI 2026 utilisé: ' + e.message);
   }
 }
 function logger(msg) { console.log('[GeoRisk]', msg); }
@@ -611,19 +612,50 @@ function drawMap(world) {
       const det=countryDetails[n]||[];
       let h;
       if(cs){
-        const srcLabel = cs.source === 'baseline' ? 'Enrichissement seul' : cs.core >= 5 ? `${cs.core} marchés (forte couverture)` : cs.core >= 2 ? `${cs.core} marchés + enrichissement` : cs.core >= 1 ? `${cs.core} marché + enrichissement` : 'Enrichissement seul';
+        // Build source label with details
+        const gpiScore = GPI_ORIGINAL[n];
+        const hasGPI = gpiScore != null;
+        const enrichedMkts = det.filter(m => m.source === 'manifold');
+        const polyMkts = det.filter(m => m.source !== 'manifold');
+
+        let srcParts = [];
+        if (cs.core > 0) srcParts.push(`${cs.core} marché${cs.core>1?'s':''} Polymarket`);
+        if (enrichedMkts.length > 0) srcParts.push(`${enrichedMkts.length} Manifold`);
+        if (hasGPI) srcParts.push('GPI 2026');
+        const srcLabel = srcParts.join(' + ') || 'Aucune donnée';
+
         h=`<strong>${fr}</strong> <span class="tt-score" style="color:${scoreColor(cs.score)}">${cs.score}/100</span>`;
         h+=`<div class="tt-sub">${riskLabel(cs.score)} · ${srcLabel}</div>`;
-        if(det.length){
+
+        // Show GPI baseline for countries without much Polymarket
+        if (hasGPI && cs.core < 3) {
+          h+=`<div class="tt-mkts"><span style="color:var(--mid-gray)">📊 GPI 2026 (IEP) : ${gpiScore}/100</span>`;
+          if (cs.score !== gpiScore) h+=` → ajusté à ${cs.score}`;
+          h+=`<br>`;
+        } else if (polyMkts.length || enrichedMkts.length) {
           h+='<div class="tt-mkts">';
-          for(const m of det.slice(0,3)){
-            const col = m.contrib >= 20 ? '#DC3545' : m.contrib >= 10 ? '#E67E22' : '#077C84';
-            h+=`<span style="color:${col};font-weight:600">+${Math.round(m.contrib)}pts</span> ${m.q.substring(0,48)}${m.q.length>48?'…':''} <b>${(m.prob*100).toFixed(0)}%</b><br>`;
-          }
-          if(det.length>3) h+=`<span style="color:var(--mid-gray)">+ ${det.length-3} autre(s)</span>`;
-          h+='</div>';
         }
-      } else { h=`<strong>${fr}</strong><div class="tt-sub">Aucune couverture Polymarket</div>`; }
+
+        // Show Polymarket contributions
+        if(polyMkts.length){
+          for(const m of polyMkts.slice(0,3)){
+            const col = m.contrib >= 20 ? '#DC3545' : m.contrib >= 10 ? '#E67E22' : '#077C84';
+            h+=`<span style="color:${col};font-weight:600">+${Math.round(m.contrib)}pts</span> ${m.q.substring(0,45)}${m.q.length>45?'…':''} <b>${(m.prob*100).toFixed(0)}%</b><br>`;
+          }
+          if(polyMkts.length>3) h+=`<span style="color:var(--mid-gray)">+ ${polyMkts.length-3} autre(s) Polymarket</span><br>`;
+        }
+
+        // Show Manifold contributions
+        if(enrichedMkts.length){
+          for(const m of enrichedMkts.slice(0, polyMkts.length ? 2 : 3)){
+            h+=`<span style="color:#7C3AED;font-weight:500">Ⓜ</span> ${m.q.substring(0,45)}${m.q.length>45?'…':''} <b>${(m.prob*100).toFixed(0)}%</b><br>`;
+          }
+          if(enrichedMkts.length > (polyMkts.length ? 2 : 3)) h+=`<span style="color:var(--mid-gray)">+ ${enrichedMkts.length - (polyMkts.length ? 2 : 3)} autre(s) Manifold</span>`;
+        }
+
+        if (hasGPI && cs.core < 3 || polyMkts.length || enrichedMkts.length) h+='</div>';
+
+      } else { h=`<strong>${fr}</strong><div class="tt-sub">Aucune couverture</div>`; }
       tooltip.innerHTML=h; tooltip.classList.add('show');
     })
     .on('mousemove',function(ev){
