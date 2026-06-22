@@ -440,9 +440,23 @@ async function fetchEnrichment() {
     const data = await resp.json();
     enrichmentSources = data.sources || {};
     const countries = data.countries || {};
-    // Override baseline with live ACLED/Metaculus scores
+    // Blend enrichment with GPI baseline (nudge up, never replace downward)
     for (const [c, info] of Object.entries(countries)) {
-      if (info.score > 0) BASELINE[c] = info.score;
+      if (info.score > 0 && BASELINE[c] != null) {
+        BASELINE[c] = Math.round(Math.max(BASELINE[c], 0.6 * BASELINE[c] + 0.4 * info.score));
+      } else if (info.score > 0) {
+        BASELINE[c] = info.score;
+      }
+      if (info.manifold_markets && info.manifold_markets.length) {
+        if (!countryDetails[c]) countryDetails[c] = [];
+        for (const m of info.manifold_markets) {
+          countryDetails[c].push({
+            q: m.title, prob: m.prob, contrib: m.contrib,
+            severity: m.severity, source: 'manifold', vol: 0
+          });
+        }
+      }
+      // Also support legacy metaculus format
       if (info.metaculus_markets && info.metaculus_markets.length) {
         if (!countryDetails[c]) countryDetails[c] = [];
         for (const m of info.metaculus_markets) {
@@ -454,7 +468,7 @@ async function fetchEnrichment() {
       }
     }
     const nOverrides = Object.keys(countries).length;
-    logger(`Enrichment: ${nOverrides} pays mis à jour via ACLED/Metaculus`);
+    logger(`Enrichment: ${nOverrides} pays enrichis via ${enrichmentSources.manifold?.markets ? 'Manifold (' + enrichmentSources.manifold.markets + ' marchés)' : ''}${enrichmentSources.acled?.countries ? ' + ACLED (' + enrichmentSources.acled.countries + ' pays)' : ''}`);
   } catch (e) {
     logger('Enrichment non disponible, baseline statique utilisé: ' + e.message);
   }
