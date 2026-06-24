@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-24T06:44:50.196Z",
+  "timestamp": "2026-06-24T10:19:59.354Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -145,16 +145,16 @@
           "source": "manifold"
         },
         {
-          "title": "Will Russia and Ukraine agree to a ceasefire before August 1, 2026?",
-          "prob": 0.0685922294545778,
-          "contrib": 25.1,
+          "title": "Will Ukraine and Russia agree to a formal ceasefire by June 30, 2026?",
+          "prob": 0.05000000000000004,
+          "contrib": 25.7,
           "severity": "peace",
           "source": "manifold"
         },
         {
-          "title": "Will Ukraine and Russia agree to a formal ceasefire by June 30, 2026?",
-          "prob": 0.08575618635935041,
-          "contrib": 24.7,
+          "title": "Will Russia and Ukraine agree to a ceasefire before August 1, 2026?",
+          "prob": 0.0685922294545778,
+          "contrib": 25.1,
           "severity": "peace",
           "source": "manifold"
         },
@@ -190,16 +190,16 @@
           "source": "manifold"
         },
         {
-          "title": "Will Russia and Ukraine agree to a ceasefire before August 1, 2026?",
-          "prob": 0.0685922294545778,
-          "contrib": 25.1,
+          "title": "Will Ukraine and Russia agree to a formal ceasefire by June 30, 2026?",
+          "prob": 0.05000000000000004,
+          "contrib": 25.7,
           "severity": "peace",
           "source": "manifold"
         },
         {
-          "title": "Will Ukraine and Russia agree to a formal ceasefire by June 30, 2026?",
-          "prob": 0.08575618635935041,
-          "contrib": 24.7,
+          "title": "Will Russia and Ukraine agree to a ceasefire before August 1, 2026?",
+          "prob": 0.0685922294545778,
+          "contrib": 25.1,
           "severity": "peace",
           "source": "manifold"
         },
