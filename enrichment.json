@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-24T13:18:12.886Z",
+  "timestamp": "2026-06-24T16:15:19.426Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -146,15 +146,15 @@
         },
         {
           "title": "Will Ukraine and Russia agree to a formal ceasefire by June 30, 2026?",
-          "prob": 0.05000000000000004,
-          "contrib": 25.7,
+          "prob": 0.03669078078133266,
+          "contrib": 26,
           "severity": "peace",
           "source": "manifold"
         },
         {
           "title": "Will Russia and Ukraine agree to a ceasefire before August 1, 2026?",
-          "prob": 0.0685922294545778,
-          "contrib": 25.1,
+          "prob": 0.08326352733802961,
+          "contrib": 24.8,
           "severity": "peace",
           "source": "manifold"
         },
@@ -191,15 +191,15 @@
         },
         {
           "title": "Will Ukraine and Russia agree to a formal ceasefire by June 30, 2026?",
-          "prob": 0.05000000000000004,
-          "contrib": 25.7,
+          "prob": 0.03669078078133266,
+          "contrib": 26,
           "severity": "peace",
           "source": "manifold"
         },
         {
           "title": "Will Russia and Ukraine agree to a ceasefire before August 1, 2026?",
-          "prob": 0.0685922294545778,
-          "contrib": 25.1,
+          "prob": 0.08326352733802961,
+          "contrib": 24.8,
           "severity": "peace",
           "source": "manifold"
         },
