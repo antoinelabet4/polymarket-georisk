@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-26T10:21:25.054Z",
+  "timestamp": "2026-06-26T13:08:13.814Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -340,14 +340,14 @@
       ]
     },
     "Cuba": {
-      "score": 6,
+      "score": 7,
       "acled_score": 0,
-      "manifold_score": 6,
+      "manifold_score": 7,
       "manifold_markets": [
         {
           "title": "Will Trump attack Cuba by the end of his term?",
-          "prob": 0.8055321523299304,
-          "contrib": 6.4,
+          "prob": 0.8214952872949982,
+          "contrib": 6.6,
           "severity": "geo",
           "source": "manifold"
         }
