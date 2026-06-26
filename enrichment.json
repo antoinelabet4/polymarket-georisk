@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-26T02:56:03.431Z",
+  "timestamp": "2026-06-26T06:54:24.257Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -114,9 +114,9 @@
           "source": "manifold"
         },
         {
-          "title": "Will Trump attack Cuba by the end of his term?",
-          "prob": 0.8055321523299304,
-          "contrib": 6.4,
+          "title": "Will Venezuela continue submissive to american demands in 2026?",
+          "prob": 0.9265867565293648,
+          "contrib": 7.4,
           "severity": "geo",
           "source": "manifold"
         }
@@ -153,8 +153,8 @@
         },
         {
           "title": "Will Russia and Ukraine agree to a ceasefire before August 1, 2026?",
-          "prob": 0.08326352733802961,
-          "contrib": 24.8,
+          "prob": 0.07000645443896036,
+          "contrib": 25.1,
           "severity": "peace",
           "source": "manifold"
         },
@@ -198,8 +198,8 @@
         },
         {
           "title": "Will Russia and Ukraine agree to a ceasefire before August 1, 2026?",
-          "prob": 0.08326352733802961,
-          "contrib": 24.8,
+          "prob": 0.07000645443896036,
+          "contrib": 25.1,
           "severity": "peace",
           "source": "manifold"
         },
@@ -322,6 +322,23 @@
         "Manifold"
       ]
     },
+    "Venezuela": {
+      "score": 7,
+      "acled_score": 0,
+      "manifold_score": 7,
+      "manifold_markets": [
+        {
+          "title": "Will Venezuela continue submissive to american demands in 2026?",
+          "prob": 0.9265867565293648,
+          "contrib": 7.4,
+          "severity": "geo",
+          "source": "manifold"
+        }
+      ],
+      "sources": [
+        "Manifold"
+      ]
+    },
     "Cuba": {
       "score": 6,
       "acled_score": 0,
@@ -331,23 +348,6 @@
           "title": "Will Trump attack Cuba by the end of his term?",
           "prob": 0.8055321523299304,
           "contrib": 6.4,
-          "severity": "geo",
-          "source": "manifold"
-        }
-      ],
-      "sources": [
-        "Manifold"
-      ]
-    },
-    "Venezuela": {
-      "score": 6,
-      "acled_score": 0,
-      "manifold_score": 6,
-      "manifold_markets": [
-        {
-          "title": "Will Venezuela continue submissive to american demands in 2026?",
-          "prob": 0.739231098840523,
-          "contrib": 5.9,
           "severity": "geo",
           "source": "manifold"
         }
