@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-26T18:28:37.457Z",
+  "timestamp": "2026-06-26T20:44:24.187Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -329,8 +329,8 @@
       "manifold_markets": [
         {
           "title": "Will Venezuela continue submissive to american demands in 2026?",
-          "prob": 0.9192042487388644,
-          "contrib": 7.4,
+          "prob": 0.9150140872771414,
+          "contrib": 7.3,
           "severity": "geo",
           "source": "manifold"
         }
