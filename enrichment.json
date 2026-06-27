@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-27T17:58:48.406Z",
+  "timestamp": "2026-06-27T19:37:16.599Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -7,7 +7,7 @@
     },
     "manifold": {
       "configured": true,
-      "markets": 40
+      "markets": 39
     }
   },
   "countries": {
@@ -93,13 +93,6 @@
           "source": "manifold"
         },
         {
-          "title": "Will a nuclear weapon be detonated in a war during the 2nd Trump administration?",
-          "prob": 0.12575882830611307,
-          "contrib": 30.2,
-          "severity": "catastrophic",
-          "source": "manifold"
-        },
-        {
           "title": "Will China invade any territory of Taiwan before Trump leaves office?",
           "prob": 0.3299999999999999,
           "contrib": 16.5,
@@ -117,6 +110,13 @@
           "title": "Will China invade the main island of Taiwan before Trump leaves office?",
           "prob": 0.24534989920676217,
           "contrib": 12.3,
+          "severity": "major_war",
+          "source": "manifold"
+        },
+        {
+          "title": "Will the US invade Iran's Kharg Island  by the end of 2026?",
+          "prob": 0.14950877422085665,
+          "contrib": 7.5,
           "severity": "major_war",
           "source": "manifold"
         }
