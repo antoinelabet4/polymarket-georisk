@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-28T13:28:07.831Z",
+  "timestamp": "2026-06-28T15:15:25.617Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -7,7 +7,7 @@
     },
     "manifold": {
       "configured": true,
-      "markets": 41
+      "markets": 39
     }
   },
   "countries": {
@@ -38,17 +38,17 @@
           "source": "manifold"
         },
         {
+          "title": "Will the US and Iran be at war on January 1st, 2027?",
+          "prob": 0.1579155518811562,
+          "contrib": 4.3,
+          "severity": "conflict",
+          "source": "manifold"
+        },
+        {
           "title": "Will J.D. Vance publicly criticize the decision to attack Iran before 2029?",
           "prob": 0.5165593828058503,
           "contrib": 4.1,
           "severity": "geo",
-          "source": "manifold"
-        },
-        {
-          "title": "Will the US and Iran be at war on January 1st, 2027?",
-          "prob": 0.13677095254045657,
-          "contrib": 3.7,
-          "severity": "conflict",
           "source": "manifold"
         }
       ],
@@ -93,13 +93,6 @@
           "source": "manifold"
         },
         {
-          "title": "Will a nuclear weapon be detonated in a war during the 2nd Trump administration?",
-          "prob": 0.12575882830611307,
-          "contrib": 30.2,
-          "severity": "catastrophic",
-          "source": "manifold"
-        },
-        {
           "title": "Will China invade any territory of Taiwan before Trump leaves office?",
           "prob": 0.3299999999999999,
           "contrib": 16.5,
@@ -117,6 +110,13 @@
           "title": "Will China invade the main island of Taiwan before Trump leaves office?",
           "prob": 0.24534989920676217,
           "contrib": 12.3,
+          "severity": "major_war",
+          "source": "manifold"
+        },
+        {
+          "title": "Will the US invade Iran's Kharg Island  by the end of 2026?",
+          "prob": 0.14950877422085665,
+          "contrib": 7.5,
           "severity": "major_war",
           "source": "manifold"
         }
