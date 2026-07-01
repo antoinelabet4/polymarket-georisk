@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-30T23:07:27.060Z",
+  "timestamp": "2026-07-01T03:25:41.587Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -32,8 +32,8 @@
         },
         {
           "title": "US x Iran permanent peace deal by December 31 ? [Not Polymarket]",
-          "prob": 0.6299999999999998,
-          "contrib": 10,
+          "prob": 0.41501758491756746,
+          "contrib": 15.8,
           "severity": "peace",
           "source": "manifold"
         },
@@ -100,6 +100,13 @@
           "source": "manifold"
         },
         {
+          "title": "US x Iran permanent peace deal by December 31 ? [Not Polymarket]",
+          "prob": 0.41501758491756746,
+          "contrib": 15.8,
+          "severity": "peace",
+          "source": "manifold"
+        },
+        {
           "title": "Will China invade the Kinmen Islands of Taiwan before Trump leaves office?",
           "prob": 0.2841435554814701,
           "contrib": 14.2,
@@ -111,13 +118,6 @@
           "prob": 0.05205910105893444,
           "contrib": 12.5,
           "severity": "catastrophic",
-          "source": "manifold"
-        },
-        {
-          "title": "Will China invade the main island of Taiwan before Trump leaves office?",
-          "prob": 0.24534989920676217,
-          "contrib": 12.3,
-          "severity": "major_war",
           "source": "manifold"
         }
       ],
