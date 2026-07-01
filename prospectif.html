@@ -169,7 +169,7 @@ body{background:var(--light-gray);color:var(--cool-black);font-family:var(--font
         </div>
       </div>
     </div>
-    <div class="header-right"><a href="index.html" style="font-size:11px;color:#077C84;text-decoration:none;font-family:var(--mono);padding:5px 12px;border:1px solid #E4E8F0;border-radius:20px;background:white;margin-right:4px">← Accueil</a>
+    <div class="header-right">
       <button class="btn" id="refreshBtn" onclick="refreshData()">
         <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 2v6h-6"/><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M3 22v-6h6"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/></svg>Refresh
       </button>
@@ -392,24 +392,72 @@ function classifySeverity(q) {
 // ENRICHMENT: fetched dynamically from backend server
 // Configure ENRICHMENT_URL to point to your server
 // ================================================================
-const ENRICHMENT_URL = localStorage.getItem('georisk_backend_url') || '/api/enrichment';
-let BASELINE = {};  // populated dynamically from backend
+const ENRICHMENT_URL = localStorage.getItem('georisk_backend_url') || 'enrichment.json';
+let BASELINE = {
+  // Source: Global Peace Index 2026 (Institute for Economics & Peace, juin 2026)
+  // Conversion: risk = ((GPI_score - 1) / 3) ^ 0.7 × 100
+  // https://www.visionofhumanity.org/maps/
+  // 150+ pays couverts
+  'Russia':85,'Sudan':80,'Ukraine':80,'Israel':79,'Afghanistan':78,'South Sudan':78,
+  'S. Sudan':78,'Syria':77,'Yemen':77,'Mali':75,'Somalia':75,'Somaliland':75,
+  'Myanmar':73,'Pakistan':73,'Burkina Faso':72,'Palestine':72,'Niger':71,
+  'Dem. Rep. Korea':71,'North Korea':71,'Chad':69,'Haiti':69,'Iran':69,'Nigeria':69,
+  'Colombia':68,'Ethiopia':66,'Iraq':66,'Mexico':66,'Cameroon':65,
+  'United States':63,'United States of America':63,'Ecuador':63,'Venezuela':62,
+  'Kenya':60,'Lebanon':60,'W. Sahara':60,'Burundi':59,'Eritrea':59,'India':59,
+  'Uganda':59,'Libya':58,'Mozambique':58,'Brazil':57,'South Africa':56,'Benin':55,
+  'El Salvador':55,'China':54,'Congo':54,'Togo':54,'Bangladesh':53,
+  'Belarus':53,'Guinea':53,'Rwanda':53,'Egypt':52,'Mauritania':52,'Azerbaijan':51,
+  'Bahrain':51,'Cuba':51,'Nepal':51,'Nicaragua':50,'Peru':50,'Cambodia':49,
+  'Djibouti':49,'Eswatini':49,'France':49,'Gabon':49,'Guyana':49,'Honduras':49,
+  'Philippines':49,'Tanzania':49,'Thailand':49,'Algeria':48,'Bolivia':48,'Georgia':48,
+  'Saudi Arabia':48,'Zimbabwe':48,"Côte d'Ivoire":48,'Guatemala':47,'Lesotho':47,
+  'Liberia':47,'Malawi':46,'Panama':46,'Papua New Guinea':46,'Zambia':46,'Angola':45,
+  'Tunisia':45,'Argentina':44,'Ghana':44,'Indonesia':44,'Jamaica':44,'Senegal':44,
+  'Serbia':44,'Sierra Leone':44,'Jordan':43,'Morocco':43,'Sri Lanka':43,'Costa Rica':42,
+  'Namibia':42,'Paraguay':42,'Armenia':41,'Chile':41,'Greece':41,'Kosovo':41,
+  'Kyrgyzstan':41,'Laos':41,'Madagascar':41,'Moldova':41,'Oman':41,
+  'Korea':41,'South Korea':41,'Botswana':40,'Kuwait':40,'Tajikistan':40,
+  'Kazakhstan':39,'North Macedonia':39,'Romania':39,'Taiwan':38,'Uruguay':38,'Albania':37,
+  'Equatorial Guinea':37,'Italy':37,'Uzbekistan':37,'Vietnam':37,'Mongolia':36,'Germany':35,
+  'Qatar':35,'N. Cyprus':35,'Spain':34,'Bulgaria':33,'Lithuania':33,
+  'Poland':33,'Australia':32,'Latvia':32,'Mauritius':32,'Netherlands':31,'Bhutan':30,
+  'Canada':30,'Hungary':30,'Turkmenistan':30,'Malaysia':29,'Denmark':29,
+  'Finland':28,'Japan':28,'Czechia':29,'Czech Rep.':29,'Croatia':30,
+  'United Kingdom':30,'Estonia':33,'Ireland':23,'Austria':23,
+  'Portugal':26,'Singapore':26,'Greenland':13,'Slovenia':23,'Switzerland':23,
+  'New Zealand':22,'Belgium':29,'Norway':26,'Sweden':27,'Iceland':13,
+  'Luxembourg':20,'Dem. Rep. Congo':80,'Central African Rep.':73,'Bosnia and Herz.':40,
+};
+
 let enrichmentSources = {};
+const GPI_ORIGINAL = {...BASELINE}; // save GPI scores before enrichment
 
 async function fetchEnrichment() {
-  if (!ENRICHMENT_URL) {
-    logger('Enrichment backend not configured. Set URL via config panel.');
-    return;
-  }
   try {
-    const resp = await fetch(ENRICHMENT_URL, { signal: AbortSignal.timeout(10000) });
+    const controller = new AbortController();
+    setTimeout(() => controller.abort(), 10000);
+    const resp = await fetch(ENRICHMENT_URL, { signal: controller.signal });
     const data = await resp.json();
     enrichmentSources = data.sources || {};
     const countries = data.countries || {};
-    BASELINE = {};
+    // Blend enrichment with GPI baseline (nudge up, never replace downward)
     for (const [c, info] of Object.entries(countries)) {
-      BASELINE[c] = info.score;
-      // Store metaculus details for tooltip enrichment
+      if (info.score > 0 && BASELINE[c] != null) {
+        BASELINE[c] = Math.round(Math.max(BASELINE[c], 0.6 * BASELINE[c] + 0.4 * info.score));
+      } else if (info.score > 0) {
+        BASELINE[c] = info.score;
+      }
+      if (info.manifold_markets && info.manifold_markets.length) {
+        if (!countryDetails[c]) countryDetails[c] = [];
+        for (const m of info.manifold_markets) {
+          countryDetails[c].push({
+            q: m.title, prob: m.prob, contrib: m.contrib,
+            severity: m.severity, source: 'manifold', vol: 0
+          });
+        }
+      }
+      // Also support legacy metaculus format
       if (info.metaculus_markets && info.metaculus_markets.length) {
         if (!countryDetails[c]) countryDetails[c] = [];
         for (const m of info.metaculus_markets) {
@@ -420,9 +468,10 @@ async function fetchEnrichment() {
         }
       }
     }
-    logger(`Enrichment: ${Object.keys(BASELINE).length} pays via ${(enrichmentSources.acled?.configured ? 'ACLED' : '')} ${(enrichmentSources.metaculus?.configured ? '+ Metaculus' : enrichmentSources.metaculus?.questions > 0 ? '+ Metaculus (scraping)' : '')}`);
+    const nOverrides = Object.keys(countries).length;
+    logger(`Enrichment: ${nOverrides} pays enrichis via ${enrichmentSources.manifold?.markets ? 'Manifold (' + enrichmentSources.manifold.markets + ' marchés)' : ''}${enrichmentSources.acled?.countries ? ' + ACLED (' + enrichmentSources.acled.countries + ' pays)' : ''}`);
   } catch (e) {
-    logger('Enrichment backend non accessible: ' + e.message);
+    logger('Enrichment non disponible, baseline GPI 2026 utilisé: ' + e.message);
   }
 }
 function logger(msg) { console.log('[GeoRisk]', msg); }
@@ -563,19 +612,50 @@ function drawMap(world) {
       const det=countryDetails[n]||[];
       let h;
       if(cs){
-        const srcLabel = cs.source === 'baseline' ? 'Enrichissement seul' : cs.core >= 5 ? `${cs.core} marchés (forte couverture)` : cs.core >= 2 ? `${cs.core} marchés + enrichissement` : cs.core >= 1 ? `${cs.core} marché + enrichissement` : 'Enrichissement seul';
+        // Build source label with details
+        const gpiScore = GPI_ORIGINAL[n];
+        const hasGPI = gpiScore != null;
+        const enrichedMkts = det.filter(m => m.source === 'manifold');
+        const polyMkts = det.filter(m => m.source !== 'manifold');
+
+        let srcParts = [];
+        if (cs.core > 0) srcParts.push(`${cs.core} marché${cs.core>1?'s':''} Polymarket`);
+        if (enrichedMkts.length > 0) srcParts.push(`${enrichedMkts.length} Manifold`);
+        if (hasGPI) srcParts.push('GPI 2026');
+        const srcLabel = srcParts.join(' + ') || 'Aucune donnée';
+
         h=`<strong>${fr}</strong> <span class="tt-score" style="color:${scoreColor(cs.score)}">${cs.score}/100</span>`;
         h+=`<div class="tt-sub">${riskLabel(cs.score)} · ${srcLabel}</div>`;
-        if(det.length){
+
+        // Show GPI baseline for countries without much Polymarket
+        if (hasGPI && cs.core < 3) {
+          h+=`<div class="tt-mkts"><span style="color:var(--mid-gray)">📊 GPI 2026 (IEP) : ${gpiScore}/100</span>`;
+          if (cs.score !== gpiScore) h+=` → ajusté à ${cs.score}`;
+          h+=`<br>`;
+        } else if (polyMkts.length || enrichedMkts.length) {
           h+='<div class="tt-mkts">';
-          for(const m of det.slice(0,3)){
-            const col = m.contrib >= 20 ? '#DC3545' : m.contrib >= 10 ? '#E67E22' : '#077C84';
-            h+=`<span style="color:${col};font-weight:600">+${Math.round(m.contrib)}pts</span> ${m.q.substring(0,48)}${m.q.length>48?'…':''} <b>${(m.prob*100).toFixed(0)}%</b><br>`;
-          }
-          if(det.length>3) h+=`<span style="color:var(--mid-gray)">+ ${det.length-3} autre(s)</span>`;
-          h+='</div>';
         }
-      } else { h=`<strong>${fr}</strong><div class="tt-sub">Aucune couverture Polymarket</div>`; }
+
+        // Show Polymarket contributions
+        if(polyMkts.length){
+          for(const m of polyMkts.slice(0,3)){
+            const col = m.contrib >= 20 ? '#DC3545' : m.contrib >= 10 ? '#E67E22' : '#077C84';
+            h+=`<span style="color:${col};font-weight:600">+${Math.round(m.contrib)}pts</span> ${m.q.substring(0,45)}${m.q.length>45?'…':''} <b>${(m.prob*100).toFixed(0)}%</b><br>`;
+          }
+          if(polyMkts.length>3) h+=`<span style="color:var(--mid-gray)">+ ${polyMkts.length-3} autre(s) Polymarket</span><br>`;
+        }
+
+        // Show Manifold contributions
+        if(enrichedMkts.length){
+          for(const m of enrichedMkts.slice(0, polyMkts.length ? 2 : 3)){
+            h+=`<span style="color:#7C3AED;font-weight:500">Ⓜ</span> ${m.q.substring(0,45)}${m.q.length>45?'…':''} <b>${(m.prob*100).toFixed(0)}%</b><br>`;
+          }
+          if(enrichedMkts.length > (polyMkts.length ? 2 : 3)) h+=`<span style="color:var(--mid-gray)">+ ${enrichedMkts.length - (polyMkts.length ? 2 : 3)} autre(s) Manifold</span>`;
+        }
+
+        if (hasGPI && cs.core < 3 || polyMkts.length || enrichedMkts.length) h+='</div>';
+
+      } else { h=`<strong>${fr}</strong><div class="tt-sub">Aucune couverture</div>`; }
       tooltip.innerHTML=h; tooltip.classList.add('show');
     })
     .on('mousemove',function(ev){
