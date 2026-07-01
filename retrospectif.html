@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sia — Indicateur Rétrospectif GPR</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/3.0.1/chartjs-plugin-annotation.min.js"></script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--white:#FFF;--light:#F4F6FC;--navy:#173044;--black:#0A151E;--teal:#00DECC;--dark-teal:#077C84;--mid-teal:#00A2A3;--gray:#455669;--mid-gray:#8796A9;--border:#E4E8F0;--danger:#DC3545;--warning:#E67E22;--font:'Sora',sans-serif;--mono:'IBM Plex Mono',monospace}
+body{background:var(--light);font-family:var(--font);color:var(--black);line-height:1.55;-webkit-font-smoothing:antialiased}
+.app{max-width:1200px;margin:0 auto;padding:20px 28px 48px}
+.header{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;padding-bottom:14px;border-bottom:2px solid var(--teal);flex-wrap:wrap;gap:12px}
+.header-left a{text-decoration:none;color:var(--navy);font-weight:700;font-size:18px}
+.header-left a span{color:var(--dark-teal)}
+.header-left p{color:var(--mid-gray);font-size:11px;font-family:var(--mono);margin-top:2px}
+.back{font-size:12px;color:var(--dark-teal);text-decoration:none;font-family:var(--mono);padding:6px 14px;border:1px solid var(--border);border-radius:20px;background:var(--white)}
+.back:hover{border-color:var(--teal)}
+
+/* Controls */
+.controls{display:flex;gap:12px;margin-bottom:20px;align-items:center;flex-wrap:wrap}
+.controls select{padding:8px 14px;border:1px solid var(--border);border-radius:10px;font-family:var(--font);font-size:13px;background:var(--white);color:var(--navy);cursor:pointer;min-width:200px}
+.controls select:focus{outline:none;border-color:var(--teal)}
+.controls label{font-size:11px;color:var(--mid-gray);font-family:var(--mono)}
+
+/* Chart */
+.chart-card{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:24px;margin-bottom:20px;box-shadow:0 1px 3px rgba(0,0,0,0.04)}
+.chart-card h2{font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:1.3px;color:var(--mid-gray);margin-bottom:16px}
+.chart-card h2::before{content:'/';color:var(--teal);margin-right:6px;font-weight:600}
+.chart-wrap{position:relative;height:380px}
+.chart-wrap canvas{width:100%!important;height:100%!important}
+
+/* Grid */
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px}
+.card{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:20px 22px;box-shadow:0 1px 3px rgba(0,0,0,0.04)}
+.card h3{font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:1.3px;color:var(--mid-gray);margin-bottom:14px}
+.card h3::before{content:'/';color:var(--teal);margin-right:6px;font-weight:600}
+
+/* Stats */
+.stat-row{display:flex;gap:12px;margin-bottom:12px}
+.stat{flex:1;padding:12px;border-radius:10px;background:var(--light)}
+.stat-label{font-size:9px;font-family:var(--mono);text-transform:uppercase;letter-spacing:1px;color:var(--mid-gray);margin-bottom:4px}
+.stat-val{font-family:var(--mono);font-size:22px;font-weight:600;color:var(--navy)}
+.stat-val.danger{color:var(--danger)}
+.stat-val.teal{color:var(--dark-teal)}
+
+/* Events list */
+.event-item{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid #EEF1F7;align-items:flex-start}
+.event-item:last-child{border-bottom:none}
+.event-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;margin-top:5px}
+.event-date{font-family:var(--mono);font-size:10px;color:var(--mid-gray);width:60px;flex-shrink:0}
+.event-text{font-size:12px;color:var(--gray);line-height:1.4}
+
+/* Weight sliders */
+.weight-row{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.weight-label{width:80px;font-size:11px;color:var(--gray);flex-shrink:0}
+.weight-slider{flex:1;-webkit-appearance:none;height:4px;border-radius:2px;background:var(--border);outline:none}
+.weight-slider::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--dark-teal);cursor:pointer}
+.weight-val{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--dark-teal);width:35px;text-align:right}
+
+/* Method */
+.method-text{font-size:12px;color:var(--gray);line-height:1.6;margin-bottom:10px}
+.formula{font-family:var(--mono);font-size:11px;background:var(--light);padding:10px 14px;border-radius:8px;color:var(--navy);margin:10px 0}
+
+.footer{margin-top:32px;padding-top:14px;border-top:1px solid var(--border);text-align:center;font-size:9px;color:var(--mid-gray);font-family:var(--mono);line-height:1.8}
+
+@media(max-width:768px){.grid{grid-template-columns:1fr}.chart-wrap{height:280px}}
+</style>
+</head>
+<body>
+<div class="app">
+  <header class="header">
+    <div class="header-left">
+      <a href="index.html">Sia <span style="color:var(--teal)">/</span> Geopolitical Risk Index <span>— Rétrospectif</span></a>
+      <p>Indice composite GPR + EPU · Série temporelle 1985–2026 · 44 pays</p>
+    </div>
+    <a class="back" href="index.html">← Accueil</a>
+  </header>
+
+  <div class="controls">
+    <div>
+      <label>Pays</label><br>
+      <select id="countrySelect" onchange="updateChart()"></select>
+    </div>
+    <div>
+      <label>Période</label><br>
+      <select id="periodSelect" onchange="updateChart()">
+        <option value="all">Tout (1985–2026)</option>
+        <option value="2000">Depuis 2000</option>
+        <option value="2010">Depuis 2010</option>
+        <option value="2020" selected>Depuis 2020</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="chart-card">
+    <h2>Indice GPR · <span id="chartCountry">—</span> · Z-score normalisé</h2>
+    <div class="chart-wrap"><canvas id="mainChart"></canvas></div>
+  </div>
+
+  <div class="stat-row">
+    <div class="stat"><div class="stat-label">Score actuel</div><div class="stat-val" id="statCurrent">—</div></div>
+    <div class="stat"><div class="stat-label">Moyenne historique</div><div class="stat-val teal" id="statMean">—</div></div>
+    <div class="stat"><div class="stat-label">Max historique</div><div class="stat-val danger" id="statMax">—</div></div>
+    <div class="stat"><div class="stat-label">Événements détectés</div><div class="stat-val" id="statEvents">—</div></div>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Événements géopolitiques détectés</h3>
+      <div id="eventsList"><em style="color:var(--mid-gray);font-size:12px">Sélectionnez un pays...</em></div>
+    </div>
+    <div class="card">
+      <h3>Pondération de l'indicateur</h3>
+      <div class="method-text">L'indicateur composite combine le GPR Index (risque géopolitique, analyse presse) et l'EPU (incertitude politique économique). Ajustez les poids pour explorer différentes configurations.</div>
+      <div class="weight-row">
+        <span class="weight-label">GPR Index</span>
+        <input type="range" class="weight-slider" id="wGPR" min="0" max="100" value="70" oninput="updateWeights()">
+        <span class="weight-val" id="wGPR_v">70%</span>
+      </div>
+      <div class="weight-row">
+        <span class="weight-label">EPU</span>
+        <input type="range" class="weight-slider" id="wEPU" min="0" max="100" value="30" oninput="updateWeights()">
+        <span class="weight-val" id="wEPU_v">30%</span>
+      </div>
+      <div class="formula" id="formulaBox">Score = 0.70 × Z(GPR) + 0.30 × Z(EPU)</div>
+      <div class="method-text" style="font-size:11px;color:var(--mid-gray)">
+        <strong>Recommandation Sia :</strong> GPR 70% / EPU 30%. Le PoC original utilisait GPR 50% / EPU 25% / FX Vol 25%, mais la volatilité FX est un indicateur retardé qui dilue le signal géopolitique. Nous recommandons de concentrer le poids sur les indices de risque géopolitique pur.
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:20px">
+    <h3>Méthodologie</h3>
+    <div class="method-text">
+      <strong>Étape 1 — Collecte :</strong> Le GPR Index (Caldara & Iacoviello, Federal Reserve) mesure le risque géopolitique via le comptage d'articles de presse mentionnant des menaces (guerres, terrorisme, tensions). L'EPU (Baker, Bloom & Davis) mesure l'incertitude liée aux politiques économiques.<br><br>
+      <strong>Étape 2 — Normalisation Z-score :</strong> Chaque série est centrée-réduite sur sa moyenne et son écart-type historiques. Un Z de +2 signifie « 2 écarts-types au-dessus de la normale ».<br><br>
+      <strong>Étape 3 — Agrégation pondérée :</strong> Les Z-scores sont combinés selon les poids configurés ci-dessus.<br><br>
+      <strong>Étape 4 — Détection d'événements :</strong> Les pics dépassant 1.5 écart-type sont automatiquement identifiés et annotés sur le graphique avec les événements géopolitiques correspondants.
+    </div>
+  </div>
+
+  <div class="footer">
+    Sia <span style="color:var(--teal)">/</span> Geopolitical Risk Index — Rétrospectif <span style="color:var(--teal)">/</span> Sources : GPR Index (Caldara & Iacoviello), EPU (Baker, Bloom & Davis)
+  </div>
+</div>
+
+<script>
+// ═══════════════════════════════════════════
+// HISTORICAL EVENTS DATABASE (for annotation)
+// ═══════════════════════════════════════════
+const EVENTS = {
+  'global': [
+    {d:'2001-09',l:'Attentats du 11 septembre',c:'#DC3545'},
+    {d:'2003-03',l:'Invasion de l\'Irak',c:'#DC3545'},
+    {d:'2008-08',l:'Guerre Russie-Géorgie',c:'#E67E22'},
+    {d:'2011-01',l:'Printemps arabe',c:'#E67E22'},
+    {d:'2014-03',l:'Annexion de la Crimée',c:'#DC3545'},
+    {d:'2015-11',l:'Attentats de Paris',c:'#DC3545'},
+    {d:'2020-01',l:'Assassinat Soleimani',c:'#DC3545'},
+    {d:'2022-02',l:'Invasion de l\'Ukraine',c:'#DC3545'},
+    {d:'2023-10',l:'Attaque du 7 octobre',c:'#DC3545'},
+    {d:'2025-06',l:'Blocus du détroit d\'Hormuz',c:'#E67E22'},
+  ],
+  'United States': [
+    {d:'2001-09',l:'11 septembre',c:'#DC3545'},
+    {d:'2003-03',l:'Invasion Irak',c:'#DC3545'},
+    {d:'2017-01',l:'Inauguration Trump I',c:'#E67E22'},
+    {d:'2020-01',l:'Assassinat Soleimani',c:'#DC3545'},
+    {d:'2021-01',l:'Assaut du Capitole',c:'#DC3545'},
+    {d:'2025-01',l:'Inauguration Trump II',c:'#E67E22'},
+    {d:'2025-06',l:'Blocus Hormuz / Iran',c:'#DC3545'},
+  ],
+  'France': [
+    {d:'2005-10',l:'Émeutes banlieues',c:'#E67E22'},
+    {d:'2015-01',l:'Charlie Hebdo',c:'#DC3545'},
+    {d:'2015-11',l:'Bataclan',c:'#DC3545'},
+    {d:'2016-07',l:'Attentat de Nice',c:'#DC3545'},
+    {d:'2018-11',l:'Gilets jaunes',c:'#E67E22'},
+    {d:'2023-06',l:'Émeutes Nahel',c:'#E67E22'},
+    {d:'2024-06',l:'Dissolution Assemblée',c:'#E67E22'},
+  ],
+  'United Kingdom': [
+    {d:'2005-07',l:'Attentats de Londres',c:'#DC3545'},
+    {d:'2016-06',l:'Référendum Brexit',c:'#E67E22'},
+    {d:'2017-06',l:'Attentat Manchester',c:'#DC3545'},
+    {d:'2019-10',l:'Deal Brexit Johnson',c:'#E67E22'},
+    {d:'2022-09',l:'Décès Elizabeth II',c:'#8796A9'},
+  ],
+  'Russia': [
+    {d:'2008-08',l:'Guerre de Géorgie',c:'#DC3545'},
+    {d:'2014-03',l:'Annexion Crimée',c:'#DC3545'},
+    {d:'2015-09',l:'Intervention en Syrie',c:'#E67E22'},
+    {d:'2022-02',l:'Invasion Ukraine',c:'#DC3545'},
+    {d:'2023-06',l:'Mutinerie Wagner',c:'#DC3545'},
+  ],
+  'Ukraine': [
+    {d:'2004-11',l:'Révolution orange',c:'#E67E22'},
+    {d:'2014-02',l:'Maïdan / Crimée',c:'#DC3545'},
+    {d:'2022-02',l:'Invasion russe',c:'#DC3545'},
+  ],
+  'Israel': [
+    {d:'2006-07',l:'Guerre du Liban',c:'#DC3545'},
+    {d:'2008-12',l:'Opération Plomb durci',c:'#DC3545'},
+    {d:'2014-07',l:'Opération Bordure protectrice',c:'#DC3545'},
+    {d:'2023-10',l:'Attaque du 7 octobre',c:'#DC3545'},
+    {d:'2024-10',l:'Offensive Liban',c:'#DC3545'},
+  ],
+  'China': [
+    {d:'2010-09',l:'Tensions Senkaku/Diaoyu',c:'#E67E22'},
+    {d:'2018-03',l:'Guerre commerciale US-Chine',c:'#E67E22'},
+    {d:'2020-06',l:'Loi sécurité Hong Kong',c:'#E67E22'},
+    {d:'2022-08',l:'Crise Taïwan (Pelosi)',c:'#DC3545'},
+  ],
+  'India': [
+    {d:'2008-11',l:'Attentats de Mumbai',c:'#DC3545'},
+    {d:'2016-09',l:'Surgical strikes Pakistan',c:'#DC3545'},
+    {d:'2019-02',l:'Frappes Balakot',c:'#DC3545'},
+    {d:'2020-06',l:'Clash Ladakh (Chine)',c:'#DC3545'},
+    {d:'2025-05',l:'Frappes Pakistan/Pahalgam',c:'#DC3545'},
+  ],
+  'Turkey': [
+    {d:'2016-07',l:'Tentative de coup d\'État',c:'#DC3545'},
+    {d:'2019-10',l:'Offensive nord-Syrie',c:'#E67E22'},
+  ],
+  'Saudi Arabia': [
+    {d:'2019-09',l:'Attaque Aramco',c:'#DC3545'},
+  ],
+  'Brazil': [
+    {d:'2016-03',l:'Destitution Dilma',c:'#E67E22'},
+    {d:'2023-01',l:'Assaut Brasilia',c:'#DC3545'},
+  ],
+};
+
+// ═══════════════════════════════════════════
+// DATA + CHART
+// ═══════════════════════════════════════════
+let DATA = null;
+let chart = null;
+
+async function loadData() {
+  try {
+    const resp = await fetch('retro_data.json');
+    DATA = await resp.json();
+    const sel = document.getElementById('countrySelect');
+    for (const c of DATA.countries) {
+      const opt = document.createElement('option');
+      opt.value = c; opt.textContent = c;
+      if (c === 'France') opt.selected = true;
+      sel.appendChild(opt);
+    }
+    updateChart();
+  } catch (e) {
+    console.error('Failed to load data:', e);
+    document.getElementById('chartCountry').textContent = 'Erreur de chargement';
+  }
+}
+
+function zScore(series) {
+  const vals = series.map(s => s[1]);
+  const mean = vals.reduce((a, b) => a + b, 0) / vals.length;
+  const std = Math.sqrt(vals.reduce((a, b) => a + (b - mean) ** 2, 0) / vals.length) || 1;
+  return { data: series.map(s => [s[0], (s[1] - mean) / std]), mean, std };
+}
+
+function updateWeights() {
+  const g = parseInt(document.getElementById('wGPR').value);
+  const e = 100 - g;
+  document.getElementById('wEPU').value = e;
+  document.getElementById('wGPR_v').textContent = g + '%';
+  document.getElementById('wEPU_v').textContent = e + '%';
+  document.getElementById('formulaBox').textContent = `Score = ${(g/100).toFixed(2)} × Z(GPR) + ${(e/100).toFixed(2)} × Z(EPU)`;
+  updateChart();
+}
+
+function updateChart() {
+  if (!DATA) return;
+  const country = document.getElementById('countrySelect').value;
+  const period = document.getElementById('periodSelect').value;
+  const wGPR = parseInt(document.getElementById('wGPR').value) / 100;
+  const wEPU = 1 - wGPR;
+
+  document.getElementById('chartCountry').textContent = country;
+
+  const gprRaw = DATA.gpr[country] || [];
+  const epuRaw = DATA.epu[country] || [];
+
+  // Filter by period
+  const minDate = period === 'all' ? '1985' : period;
+  const gprF = gprRaw.filter(s => s[0] >= minDate);
+  const epuF = epuRaw.filter(s => s[0] >= minDate);
+
+  if (!gprF.length) {
+    document.getElementById('statCurrent').textContent = 'N/A';
+    return;
+  }
+
+  // Z-scores
+  const gprZ = zScore(gprF);
+  const epuZ = zScore(epuF);
+  const epuMap = Object.fromEntries(epuZ.data.map(s => [s[0], s[1]]));
+
+  // Composite
+  const composite = gprZ.data.map(([d, gz]) => {
+    const ez = epuMap[d] || 0;
+    return [d, gz * wGPR + ez * wEPU];
+  });
+
+  // Stats
+  const vals = composite.map(s => s[1]);
+  const current = vals[vals.length - 1];
+  const mean = vals.reduce((a, b) => a + b, 0) / vals.length;
+  const maxVal = Math.max(...vals);
+  const maxIdx = vals.indexOf(maxVal);
+
+  document.getElementById('statCurrent').textContent = current.toFixed(2);
+  document.getElementById('statMean').textContent = mean.toFixed(2);
+  document.getElementById('statMax').textContent = `${maxVal.toFixed(2)} (${composite[maxIdx][0]})`;
+
+  // Detect peaks (>1.5 std above mean)
+  const std = Math.sqrt(vals.reduce((a, b) => a + (b - mean) ** 2, 0) / vals.length);
+  const threshold = mean + 1.5 * std;
+  const peaks = [];
+  for (let i = 1; i < composite.length - 1; i++) {
+    if (vals[i] > threshold && vals[i] >= vals[i - 1] && vals[i] >= vals[i + 1]) {
+      peaks.push({ d: composite[i][0], v: vals[i] });
+    }
+  }
+
+  // Match events
+  const countryEvents = [...(EVENTS[country] || []), ...(EVENTS.global || [])];
+  const matchedEvents = [];
+  for (const ev of countryEvents) {
+    if (ev.d >= minDate) {
+      // Find nearest peak
+      const nearPeak = peaks.find(p => Math.abs(dateToNum(p.d) - dateToNum(ev.d)) <= 3);
+      matchedEvents.push({ ...ev, detected: !!nearPeak, peakVal: nearPeak?.v });
+    }
+  }
+  matchedEvents.sort((a, b) => b.d.localeCompare(a.d));
+
+  document.getElementById('statEvents').textContent = `${matchedEvents.filter(e => e.detected).length}/${matchedEvents.length}`;
+
+  // Render events list
+  const evList = document.getElementById('eventsList');
+  evList.innerHTML = '';
+  for (const ev of matchedEvents) {
+    const div = document.createElement('div');
+    div.className = 'event-item';
+    div.innerHTML = `<div class="event-dot" style="background:${ev.detected ? ev.c : '#ccc'}"></div>
+      <div class="event-date">${ev.d}</div>
+      <div class="event-text">${ev.l}${ev.detected ? ` <span style="font-family:var(--mono);font-size:10px;color:${ev.c}">✓ Z=${ev.peakVal?.toFixed(1)}</span>` : ' <span style="font-size:10px;color:#ccc">non détecté</span>'}</div>`;
+    evList.appendChild(div);
+  }
+
+  // Chart
+  const labels = composite.map(s => s[0]);
+  const datasets = [
+    {
+      label: 'Indice composite',
+      data: vals,
+      borderColor: '#077C84',
+      backgroundColor: 'rgba(7,124,132,0.08)',
+      borderWidth: 1.5,
+      fill: true,
+      pointRadius: 0,
+      tension: 0.3,
+    },
+    {
+      label: 'GPR (Z-score)',
+      data: gprZ.data.map(s => s[1]),
+      borderColor: 'rgba(37,99,235,0.4)',
+      borderWidth: 1,
+      pointRadius: 0,
+      tension: 0.3,
+    }
+  ];
+
+  if (epuF.length) {
+    datasets.push({
+      label: 'EPU (Z-score)',
+      data: gprZ.data.map(([d]) => epuMap[d] || null),
+      borderColor: 'rgba(234,179,8,0.4)',
+      borderWidth: 1,
+      pointRadius: 0,
+      tension: 0.3,
+      spanGaps: true,
+    });
+  }
+
+  // Annotations (events)
+  const annotations = {};
+  for (const ev of matchedEvents.filter(e => e.detected)) {
+    const idx = labels.indexOf(ev.d);
+    if (idx >= 0) {
+      annotations['ev_' + ev.d] = {
+        type: 'line', xMin: idx, xMax: idx, borderColor: ev.c, borderWidth: 1, borderDash: [3, 3],
+        label: { display: true, content: ev.l.substring(0, 20), position: 'start', font: { family: 'IBM Plex Mono', size: 8 }, color: ev.c, backgroundColor: 'rgba(255,255,255,0.85)', padding: 2 }
+      };
+    }
+  }
+  // Threshold line
+  annotations['threshold'] = {
+    type: 'line', yMin: threshold, yMax: threshold, borderColor: 'rgba(220,53,69,0.3)', borderWidth: 1, borderDash: [6, 4],
+    label: { display: true, content: `Seuil détection (${threshold.toFixed(1)})`, position: 'end', font: { family: 'IBM Plex Mono', size: 9 }, color: 'rgba(220,53,69,0.5)', backgroundColor: 'white' }
+  };
+
+  if (chart) chart.destroy();
+  chart = new Chart(document.getElementById('mainChart'), {
+    type: 'line',
+    data: { labels, datasets },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      interaction: { mode: 'index', intersect: false },
+      scales: {
+        x: {
+          ticks: { maxTicksLimit: 12, font: { family: 'IBM Plex Mono', size: 9 }, color: '#8796A9' },
+          grid: { color: '#EEF1F7' }
+        },
+        y: {
+          ticks: { font: { family: 'IBM Plex Mono', size: 9 }, color: '#8796A9' },
+          grid: { color: '#EEF1F7' },
+          title: { display: true, text: 'Z-score', font: { family: 'IBM Plex Mono', size: 10 }, color: '#8796A9' }
+        }
+      },
+      plugins: {
+        legend: { labels: { font: { family: 'Sora', size: 11 }, usePointStyle: true, pointStyle: 'line' } },
+        annotation: { annotations },
+        tooltip: {
+          titleFont: { family: 'IBM Plex Mono', size: 10 },
+          bodyFont: { family: 'Sora', size: 11 },
+          callbacks: { label: ctx => `${ctx.dataset.label}: ${ctx.parsed.y?.toFixed(2)}` }
+        }
+      }
+    }
+  });
+}
+
+function dateToNum(d) {
+  const [y, m] = d.split('-').map(Number);
+  return y * 12 + m;
+}
+
+loadData();
+</script>
+</body>
+</html>
