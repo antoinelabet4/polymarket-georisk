@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-01T11:57:58.851Z",
+  "timestamp": "2026-07-01T14:43:42.841Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -32,8 +32,8 @@
         },
         {
           "title": "US x Iran permanent peace deal by December 31 ? [Not Polymarket]",
-          "prob": 0.41501758491756746,
-          "contrib": 15.8,
+          "prob": 0.44085395427583807,
+          "contrib": 15.1,
           "severity": "peace",
           "source": "manifold"
         },
@@ -101,8 +101,8 @@
         },
         {
           "title": "US x Iran permanent peace deal by December 31 ? [Not Polymarket]",
-          "prob": 0.41501758491756746,
-          "contrib": 15.8,
+          "prob": 0.44085395427583807,
+          "contrib": 15.1,
           "severity": "peace",
           "source": "manifold"
         },
