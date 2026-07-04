@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-04T22:55:11.845Z",
+  "timestamp": "2026-07-04T23:58:53.319Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -146,8 +146,8 @@
         },
         {
           "title": "Will Russia and Ukraine agree to a ceasefire before August 1, 2026?",
-          "prob": 0.07000645443896036,
-          "contrib": 25.1,
+          "prob": 0.06656303904560416,
+          "contrib": 25.2,
           "severity": "peace",
           "source": "manifold"
         },
@@ -191,8 +191,8 @@
         },
         {
           "title": "Will Russia and Ukraine agree to a ceasefire before August 1, 2026?",
-          "prob": 0.07000645443896036,
-          "contrib": 25.1,
+          "prob": 0.06656303904560416,
+          "contrib": 25.2,
           "severity": "peace",
           "source": "manifold"
         },
