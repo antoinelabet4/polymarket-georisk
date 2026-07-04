@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-04T10:05:13.774Z",
+  "timestamp": "2026-07-04T12:04:05.202Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -7,7 +7,7 @@
     },
     "manifold": {
       "configured": true,
-      "markets": 40
+      "markets": 39
     }
   },
   "countries": {
@@ -114,10 +114,10 @@
           "source": "manifold"
         },
         {
-          "title": "Will the United States government detonate a nuclear weapon anywhere in 2026?",
-          "prob": 0.05205910105893444,
-          "contrib": 12.5,
-          "severity": "catastrophic",
+          "title": "Will China invade the main island of Taiwan before Trump leaves office?",
+          "prob": 0.24534989920676217,
+          "contrib": 12.3,
+          "severity": "major_war",
           "source": "manifold"
         }
       ],
