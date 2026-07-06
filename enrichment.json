@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-06T12:00:37.058Z",
+  "timestamp": "2026-07-06T16:17:01.452Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -11,120 +11,6 @@
     }
   },
   "countries": {
-    "Iran": {
-      "score": 100,
-      "acled_score": 0,
-      "manifold_score": 100,
-      "manifold_markets": [
-        {
-          "title": "Will the US or Israel threaten to use nuclear weapons against Iran before 2029?",
-          "prob": 0.6850267151660082,
-          "contrib": 164.4,
-          "severity": "catastrophic",
-          "source": "manifold"
-        },
-        {
-          "title": "Will Iran sign a peace deal with the middle east countries",
-          "prob": 0.2740598228667394,
-          "contrib": 19.6,
-          "severity": "peace",
-          "source": "manifold"
-        },
-        {
-          "title": "US x Iran permanent peace deal by December 31 ? [Not Polymarket]",
-          "prob": 0.4384639775969203,
-          "contrib": 15.2,
-          "severity": "peace",
-          "source": "manifold"
-        },
-        {
-          "title": "Will the US and Iran be at war on January 1st, 2027?",
-          "prob": 0.19461039394663335,
-          "contrib": 5.3,
-          "severity": "conflict",
-          "source": "manifold"
-        },
-        {
-          "title": "Will the US invade Iran's Kharg Island  by the end of 2026?",
-          "prob": 0.09044724404844462,
-          "contrib": 4.5,
-          "severity": "major_war",
-          "source": "manifold"
-        }
-      ],
-      "sources": [
-        "Manifold"
-      ]
-    },
-    "Israel": {
-      "score": 100,
-      "acled_score": 0,
-      "manifold_score": 100,
-      "manifold_markets": [
-        {
-          "title": "Will the US or Israel threaten to use nuclear weapons against Iran before 2029?",
-          "prob": 0.6850267151660082,
-          "contrib": 164.4,
-          "severity": "catastrophic",
-          "source": "manifold"
-        },
-        {
-          "title": "Assembly of  Experts hit by US or Israeli attack in 2026 and at least one cleric dies",
-          "prob": 0.06721001592463534,
-          "contrib": 0.5,
-          "severity": "geo",
-          "source": "manifold"
-        }
-      ],
-      "sources": [
-        "Manifold"
-      ]
-    },
-    "United States": {
-      "score": 100,
-      "acled_score": 0,
-      "manifold_score": 100,
-      "manifold_markets": [
-        {
-          "title": "Will the US or Israel threaten to use nuclear weapons against Iran before 2029?",
-          "prob": 0.6850267151660082,
-          "contrib": 164.4,
-          "severity": "catastrophic",
-          "source": "manifold"
-        },
-        {
-          "title": "Will China invade any territory of Taiwan before Trump leaves office?",
-          "prob": 0.3299999999999999,
-          "contrib": 16.5,
-          "severity": "major_war",
-          "source": "manifold"
-        },
-        {
-          "title": "US x Iran permanent peace deal by December 31 ? [Not Polymarket]",
-          "prob": 0.4384639775969203,
-          "contrib": 15.2,
-          "severity": "peace",
-          "source": "manifold"
-        },
-        {
-          "title": "Will China invade the Kinmen Islands of Taiwan before Trump leaves office?",
-          "prob": 0.2841435554814701,
-          "contrib": 14.2,
-          "severity": "major_war",
-          "source": "manifold"
-        },
-        {
-          "title": "Will China invade the main island of Taiwan before Trump leaves office?",
-          "prob": 0.24534989920676217,
-          "contrib": 12.3,
-          "severity": "major_war",
-          "source": "manifold"
-        }
-      ],
-      "sources": [
-        "Manifold"
-      ]
-    },
     "Ukraine": {
       "score": 100,
       "acled_score": 0,
@@ -208,6 +94,120 @@
           "prob": 0.14498972648085962,
           "contrib": 23.1,
           "severity": "peace",
+          "source": "manifold"
+        }
+      ],
+      "sources": [
+        "Manifold"
+      ]
+    },
+    "Iran": {
+      "score": 100,
+      "acled_score": 0,
+      "manifold_score": 100,
+      "manifold_markets": [
+        {
+          "title": "Will the US or Israel threaten to use nuclear weapons against Iran before 2029?",
+          "prob": 0.5830011239099497,
+          "contrib": 139.9,
+          "severity": "catastrophic",
+          "source": "manifold"
+        },
+        {
+          "title": "Will Iran sign a peace deal with the middle east countries",
+          "prob": 0.2740598228667394,
+          "contrib": 19.6,
+          "severity": "peace",
+          "source": "manifold"
+        },
+        {
+          "title": "US x Iran permanent peace deal by December 31 ? [Not Polymarket]",
+          "prob": 0.4384639775969203,
+          "contrib": 15.2,
+          "severity": "peace",
+          "source": "manifold"
+        },
+        {
+          "title": "Will the US and Iran be at war on January 1st, 2027?",
+          "prob": 0.19461039394663335,
+          "contrib": 5.3,
+          "severity": "conflict",
+          "source": "manifold"
+        },
+        {
+          "title": "Will the US invade Iran's Kharg Island  by the end of 2026?",
+          "prob": 0.09044724404844462,
+          "contrib": 4.5,
+          "severity": "major_war",
+          "source": "manifold"
+        }
+      ],
+      "sources": [
+        "Manifold"
+      ]
+    },
+    "Israel": {
+      "score": 100,
+      "acled_score": 0,
+      "manifold_score": 100,
+      "manifold_markets": [
+        {
+          "title": "Will the US or Israel threaten to use nuclear weapons against Iran before 2029?",
+          "prob": 0.5830011239099497,
+          "contrib": 139.9,
+          "severity": "catastrophic",
+          "source": "manifold"
+        },
+        {
+          "title": "Assembly of  Experts hit by US or Israeli attack in 2026 and at least one cleric dies",
+          "prob": 0.06721001592463534,
+          "contrib": 0.5,
+          "severity": "geo",
+          "source": "manifold"
+        }
+      ],
+      "sources": [
+        "Manifold"
+      ]
+    },
+    "United States": {
+      "score": 100,
+      "acled_score": 0,
+      "manifold_score": 100,
+      "manifold_markets": [
+        {
+          "title": "Will the US or Israel threaten to use nuclear weapons against Iran before 2029?",
+          "prob": 0.5830011239099497,
+          "contrib": 139.9,
+          "severity": "catastrophic",
+          "source": "manifold"
+        },
+        {
+          "title": "Will China invade any territory of Taiwan before Trump leaves office?",
+          "prob": 0.3299999999999999,
+          "contrib": 16.5,
+          "severity": "major_war",
+          "source": "manifold"
+        },
+        {
+          "title": "US x Iran permanent peace deal by December 31 ? [Not Polymarket]",
+          "prob": 0.4384639775969203,
+          "contrib": 15.2,
+          "severity": "peace",
+          "source": "manifold"
+        },
+        {
+          "title": "Will China invade the Kinmen Islands of Taiwan before Trump leaves office?",
+          "prob": 0.2841435554814701,
+          "contrib": 14.2,
+          "severity": "major_war",
+          "source": "manifold"
+        },
+        {
+          "title": "Will China invade the main island of Taiwan before Trump leaves office?",
+          "prob": 0.24534989920676217,
+          "contrib": 12.3,
+          "severity": "major_war",
           "source": "manifold"
         }
       ],
