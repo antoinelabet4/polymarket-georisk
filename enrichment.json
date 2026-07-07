@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-07T14:22:50.425Z",
+  "timestamp": "2026-07-07T17:10:14.499Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -7,7 +7,7 @@
     },
     "manifold": {
       "configured": true,
-      "markets": 39
+      "markets": 41
     }
   },
   "countries": {
@@ -183,6 +183,13 @@
           "source": "manifold"
         },
         {
+          "title": "Will a nuclear weapon be detonated in a war during the 2nd Trump administration?",
+          "prob": 0.12575882830611307,
+          "contrib": 30.2,
+          "severity": "catastrophic",
+          "source": "manifold"
+        },
+        {
           "title": "US x Iran permanent peace deal by December 31 ? [Not Polymarket]",
           "prob": 0.3488797289227218,
           "contrib": 17.6,
@@ -200,13 +207,6 @@
           "title": "Will China invade the Kinmen Islands of Taiwan before Trump leaves office?",
           "prob": 0.2841435554814701,
           "contrib": 14.2,
-          "severity": "major_war",
-          "source": "manifold"
-        },
-        {
-          "title": "Will China invade the main island of Taiwan before Trump leaves office?",
-          "prob": 0.24534989920676217,
-          "contrib": 12.3,
           "severity": "major_war",
           "source": "manifold"
         }
