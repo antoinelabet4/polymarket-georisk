@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-07T08:19:19.986Z",
+  "timestamp": "2026-07-07T11:44:36.670Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -135,10 +135,10 @@
           "source": "manifold"
         },
         {
-          "title": "Will the US invade Iran's Kharg Island  by the end of 2026?",
-          "prob": 0.09044724404844462,
-          "contrib": 4.5,
-          "severity": "major_war",
+          "title": "Will J.D. Vance publicly criticize the decision to attack Iran before 2029?",
+          "prob": 0.5165593828058503,
+          "contrib": 4.1,
+          "severity": "geo",
           "source": "manifold"
         }
       ],
