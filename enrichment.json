@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-07T19:49:26.309Z",
+  "timestamp": "2026-07-07T21:19:58.229Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -122,9 +122,16 @@
         },
         {
           "title": "US x Iran permanent peace deal by December 31 ? [Not Polymarket]",
-          "prob": 0.3488797289227218,
-          "contrib": 17.6,
+          "prob": 0.3199975209602177,
+          "contrib": 18.4,
           "severity": "peace",
+          "source": "manifold"
+        },
+        {
+          "title": "Will the US invade Iran's Kharg Island  by the end of 2026?",
+          "prob": 0.11035726489954473,
+          "contrib": 5.5,
+          "severity": "major_war",
           "source": "manifold"
         },
         {
@@ -132,13 +139,6 @@
           "prob": 0.19461039394663335,
           "contrib": 5.3,
           "severity": "conflict",
-          "source": "manifold"
-        },
-        {
-          "title": "Will J.D. Vance publicly criticize the decision to attack Iran before 2029?",
-          "prob": 0.5165593828058503,
-          "contrib": 4.1,
-          "severity": "geo",
           "source": "manifold"
         }
       ],
@@ -191,8 +191,8 @@
         },
         {
           "title": "US x Iran permanent peace deal by December 31 ? [Not Polymarket]",
-          "prob": 0.3488797289227218,
-          "contrib": 17.6,
+          "prob": 0.3199975209602177,
+          "contrib": 18.4,
           "severity": "peace",
           "source": "manifold"
         },
@@ -357,14 +357,14 @@
       ]
     },
     "India": {
-      "score": 3,
+      "score": 2,
       "acled_score": 0,
-      "manifold_score": 3,
+      "manifold_score": 2,
       "manifold_markets": [
         {
           "title": "Will India settle their Kashmir conflict with Pakistan before January 1st 2035?",
-          "prob": 0.31470378705639085,
-          "contrib": 2.5,
+          "prob": 0.2297366959062194,
+          "contrib": 1.8,
           "severity": "geo",
           "source": "manifold"
         }
@@ -374,14 +374,14 @@
       ]
     },
     "Pakistan": {
-      "score": 3,
+      "score": 2,
       "acled_score": 0,
-      "manifold_score": 3,
+      "manifold_score": 2,
       "manifold_markets": [
         {
           "title": "Will India settle their Kashmir conflict with Pakistan before January 1st 2035?",
-          "prob": 0.31470378705639085,
-          "contrib": 2.5,
+          "prob": 0.2297366959062194,
+          "contrib": 1.8,
           "severity": "geo",
           "source": "manifold"
         }
