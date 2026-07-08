@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-08T17:47:20.027Z",
+  "timestamp": "2026-07-08T19:18:52.901Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -129,8 +129,8 @@
         },
         {
           "title": "Will the US invade Iran's Kharg Island  by the end of 2026?",
-          "prob": 0.15545373445935756,
-          "contrib": 7.8,
+          "prob": 0.2609341494984578,
+          "contrib": 13,
           "severity": "major_war",
           "source": "manifold"
         },
@@ -160,8 +160,8 @@
         },
         {
           "title": "Will Israel attack Iran in July 2026?",
-          "prob": 0.6994214661946286,
-          "contrib": 5.6,
+          "prob": 0.7465483202697096,
+          "contrib": 6,
           "severity": "geo",
           "source": "manifold"
         },
