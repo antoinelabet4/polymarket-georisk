@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-10T20:19:16.686Z",
+  "timestamp": "2026-07-10T21:57:41.448Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -46,8 +46,8 @@
         },
         {
           "title": "By the time a ceasefire or peace treaty between Ukraine & Russia is signed, will UA partially control Crimea?",
-          "prob": 0.14498972648085962,
-          "contrib": 23.1,
+          "prob": 0.14925179335650526,
+          "contrib": 23,
           "severity": "peace",
           "source": "manifold"
         }
@@ -91,8 +91,8 @@
         },
         {
           "title": "By the time a ceasefire or peace treaty between Ukraine & Russia is signed, will UA partially control Crimea?",
-          "prob": 0.14498972648085962,
-          "contrib": 23.1,
+          "prob": 0.14925179335650526,
+          "contrib": 23,
           "severity": "peace",
           "source": "manifold"
         }
@@ -160,8 +160,8 @@
         },
         {
           "title": "Will Israel attack Iran in July 2026?",
-          "prob": 0.680063154823418,
-          "contrib": 5.4,
+          "prob": 0.7381597465481867,
+          "contrib": 5.9,
           "severity": "geo",
           "source": "manifold"
         },
