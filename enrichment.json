@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-11T09:23:59.295Z",
+  "timestamp": "2026-07-11T11:00:17.965Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -46,8 +46,8 @@
         },
         {
           "title": "By the time a ceasefire or peace treaty between Ukraine & Russia is signed, will UA partially control Crimea?",
-          "prob": 0.14775653525680557,
-          "contrib": 23,
+          "prob": 0.15206807820469503,
+          "contrib": 22.9,
           "severity": "peace",
           "source": "manifold"
         }
@@ -91,8 +91,8 @@
         },
         {
           "title": "By the time a ceasefire or peace treaty between Ukraine & Russia is signed, will UA partially control Crimea?",
-          "prob": 0.14775653525680557,
-          "contrib": 23,
+          "prob": 0.15206807820469503,
+          "contrib": 22.9,
           "severity": "peace",
           "source": "manifold"
         }
