@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-12T08:10:16.244Z",
+  "timestamp": "2026-07-12T10:23:30.941Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -136,8 +136,8 @@
         },
         {
           "title": "Will the US and Iran be at war on January 1st, 2027?",
-          "prob": 0.3030585448659415,
-          "contrib": 8.2,
+          "prob": 0.3145539550347541,
+          "contrib": 8.5,
           "severity": "conflict",
           "source": "manifold"
         }
@@ -160,8 +160,8 @@
         },
         {
           "title": "Will Israel attack Iran in July 2026?",
-          "prob": 0.6950337608442367,
-          "contrib": 5.6,
+          "prob": 0.7072322418202244,
+          "contrib": 5.7,
           "severity": "geo",
           "source": "manifold"
         },
