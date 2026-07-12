@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-12T17:57:37.186Z",
+  "timestamp": "2026-07-12T19:08:39.873Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -252,16 +252,16 @@
           "source": "manifold"
         },
         {
-          "title": "Will China invade Taiwan before 2030?",
-          "prob": 0.32999999999999996,
+          "title": "Will China invade any territory of Taiwan before Trump leaves office?",
+          "prob": 0.3299999999999999,
           "contrib": 16.5,
           "severity": "major_war",
           "source": "manifold"
         },
         {
-          "title": "Will China invade any territory of Taiwan before Trump leaves office?",
-          "prob": 0.3299999999999999,
-          "contrib": 16.5,
+          "title": "Will China invade Taiwan before 2030?",
+          "prob": 0.32091165550011835,
+          "contrib": 16,
           "severity": "major_war",
           "source": "manifold"
         },
@@ -297,16 +297,16 @@
           "source": "manifold"
         },
         {
-          "title": "Will China invade Taiwan before 2030?",
-          "prob": 0.32999999999999996,
+          "title": "Will China invade any territory of Taiwan before Trump leaves office?",
+          "prob": 0.3299999999999999,
           "contrib": 16.5,
           "severity": "major_war",
           "source": "manifold"
         },
         {
-          "title": "Will China invade any territory of Taiwan before Trump leaves office?",
-          "prob": 0.3299999999999999,
-          "contrib": 16.5,
+          "title": "Will China invade Taiwan before 2030?",
+          "prob": 0.32091165550011835,
+          "contrib": 16,
           "severity": "major_war",
           "source": "manifold"
         },
