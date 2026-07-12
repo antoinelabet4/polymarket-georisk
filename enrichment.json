@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-12T13:15:33.461Z",
+  "timestamp": "2026-07-12T14:52:21.839Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -32,8 +32,8 @@
         },
         {
           "title": "Will Russia and Ukraine agree to a ceasefire before August 1, 2026?",
-          "prob": 0.08343822038440751,
-          "contrib": 24.7,
+          "prob": 0.0643117208674423,
+          "contrib": 25.3,
           "severity": "peace",
           "source": "manifold"
         },
@@ -46,7 +46,7 @@
         },
         {
           "title": "By the time a ceasefire or peace treaty between Ukraine & Russia is signed, will UA partially control Crimea?",
-          "prob": 0.15206807820469503,
+          "prob": 0.1505222020287451,
           "contrib": 22.9,
           "severity": "peace",
           "source": "manifold"
@@ -77,8 +77,8 @@
         },
         {
           "title": "Will Russia and Ukraine agree to a ceasefire before August 1, 2026?",
-          "prob": 0.08343822038440751,
-          "contrib": 24.7,
+          "prob": 0.0643117208674423,
+          "contrib": 25.3,
           "severity": "peace",
           "source": "manifold"
         },
@@ -91,7 +91,7 @@
         },
         {
           "title": "By the time a ceasefire or peace treaty between Ukraine & Russia is signed, will UA partially control Crimea?",
-          "prob": 0.15206807820469503,
+          "prob": 0.1505222020287451,
           "contrib": 22.9,
           "severity": "peace",
           "source": "manifold"
