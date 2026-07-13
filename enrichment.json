@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-13T10:21:04.517Z",
+  "timestamp": "2026-07-13T13:19:26.376Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -7,7 +7,7 @@
     },
     "manifold": {
       "configured": true,
-      "markets": 41
+      "markets": 42
     }
   },
   "countries": {
@@ -190,6 +190,13 @@
           "source": "manifold"
         },
         {
+          "title": "Will a nuclear weapon be detonated in a war during the 2nd Trump administration?",
+          "prob": 0.12575882830611307,
+          "contrib": 30.2,
+          "severity": "catastrophic",
+          "source": "manifold"
+        },
+        {
           "title": "US x Iran permanent peace deal by December 31 ? [Not Polymarket]",
           "prob": 0.20417198282725618,
           "contrib": 21.5,
@@ -208,13 +215,6 @@
           "prob": 0.2841435554814701,
           "contrib": 14.2,
           "severity": "major_war",
-          "source": "manifold"
-        },
-        {
-          "title": "Will the United States government detonate a nuclear weapon anywhere in 2026?",
-          "prob": 0.05205910105893444,
-          "contrib": 12.5,
-          "severity": "catastrophic",
           "source": "manifold"
         }
       ],
