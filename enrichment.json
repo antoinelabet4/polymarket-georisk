@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-14T22:56:10.930Z",
+  "timestamp": "2026-07-14T23:52:23.815Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -160,7 +160,7 @@
         },
         {
           "title": "Will Israel attack Iran in July 2026?",
-          "prob": 0.7118951284037892,
+          "prob": 0.7118951284037891,
           "contrib": 5.7,
           "severity": "geo",
           "source": "manifold"
