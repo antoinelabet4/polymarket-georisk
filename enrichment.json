@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-15T12:11:41.191Z",
+  "timestamp": "2026-07-15T14:45:10.336Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -129,15 +129,15 @@
         },
         {
           "title": "Will the US invade Iran's Kharg Island  by the end of 2026?",
-          "prob": 0.2237722673851878,
-          "contrib": 11.2,
+          "prob": 0.31995035954858714,
+          "contrib": 16,
           "severity": "major_war",
           "source": "manifold"
         },
         {
           "title": "Will the US and Iran be at war on January 1st, 2027?",
-          "prob": 0.37238416578524575,
-          "contrib": 10.1,
+          "prob": 0.40222112432237705,
+          "contrib": 10.9,
           "severity": "conflict",
           "source": "manifold"
         }
@@ -211,9 +211,9 @@
           "source": "manifold"
         },
         {
-          "title": "Will China invade the Kinmen Islands of Taiwan before Trump leaves office?",
-          "prob": 0.2841435554814701,
-          "contrib": 14.2,
+          "title": "Will the US invade Iran's Kharg Island  by the end of 2026?",
+          "prob": 0.31995035954858714,
+          "contrib": 16,
           "severity": "major_war",
           "source": "manifold"
         }
