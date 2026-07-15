@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-15T08:00:52.388Z",
+  "timestamp": "2026-07-15T10:45:11.116Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -7,8 +7,446 @@
     },
     "manifold": {
       "configured": true,
-      "markets": 0
+      "markets": 41
     }
   },
-  "countries": {}
+  "countries": {
+    "Ukraine": {
+      "score": 100,
+      "acled_score": 0,
+      "manifold_score": 100,
+      "manifold_markets": [
+        {
+          "title": "Will part of the agreed ceasefire deal between Russia and Ukraine involve a minimum 10 year block on joining NATO or EU?",
+          "prob": 0.5958282050661089,
+          "contrib": 143,
+          "severity": "catastrophic",
+          "source": "manifold"
+        },
+        {
+          "title": "Will part of the agreed ceasefire deal between Russia and Ukraine involve a minimum 20 year block on joining NATO or EU?",
+          "prob": 0.33023048240388697,
+          "contrib": 79.3,
+          "severity": "catastrophic",
+          "source": "manifold"
+        },
+        {
+          "title": "Will Russia and Ukraine agree to a ceasefire before August 1, 2026?",
+          "prob": 0.05098499167714,
+          "contrib": 25.6,
+          "severity": "peace",
+          "source": "manifold"
+        },
+        {
+          "title": "Will there be a presidential election in Ukraine, before a ceasefire between it and Russia occurs? (See description)",
+          "prob": 0.11830257667442277,
+          "contrib": 23.8,
+          "severity": "peace",
+          "source": "manifold"
+        },
+        {
+          "title": "By the time a ceasefire or peace treaty between Ukraine & Russia is signed, will UA partially control Crimea?",
+          "prob": 0.15488247361757446,
+          "contrib": 22.8,
+          "severity": "peace",
+          "source": "manifold"
+        }
+      ],
+      "sources": [
+        "Manifold"
+      ]
+    },
+    "Russia": {
+      "score": 100,
+      "acled_score": 0,
+      "manifold_score": 100,
+      "manifold_markets": [
+        {
+          "title": "Will part of the agreed ceasefire deal between Russia and Ukraine involve a minimum 10 year block on joining NATO or EU?",
+          "prob": 0.5958282050661089,
+          "contrib": 143,
+          "severity": "catastrophic",
+          "source": "manifold"
+        },
+        {
+          "title": "Will part of the agreed ceasefire deal between Russia and Ukraine involve a minimum 20 year block on joining NATO or EU?",
+          "prob": 0.33023048240388697,
+          "contrib": 79.3,
+          "severity": "catastrophic",
+          "source": "manifold"
+        },
+        {
+          "title": "Will Russia and Ukraine agree to a ceasefire before August 1, 2026?",
+          "prob": 0.05098499167714,
+          "contrib": 25.6,
+          "severity": "peace",
+          "source": "manifold"
+        },
+        {
+          "title": "Will there be a presidential election in Ukraine, before a ceasefire between it and Russia occurs? (See description)",
+          "prob": 0.11830257667442277,
+          "contrib": 23.8,
+          "severity": "peace",
+          "source": "manifold"
+        },
+        {
+          "title": "By the time a ceasefire or peace treaty between Ukraine & Russia is signed, will UA partially control Crimea?",
+          "prob": 0.15488247361757446,
+          "contrib": 22.8,
+          "severity": "peace",
+          "source": "manifold"
+        }
+      ],
+      "sources": [
+        "Manifold"
+      ]
+    },
+    "Iran": {
+      "score": 100,
+      "acled_score": 0,
+      "manifold_score": 100,
+      "manifold_markets": [
+        {
+          "title": "Will the US or Israel threaten to use nuclear weapons against Iran before 2029?",
+          "prob": 0.5830011239099497,
+          "contrib": 139.9,
+          "severity": "catastrophic",
+          "source": "manifold"
+        },
+        {
+          "title": "US x Iran permanent peace deal by December 31 ? [Not Polymarket]",
+          "prob": 0.21009188529432926,
+          "contrib": 21.3,
+          "severity": "peace",
+          "source": "manifold"
+        },
+        {
+          "title": "Will Iran sign a peace deal with the middle east countries",
+          "prob": 0.2740598228667394,
+          "contrib": 19.6,
+          "severity": "peace",
+          "source": "manifold"
+        },
+        {
+          "title": "Will the US invade Iran's Kharg Island  by the end of 2026?",
+          "prob": 0.2237722673851878,
+          "contrib": 11.2,
+          "severity": "major_war",
+          "source": "manifold"
+        },
+        {
+          "title": "Will the US and Iran be at war on January 1st, 2027?",
+          "prob": 0.37238416578524575,
+          "contrib": 10.1,
+          "severity": "conflict",
+          "source": "manifold"
+        }
+      ],
+      "sources": [
+        "Manifold"
+      ]
+    },
+    "Israel": {
+      "score": 100,
+      "acled_score": 0,
+      "manifold_score": 100,
+      "manifold_markets": [
+        {
+          "title": "Will the US or Israel threaten to use nuclear weapons against Iran before 2029?",
+          "prob": 0.5830011239099497,
+          "contrib": 139.9,
+          "severity": "catastrophic",
+          "source": "manifold"
+        },
+        {
+          "title": "Will Israel attack Iran in July 2026?",
+          "prob": 0.7118951284037891,
+          "contrib": 5.7,
+          "severity": "geo",
+          "source": "manifold"
+        },
+        {
+          "title": "Assembly of  Experts hit by US or Israeli attack in 2026 and at least one cleric dies",
+          "prob": 0.06721001592463534,
+          "contrib": 0.5,
+          "severity": "geo",
+          "source": "manifold"
+        }
+      ],
+      "sources": [
+        "Manifold"
+      ]
+    },
+    "United States": {
+      "score": 100,
+      "acled_score": 0,
+      "manifold_score": 100,
+      "manifold_markets": [
+        {
+          "title": "Will the US or Israel threaten to use nuclear weapons against Iran before 2029?",
+          "prob": 0.5830011239099497,
+          "contrib": 139.9,
+          "severity": "catastrophic",
+          "source": "manifold"
+        },
+        {
+          "title": "Will a nuclear weapon be detonated in a war during the 2nd Trump administration?",
+          "prob": 0.12575882830611307,
+          "contrib": 30.2,
+          "severity": "catastrophic",
+          "source": "manifold"
+        },
+        {
+          "title": "US x Iran permanent peace deal by December 31 ? [Not Polymarket]",
+          "prob": 0.21009188529432926,
+          "contrib": 21.3,
+          "severity": "peace",
+          "source": "manifold"
+        },
+        {
+          "title": "Will China invade any territory of Taiwan before Trump leaves office?",
+          "prob": 0.3299999999999999,
+          "contrib": 16.5,
+          "severity": "major_war",
+          "source": "manifold"
+        },
+        {
+          "title": "Will China invade the Kinmen Islands of Taiwan before Trump leaves office?",
+          "prob": 0.2841435554814701,
+          "contrib": 14.2,
+          "severity": "major_war",
+          "source": "manifold"
+        }
+      ],
+      "sources": [
+        "Manifold"
+      ]
+    },
+    "South Korea": {
+      "score": 25,
+      "acled_score": 0,
+      "manifold_score": 25,
+      "manifold_markets": [
+        {
+          "title": "Will South Korea withdraw from the NPT by 2026?",
+          "prob": 0.09173043653328371,
+          "contrib": 24.5,
+          "severity": "peace",
+          "source": "manifold"
+        }
+      ],
+      "sources": [
+        "Manifold"
+      ]
+    },
+    "China": {
+      "score": 44,
+      "acled_score": 0,
+      "manifold_score": 44,
+      "manifold_markets": [
+        {
+          "title": "Will China invade Taiwan by 2035?",
+          "prob": 0.36270156821885635,
+          "contrib": 18.1,
+          "severity": "major_war",
+          "source": "manifold"
+        },
+        {
+          "title": "Will China invade any territory of Taiwan before Trump leaves office?",
+          "prob": 0.3299999999999999,
+          "contrib": 16.5,
+          "severity": "major_war",
+          "source": "manifold"
+        },
+        {
+          "title": "Will China invade Taiwan before 2030?",
+          "prob": 0.32091165550011835,
+          "contrib": 16,
+          "severity": "major_war",
+          "source": "manifold"
+        },
+        {
+          "title": "Will China invade the Kinmen Islands of Taiwan before Trump leaves office?",
+          "prob": 0.2841435554814701,
+          "contrib": 14.2,
+          "severity": "major_war",
+          "source": "manifold"
+        },
+        {
+          "title": "Will China invade the main island of Taiwan before Trump leaves office?",
+          "prob": 0.24534989920676217,
+          "contrib": 12.3,
+          "severity": "major_war",
+          "source": "manifold"
+        }
+      ],
+      "sources": [
+        "Manifold"
+      ]
+    },
+    "Taiwan": {
+      "score": 44,
+      "acled_score": 0,
+      "manifold_score": 44,
+      "manifold_markets": [
+        {
+          "title": "Will China invade Taiwan by 2035?",
+          "prob": 0.36270156821885635,
+          "contrib": 18.1,
+          "severity": "major_war",
+          "source": "manifold"
+        },
+        {
+          "title": "Will China invade any territory of Taiwan before Trump leaves office?",
+          "prob": 0.3299999999999999,
+          "contrib": 16.5,
+          "severity": "major_war",
+          "source": "manifold"
+        },
+        {
+          "title": "Will China invade Taiwan before 2030?",
+          "prob": 0.32091165550011835,
+          "contrib": 16,
+          "severity": "major_war",
+          "source": "manifold"
+        },
+        {
+          "title": "Will China invade the Kinmen Islands of Taiwan before Trump leaves office?",
+          "prob": 0.2841435554814701,
+          "contrib": 14.2,
+          "severity": "major_war",
+          "source": "manifold"
+        },
+        {
+          "title": "Will China invade the main island of Taiwan before Trump leaves office?",
+          "prob": 0.24534989920676217,
+          "contrib": 12.3,
+          "severity": "major_war",
+          "source": "manifold"
+        }
+      ],
+      "sources": [
+        "Manifold"
+      ]
+    },
+    "Venezuela": {
+      "score": 7,
+      "acled_score": 0,
+      "manifold_score": 7,
+      "manifold_markets": [
+        {
+          "title": "Will Venezuela continue submissive to american demands in 2026?",
+          "prob": 0.9150140872771414,
+          "contrib": 7.3,
+          "severity": "geo",
+          "source": "manifold"
+        }
+      ],
+      "sources": [
+        "Manifold"
+      ]
+    },
+    "Cuba": {
+      "score": 7,
+      "acled_score": 0,
+      "manifold_score": 7,
+      "manifold_markets": [
+        {
+          "title": "Will Trump attack Cuba by the end of his term?",
+          "prob": 0.8214952872949982,
+          "contrib": 6.6,
+          "severity": "geo",
+          "source": "manifold"
+        }
+      ],
+      "sources": [
+        "Manifold"
+      ]
+    },
+    "India": {
+      "score": 2,
+      "acled_score": 0,
+      "manifold_score": 2,
+      "manifold_markets": [
+        {
+          "title": "Will India settle their Kashmir conflict with Pakistan before January 1st 2035?",
+          "prob": 0.2297366959062194,
+          "contrib": 1.8,
+          "severity": "geo",
+          "source": "manifold"
+        }
+      ],
+      "sources": [
+        "Manifold"
+      ]
+    },
+    "Pakistan": {
+      "score": 2,
+      "acled_score": 0,
+      "manifold_score": 2,
+      "manifold_markets": [
+        {
+          "title": "Will India settle their Kashmir conflict with Pakistan before January 1st 2035?",
+          "prob": 0.2297366959062194,
+          "contrib": 1.8,
+          "severity": "geo",
+          "source": "manifold"
+        }
+      ],
+      "sources": [
+        "Manifold"
+      ]
+    },
+    "Ethiopia": {
+      "score": 1,
+      "acled_score": 0,
+      "manifold_score": 1,
+      "manifold_markets": [
+        {
+          "title": "Will armed conflict break out between Ethiopia and Eritrea by December 31, 2026?",
+          "prob": 0.17734459563222715,
+          "contrib": 1.4,
+          "severity": "geo",
+          "source": "manifold"
+        }
+      ],
+      "sources": [
+        "Manifold"
+      ]
+    },
+    "Eritrea": {
+      "score": 1,
+      "acled_score": 0,
+      "manifold_score": 1,
+      "manifold_markets": [
+        {
+          "title": "Will armed conflict break out between Ethiopia and Eritrea by December 31, 2026?",
+          "prob": 0.17734459563222715,
+          "contrib": 1.4,
+          "severity": "geo",
+          "source": "manifold"
+        }
+      ],
+      "sources": [
+        "Manifold"
+      ]
+    },
+    "Palestine": {
+      "score": 1,
+      "acled_score": 0,
+      "manifold_score": 1,
+      "manifold_markets": [
+        {
+          "title": "Will Hamas actually disarm in 2026?",
+          "prob": 0.10025473862431218,
+          "contrib": 0.8,
+          "severity": "geo",
+          "source": "manifold"
+        }
+      ],
+      "sources": [
+        "Manifold"
+      ]
+    }
+  }
 }
