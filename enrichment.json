@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-16T22:53:50.133Z",
+  "timestamp": "2026-07-16T23:55:07.768Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -7,7 +7,7 @@
     },
     "manifold": {
       "configured": true,
-      "markets": 41
+      "markets": 42
     }
   },
   "countries": {
@@ -122,8 +122,8 @@
         },
         {
           "title": "The US bomb Iran at least once during August?",
-          "prob": 0.7704532027690162,
-          "contrib": 20.8,
+          "prob": 0.75,
+          "contrib": 20.3,
           "severity": "conflict",
           "source": "manifold"
         },
@@ -159,6 +159,13 @@
           "source": "manifold"
         },
         {
+          "title": "Will Israel attack Iran in July 2026?",
+          "prob": 0.6346893915503151,
+          "contrib": 5.1,
+          "severity": "geo",
+          "source": "manifold"
+        },
+        {
           "title": "Assembly of  Experts hit by US or Israeli attack in 2026 and at least one cleric dies",
           "prob": 0.06721001592463534,
           "contrib": 0.5,
@@ -191,8 +198,8 @@
         },
         {
           "title": "The US bomb Iran at least once during August?",
-          "prob": 0.7704532027690162,
-          "contrib": 20.8,
+          "prob": 0.75,
+          "contrib": 20.3,
           "severity": "conflict",
           "source": "manifold"
         },
