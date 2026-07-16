@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-16T21:11:36.194Z",
+  "timestamp": "2026-07-16T22:53:50.133Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -7,7 +7,7 @@
     },
     "manifold": {
       "configured": true,
-      "markets": 42
+      "markets": 41
     }
   },
   "countries": {
@@ -45,9 +45,9 @@
           "source": "manifold"
         },
         {
-          "title": "By the time a ceasefire or peace treaty between Ukraine & Russia is signed, will UA partially control Crimea?",
-          "prob": 0.21999999999999992,
-          "contrib": 21.1,
+          "title": "Russia x Ukraine ceasefire in 2026?",
+          "prob": 0.23241540695627383,
+          "contrib": 20.7,
           "severity": "peace",
           "source": "manifold"
         }
@@ -90,9 +90,9 @@
           "source": "manifold"
         },
         {
-          "title": "By the time a ceasefire or peace treaty between Ukraine & Russia is signed, will UA partially control Crimea?",
-          "prob": 0.21999999999999992,
-          "contrib": 21.1,
+          "title": "Russia x Ukraine ceasefire in 2026?",
+          "prob": 0.23241540695627383,
+          "contrib": 20.7,
           "severity": "peace",
           "source": "manifold"
         }
@@ -156,13 +156,6 @@
           "prob": 0.5830011239099497,
           "contrib": 139.9,
           "severity": "catastrophic",
-          "source": "manifold"
-        },
-        {
-          "title": "Will Israel attack Iran in July 2026?",
-          "prob": 0.6467164331330041,
-          "contrib": 5.2,
-          "severity": "geo",
           "source": "manifold"
         },
         {
