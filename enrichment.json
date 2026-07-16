@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-16T08:05:45.900Z",
+  "timestamp": "2026-07-16T10:55:04.277Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -122,8 +122,8 @@
         },
         {
           "title": "The US bomb Iran at least once during August?",
-          "prob": 0.7307516645680555,
-          "contrib": 19.7,
+          "prob": 0.75,
+          "contrib": 20.3,
           "severity": "conflict",
           "source": "manifold"
         },
@@ -164,9 +164,9 @@
       ]
     },
     "Iran": {
-      "score": 50,
+      "score": 51,
       "acled_score": 0,
-      "manifold_score": 50,
+      "manifold_score": 51,
       "manifold_markets": [
         {
           "title": "US x Iran permanent peace deal by December 31 ? [Not Polymarket]",
@@ -177,8 +177,8 @@
         },
         {
           "title": "The US bomb Iran at least once during August?",
-          "prob": 0.7307516645680555,
-          "contrib": 19.7,
+          "prob": 0.75,
+          "contrib": 20.3,
           "severity": "conflict",
           "source": "manifold"
         },
