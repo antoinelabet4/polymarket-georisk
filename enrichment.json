@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-17T14:39:32.037Z",
+  "timestamp": "2026-07-17T16:11:45.336Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -7,7 +7,7 @@
     },
     "manifold": {
       "configured": true,
-      "markets": 41
+      "markets": 42
     }
   },
   "countries": {
@@ -135,10 +135,10 @@
           "source": "manifold"
         },
         {
-          "title": "Will the US invade Iran's Kharg Island  by the end of 2026?",
-          "prob": 0.2553015291566985,
-          "contrib": 12.8,
-          "severity": "major_war",
+          "title": "Will the US and Iran be at war on January 1st, 2027?",
+          "prob": 0.45891317392823155,
+          "contrib": 12.4,
+          "severity": "conflict",
           "source": "manifold"
         }
       ],
@@ -156,6 +156,13 @@
           "prob": 0.5830011239099497,
           "contrib": 139.9,
           "severity": "catastrophic",
+          "source": "manifold"
+        },
+        {
+          "title": "Will Israel attack Iran in July 2026?",
+          "prob": 0.30870014385394917,
+          "contrib": 2.5,
+          "severity": "geo",
           "source": "manifold"
         },
         {
@@ -431,8 +438,8 @@
       "manifold_markets": [
         {
           "title": "Will Hamas actually disarm in 2026?",
-          "prob": 0.10025473862431218,
-          "contrib": 0.8,
+          "prob": 0.08669288535875208,
+          "contrib": 0.7,
           "severity": "geo",
           "source": "manifold"
         }
