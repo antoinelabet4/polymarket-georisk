@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-17T12:05:39.099Z",
+  "timestamp": "2026-07-17T14:39:32.037Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -7,7 +7,7 @@
     },
     "manifold": {
       "configured": true,
-      "markets": 42
+      "markets": 41
     }
   },
   "countries": {
@@ -159,13 +159,6 @@
           "source": "manifold"
         },
         {
-          "title": "Will Israel attack Iran in July 2026?",
-          "prob": 0.6346893915503151,
-          "contrib": 5.1,
-          "severity": "geo",
-          "source": "manifold"
-        },
-        {
           "title": "Assembly of  Experts hit by US or Israeli attack in 2026 and at least one cleric dies",
           "prob": 0.06721001592463534,
           "contrib": 0.5,
@@ -190,6 +183,13 @@
           "source": "manifold"
         },
         {
+          "title": "Will the United States government detonate a nuclear weapon anywhere in 2026?",
+          "prob": 0.128708802222909,
+          "contrib": 30.9,
+          "severity": "catastrophic",
+          "source": "manifold"
+        },
+        {
           "title": "The US bomb Iran at least once during August?",
           "prob": 0.8300000000000001,
           "contrib": 22.4,
@@ -207,13 +207,6 @@
           "title": "Will China invade any territory of Taiwan before Trump leaves office?",
           "prob": 0.3299999999999999,
           "contrib": 16.5,
-          "severity": "major_war",
-          "source": "manifold"
-        },
-        {
-          "title": "Will China invade the Kinmen Islands of Taiwan before Trump leaves office?",
-          "prob": 0.2841435554814701,
-          "contrib": 14.2,
           "severity": "major_war",
           "source": "manifold"
         }
