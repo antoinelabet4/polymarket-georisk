@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-17T16:11:45.336Z",
+  "timestamp": "2026-07-17T18:01:29.869Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -115,8 +115,8 @@
         },
         {
           "title": "The US bomb Iran at least once during August?",
-          "prob": 0.8300000000000001,
-          "contrib": 22.4,
+          "prob": 0.8346237690279086,
+          "contrib": 22.5,
           "severity": "conflict",
           "source": "manifold"
         },
@@ -160,8 +160,8 @@
         },
         {
           "title": "Will Israel attack Iran in July 2026?",
-          "prob": 0.30870014385394917,
-          "contrib": 2.5,
+          "prob": 0.3686559383902142,
+          "contrib": 2.9,
           "severity": "geo",
           "source": "manifold"
         },
@@ -198,8 +198,8 @@
         },
         {
           "title": "The US bomb Iran at least once during August?",
-          "prob": 0.8300000000000001,
-          "contrib": 22.4,
+          "prob": 0.8346237690279086,
+          "contrib": 22.5,
           "severity": "conflict",
           "source": "manifold"
         },
