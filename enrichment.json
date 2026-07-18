@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-18T14:47:35.369Z",
+  "timestamp": "2026-07-18T15:52:23.078Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -135,10 +135,10 @@
           "source": "manifold"
         },
         {
-          "title": "Will the US and Iran be at war on January 1st, 2027?",
-          "prob": 0.3687606917133543,
+          "title": "Will the US invade Iran's Kharg Island  by the end of 2026?",
+          "prob": 0.19999999999999998,
           "contrib": 10,
-          "severity": "conflict",
+          "severity": "major_war",
           "source": "manifold"
         }
       ],
