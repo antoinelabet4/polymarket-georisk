@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-18T05:20:45.088Z",
+  "timestamp": "2026-07-18T07:42:14.381Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -39,8 +39,8 @@
         },
         {
           "title": "Will there be a presidential election in Ukraine, before a ceasefire between it and Russia occurs? (See description)",
-          "prob": 0.11830257667442277,
-          "contrib": 23.8,
+          "prob": 0.11531203153747946,
+          "contrib": 23.9,
           "severity": "peace",
           "source": "manifold"
         },
@@ -84,8 +84,8 @@
         },
         {
           "title": "Will there be a presidential election in Ukraine, before a ceasefire between it and Russia occurs? (See description)",
-          "prob": 0.11830257667442277,
-          "contrib": 23.8,
+          "prob": 0.11531203153747946,
+          "contrib": 23.9,
           "severity": "peace",
           "source": "manifold"
         },
@@ -159,13 +159,6 @@
           "source": "manifold"
         },
         {
-          "title": "Will Israel attack Iran in July 2026?",
-          "prob": 0.37053804332852347,
-          "contrib": 3,
-          "severity": "geo",
-          "source": "manifold"
-        },
-        {
           "title": "Assembly of  Experts hit by US or Israeli attack in 2026 and at least one cleric dies",
           "prob": 0.06721001592463534,
           "contrib": 0.5,
@@ -197,6 +190,13 @@
           "source": "manifold"
         },
         {
+          "title": "Will a nuclear weapon be detonated in a war during the 2nd Trump administration?",
+          "prob": 0.12575882830611307,
+          "contrib": 30.2,
+          "severity": "catastrophic",
+          "source": "manifold"
+        },
+        {
           "title": "The US bomb Iran at least once during August?",
           "prob": 0.8462985777917921,
           "contrib": 22.9,
@@ -208,13 +208,6 @@
           "prob": 0.21009188529432926,
           "contrib": 21.3,
           "severity": "peace",
-          "source": "manifold"
-        },
-        {
-          "title": "Will China invade any territory of Taiwan before Trump leaves office?",
-          "prob": 0.3299999999999999,
-          "contrib": 16.5,
-          "severity": "major_war",
           "source": "manifold"
         }
       ],
