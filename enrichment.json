@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-18T16:52:52.919Z",
+  "timestamp": "2026-07-18T17:53:30.465Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -102,9 +102,9 @@
       ]
     },
     "United States": {
-      "score": 72,
+      "score": 71,
       "acled_score": 0,
-      "manifold_score": 72,
+      "manifold_score": 71,
       "manifold_markets": [
         {
           "title": "Will the United States government detonate a nuclear weapon anywhere in 2026?",
@@ -121,17 +121,17 @@
           "source": "manifold"
         },
         {
-          "title": "The US bomb Iran at least once during August?",
-          "prob": 0.8462985777917921,
-          "contrib": 22.9,
-          "severity": "conflict",
-          "source": "manifold"
-        },
-        {
           "title": "US x Iran permanent peace deal by December 31 ? [Not Polymarket]",
           "prob": 0.21009188529432926,
           "contrib": 21.3,
           "severity": "peace",
+          "source": "manifold"
+        },
+        {
+          "title": "The US bomb Iran at least once during August?",
+          "prob": 0.7831779978495479,
+          "contrib": 21.1,
+          "severity": "conflict",
           "source": "manifold"
         },
         {
@@ -164,22 +164,22 @@
       ]
     },
     "Iran": {
-      "score": 52,
+      "score": 50,
       "acled_score": 0,
-      "manifold_score": 52,
+      "manifold_score": 50,
       "manifold_markets": [
-        {
-          "title": "The US bomb Iran at least once during August?",
-          "prob": 0.8462985777917921,
-          "contrib": 22.9,
-          "severity": "conflict",
-          "source": "manifold"
-        },
         {
           "title": "US x Iran permanent peace deal by December 31 ? [Not Polymarket]",
           "prob": 0.21009188529432926,
           "contrib": 21.3,
           "severity": "peace",
+          "source": "manifold"
+        },
+        {
+          "title": "The US bomb Iran at least once during August?",
+          "prob": 0.7831779978495479,
+          "contrib": 21.1,
+          "severity": "conflict",
           "source": "manifold"
         },
         {
