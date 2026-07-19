@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-19T22:47:02.165Z",
+  "timestamp": "2026-07-19T23:53:07.862Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -160,8 +160,8 @@
         },
         {
           "title": "Will Israel attack Iran in July 2026?",
-          "prob": 0.3260165609659187,
-          "contrib": 2.6,
+          "prob": 0.35134263349238937,
+          "contrib": 2.8,
           "severity": "geo",
           "source": "manifold"
         },
@@ -438,8 +438,8 @@
       "manifold_markets": [
         {
           "title": "Will Hamas actually disarm in 2026?",
-          "prob": 0.08669288535875208,
-          "contrib": 0.7,
+          "prob": 0.07149444007389431,
+          "contrib": 0.6,
           "severity": "geo",
           "source": "manifold"
         }
