@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-19T10:23:32.993Z",
+  "timestamp": "2026-07-19T11:53:38.960Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -102,9 +102,9 @@
       ]
     },
     "United States": {
-      "score": 71,
+      "score": 72,
       "acled_score": 0,
-      "manifold_score": 71,
+      "manifold_score": 72,
       "manifold_markets": [
         {
           "title": "Will the United States government detonate a nuclear weapon anywhere in 2026?",
@@ -121,6 +121,13 @@
           "source": "manifold"
         },
         {
+          "title": "Will the US invade Iran's Kharg Island  by the end of 2026?",
+          "prob": 0.42999999999999994,
+          "contrib": 21.5,
+          "severity": "major_war",
+          "source": "manifold"
+        },
+        {
           "title": "US x Iran permanent peace deal by December 31 ? [Not Polymarket]",
           "prob": 0.21009188529432926,
           "contrib": 21.3,
@@ -132,13 +139,6 @@
           "prob": 0.7831779978495479,
           "contrib": 21.1,
           "severity": "conflict",
-          "source": "manifold"
-        },
-        {
-          "title": "Will China invade any territory of Taiwan before Trump leaves office?",
-          "prob": 0.3299999999999999,
-          "contrib": 16.5,
-          "severity": "major_war",
           "source": "manifold"
         }
       ],
@@ -164,10 +164,17 @@
       ]
     },
     "Iran": {
-      "score": 51,
+      "score": 54,
       "acled_score": 0,
-      "manifold_score": 51,
+      "manifold_score": 54,
       "manifold_markets": [
+        {
+          "title": "Will the US invade Iran's Kharg Island  by the end of 2026?",
+          "prob": 0.42999999999999994,
+          "contrib": 21.5,
+          "severity": "major_war",
+          "source": "manifold"
+        },
         {
           "title": "US x Iran permanent peace deal by December 31 ? [Not Polymarket]",
           "prob": 0.21009188529432926,
@@ -190,16 +197,9 @@
           "source": "manifold"
         },
         {
-          "title": "Will the US invade Iran's Kharg Island  by the end of 2026?",
-          "prob": 0.2626897278901163,
-          "contrib": 13.1,
-          "severity": "major_war",
-          "source": "manifold"
-        },
-        {
           "title": "Will the US and Iran be at war on January 1st, 2027?",
-          "prob": 0.3514788987784143,
-          "contrib": 9.5,
+          "prob": 0.38198682282914204,
+          "contrib": 10.3,
           "severity": "conflict",
           "source": "manifold"
         }
