@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-20T15:07:53.651Z",
+  "timestamp": "2026-07-20T17:57:00.372Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -7,7 +7,7 @@
     },
     "manifold": {
       "configured": true,
-      "markets": 43
+      "markets": 41
     }
   },
   "countries": {
@@ -160,8 +160,8 @@
         },
         {
           "title": "Will Israel attack Iran in July 2026?",
-          "prob": 0.35134263349238937,
-          "contrib": 2.8,
+          "prob": 0.42670159083743997,
+          "contrib": 3.4,
           "severity": "geo",
           "source": "manifold"
         },
@@ -190,13 +190,6 @@
           "source": "manifold"
         },
         {
-          "title": "Will the United States government detonate a nuclear weapon anywhere in 2026?",
-          "prob": 0.128708802222909,
-          "contrib": 30.9,
-          "severity": "catastrophic",
-          "source": "manifold"
-        },
-        {
           "title": "Will a nuclear weapon be detonated in a war during the 2nd Trump administration?",
           "prob": 0.12575882830611307,
           "contrib": 30.2,
@@ -215,6 +208,13 @@
           "prob": 0.7658230762696896,
           "contrib": 20.7,
           "severity": "conflict",
+          "source": "manifold"
+        },
+        {
+          "title": "Will China invade any territory of Taiwan before Trump leaves office?",
+          "prob": 0.39984544994042615,
+          "contrib": 20,
+          "severity": "major_war",
           "source": "manifold"
         }
       ],
