@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-20T17:57:00.372Z",
+  "timestamp": "2026-07-20T19:43:56.690Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -7,7 +7,7 @@
     },
     "manifold": {
       "configured": true,
-      "markets": 41
+      "markets": 43
     }
   },
   "countries": {
@@ -46,8 +46,8 @@
         },
         {
           "title": "Russia x Ukraine ceasefire in 2026?",
-          "prob": 0.23241540695627383,
-          "contrib": 20.7,
+          "prob": 0.25309542601183616,
+          "contrib": 20.2,
           "severity": "peace",
           "source": "manifold"
         }
@@ -91,8 +91,8 @@
         },
         {
           "title": "Russia x Ukraine ceasefire in 2026?",
-          "prob": 0.23241540695627383,
-          "contrib": 20.7,
+          "prob": 0.25309542601183616,
+          "contrib": 20.2,
           "severity": "peace",
           "source": "manifold"
         }
@@ -229,8 +229,8 @@
       "manifold_markets": [
         {
           "title": "Will South Korea withdraw from the NPT by 2026?",
-          "prob": 0.09173043653328371,
-          "contrib": 24.5,
+          "prob": 0.07999999999999993,
+          "contrib": 24.8,
           "severity": "peace",
           "source": "manifold"
         }
