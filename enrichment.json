@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-19T23:53:07.862Z",
+  "timestamp": "2026-07-20T02:35:24.156Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -7,7 +7,7 @@
     },
     "manifold": {
       "configured": true,
-      "markets": 43
+      "markets": 42
     }
   },
   "countries": {
@@ -135,10 +135,10 @@
           "source": "manifold"
         },
         {
-          "title": "Will the US invade Iran's Kharg Island  by the end of 2026?",
-          "prob": 0.27531100754586,
-          "contrib": 13.8,
-          "severity": "major_war",
+          "title": "Will the US and Iran be at war on January 1st, 2027?",
+          "prob": 0.38198682282914204,
+          "contrib": 10.3,
+          "severity": "conflict",
           "source": "manifold"
         }
       ],
