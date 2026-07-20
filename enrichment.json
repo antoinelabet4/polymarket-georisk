@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-20T12:14:59.405Z",
+  "timestamp": "2026-07-20T15:07:53.651Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -45,9 +45,9 @@
           "source": "manifold"
         },
         {
-          "title": "By the time a ceasefire or peace treaty between Ukraine & Russia is signed, will UA partially control Crimea?",
-          "prob": 0.214099318368205,
-          "contrib": 21.2,
+          "title": "Russia x Ukraine ceasefire in 2026?",
+          "prob": 0.23241540695627383,
+          "contrib": 20.7,
           "severity": "peace",
           "source": "manifold"
         }
@@ -90,9 +90,9 @@
           "source": "manifold"
         },
         {
-          "title": "By the time a ceasefire or peace treaty between Ukraine & Russia is signed, will UA partially control Crimea?",
-          "prob": 0.214099318368205,
-          "contrib": 21.2,
+          "title": "Russia x Ukraine ceasefire in 2026?",
+          "prob": 0.23241540695627383,
+          "contrib": 20.7,
           "severity": "peace",
           "source": "manifold"
         }
@@ -211,10 +211,10 @@
           "source": "manifold"
         },
         {
-          "title": "Will China invade any territory of Taiwan before Trump leaves office?",
-          "prob": 0.4199999999999998,
-          "contrib": 21,
-          "severity": "major_war",
+          "title": "The US bomb Iran at least once during August?",
+          "prob": 0.7658230762696896,
+          "contrib": 20.7,
+          "severity": "conflict",
           "source": "manifold"
         }
       ],
@@ -240,14 +240,14 @@
       ]
     },
     "China": {
-      "score": 48,
+      "score": 47,
       "acled_score": 0,
-      "manifold_score": 48,
+      "manifold_score": 47,
       "manifold_markets": [
         {
           "title": "Will China invade any territory of Taiwan before Trump leaves office?",
-          "prob": 0.4199999999999998,
-          "contrib": 21,
+          "prob": 0.39984544994042615,
+          "contrib": 20,
           "severity": "major_war",
           "source": "manifold"
         },
@@ -285,14 +285,14 @@
       ]
     },
     "Taiwan": {
-      "score": 48,
+      "score": 47,
       "acled_score": 0,
-      "manifold_score": 48,
+      "manifold_score": 47,
       "manifold_markets": [
         {
           "title": "Will China invade any territory of Taiwan before Trump leaves office?",
-          "prob": 0.4199999999999998,
-          "contrib": 21,
+          "prob": 0.39984544994042615,
+          "contrib": 20,
           "severity": "major_war",
           "source": "manifold"
         },
