@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-21T13:38:35.009Z",
+  "timestamp": "2026-07-21T15:40:06.271Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -7,7 +7,7 @@
     },
     "manifold": {
       "configured": true,
-      "markets": 42
+      "markets": 41
     }
   },
   "countries": {
@@ -121,13 +121,6 @@
           "source": "manifold"
         },
         {
-          "title": "The US bomb Iran at least once during August?",
-          "prob": 0.7658230762696896,
-          "contrib": 20.7,
-          "severity": "conflict",
-          "source": "manifold"
-        },
-        {
           "title": "Will Iran sign a peace deal with the middle east countries",
           "prob": 0.2740598228667394,
           "contrib": 19.6,
@@ -139,6 +132,13 @@
           "prob": 0.4543893799086679,
           "contrib": 12.3,
           "severity": "conflict",
+          "source": "manifold"
+        },
+        {
+          "title": "Will the US invade Iran's Kharg Island  by the end of 2026?",
+          "prob": 0.1655768136168761,
+          "contrib": 8.3,
+          "severity": "major_war",
           "source": "manifold"
         }
       ],
@@ -156,13 +156,6 @@
           "prob": 0.5830011239099497,
           "contrib": 139.9,
           "severity": "catastrophic",
-          "source": "manifold"
-        },
-        {
-          "title": "Will Israel attack Iran in July 2026?",
-          "prob": 0.42349720706265087,
-          "contrib": 3.4,
-          "severity": "geo",
           "source": "manifold"
         },
         {
@@ -204,16 +197,16 @@
           "source": "manifold"
         },
         {
-          "title": "The US bomb Iran at least once during August?",
-          "prob": 0.7658230762696896,
-          "contrib": 20.7,
-          "severity": "conflict",
-          "source": "manifold"
-        },
-        {
           "title": "Will China invade any territory of Taiwan before Trump leaves office?",
           "prob": 0.39984544994042615,
           "contrib": 20,
+          "severity": "major_war",
+          "source": "manifold"
+        },
+        {
+          "title": "Will China invade the Kinmen Islands of Taiwan before Trump leaves office?",
+          "prob": 0.2841435554814701,
+          "contrib": 14.2,
           "severity": "major_war",
           "source": "manifold"
         }
