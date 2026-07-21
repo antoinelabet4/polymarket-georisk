@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-21T11:04:05.939Z",
+  "timestamp": "2026-07-21T13:38:35.009Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -7,7 +7,7 @@
     },
     "manifold": {
       "configured": true,
-      "markets": 43
+      "markets": 42
     }
   },
   "countries": {
@@ -160,8 +160,8 @@
         },
         {
           "title": "Will Israel attack Iran in July 2026?",
-          "prob": 0.4063367671517428,
-          "contrib": 3.3,
+          "prob": 0.42349720706265087,
+          "contrib": 3.4,
           "severity": "geo",
           "source": "manifold"
         },
