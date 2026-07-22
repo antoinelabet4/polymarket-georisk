@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-21T23:53:29.323Z",
+  "timestamp": "2026-07-22T02:11:52.984Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -7,7 +7,7 @@
     },
     "manifold": {
       "configured": true,
-      "markets": 43
+      "markets": 42
     }
   },
   "countries": {
@@ -101,73 +101,18 @@
         "Manifold"
       ]
     },
-    "United States": {
-      "score": 72,
-      "acled_score": 0,
-      "manifold_score": 72,
-      "manifold_markets": [
-        {
-          "title": "Will the United States government detonate a nuclear weapon anywhere in 2026?",
-          "prob": 0.128708802222909,
-          "contrib": 30.9,
-          "severity": "catastrophic",
-          "source": "manifold"
-        },
-        {
-          "title": "Will a nuclear weapon be detonated in a war during the 2nd Trump administration?",
-          "prob": 0.12575882830611307,
-          "contrib": 30.2,
-          "severity": "catastrophic",
-          "source": "manifold"
-        },
-        {
-          "title": "US x Iran permanent peace deal by December 31 ? [Not Polymarket]",
-          "prob": 0.21009188529432926,
-          "contrib": 21.3,
-          "severity": "peace",
-          "source": "manifold"
-        },
-        {
-          "title": "The US bomb Iran at least once during August?",
-          "prob": 0.7658230762696896,
-          "contrib": 20.7,
-          "severity": "conflict",
-          "source": "manifold"
-        },
-        {
-          "title": "Will China invade any territory of Taiwan before Trump leaves office?",
-          "prob": 0.39984544994042615,
-          "contrib": 20,
-          "severity": "major_war",
-          "source": "manifold"
-        }
-      ],
-      "sources": [
-        "Manifold"
-      ]
-    },
-    "South Korea": {
-      "score": 25,
-      "acled_score": 0,
-      "manifold_score": 25,
-      "manifold_markets": [
-        {
-          "title": "Will South Korea withdraw from the NPT by 2026?",
-          "prob": 0.07999999999999993,
-          "contrib": 24.8,
-          "severity": "peace",
-          "source": "manifold"
-        }
-      ],
-      "sources": [
-        "Manifold"
-      ]
-    },
     "Iran": {
-      "score": 51,
+      "score": 100,
       "acled_score": 0,
-      "manifold_score": 51,
+      "manifold_score": 100,
       "manifold_markets": [
+        {
+          "title": "Will the US or Israel threaten to use nuclear weapons against Iran before 2029?",
+          "prob": 0.5830011239099497,
+          "contrib": 139.9,
+          "severity": "catastrophic",
+          "source": "manifold"
+        },
         {
           "title": "US x Iran permanent peace deal by December 31 ? [Not Polymarket]",
           "prob": 0.21009188529432926,
@@ -195,12 +140,91 @@
           "contrib": 12.3,
           "severity": "conflict",
           "source": "manifold"
+        }
+      ],
+      "sources": [
+        "Manifold"
+      ]
+    },
+    "Israel": {
+      "score": 100,
+      "acled_score": 0,
+      "manifold_score": 100,
+      "manifold_markets": [
+        {
+          "title": "Will the US or Israel threaten to use nuclear weapons against Iran before 2029?",
+          "prob": 0.5830011239099497,
+          "contrib": 139.9,
+          "severity": "catastrophic",
+          "source": "manifold"
         },
         {
-          "title": "Will the US invade Iran's Kharg Island  by the end of 2026?",
-          "prob": 0.17739478912063258,
-          "contrib": 8.9,
-          "severity": "major_war",
+          "title": "Assembly of  Experts hit by US or Israeli attack in 2026 and at least one cleric dies",
+          "prob": 0.06721001592463534,
+          "contrib": 0.5,
+          "severity": "geo",
+          "source": "manifold"
+        }
+      ],
+      "sources": [
+        "Manifold"
+      ]
+    },
+    "United States": {
+      "score": 100,
+      "acled_score": 0,
+      "manifold_score": 100,
+      "manifold_markets": [
+        {
+          "title": "Will the US or Israel threaten to use nuclear weapons against Iran before 2029?",
+          "prob": 0.5830011239099497,
+          "contrib": 139.9,
+          "severity": "catastrophic",
+          "source": "manifold"
+        },
+        {
+          "title": "Will the United States government detonate a nuclear weapon anywhere in 2026?",
+          "prob": 0.128708802222909,
+          "contrib": 30.9,
+          "severity": "catastrophic",
+          "source": "manifold"
+        },
+        {
+          "title": "Will a nuclear weapon be detonated in a war during the 2nd Trump administration?",
+          "prob": 0.12575882830611307,
+          "contrib": 30.2,
+          "severity": "catastrophic",
+          "source": "manifold"
+        },
+        {
+          "title": "US x Iran permanent peace deal by December 31 ? [Not Polymarket]",
+          "prob": 0.21009188529432926,
+          "contrib": 21.3,
+          "severity": "peace",
+          "source": "manifold"
+        },
+        {
+          "title": "The US bomb Iran at least once during August?",
+          "prob": 0.7658230762696896,
+          "contrib": 20.7,
+          "severity": "conflict",
+          "source": "manifold"
+        }
+      ],
+      "sources": [
+        "Manifold"
+      ]
+    },
+    "South Korea": {
+      "score": 25,
+      "acled_score": 0,
+      "manifold_score": 25,
+      "manifold_markets": [
+        {
+          "title": "Will South Korea withdraw from the NPT by 2026?",
+          "prob": 0.07999999999999993,
+          "contrib": 24.8,
+          "severity": "peace",
           "source": "manifold"
         }
       ],
@@ -324,30 +348,6 @@
           "title": "Will Trump attack Cuba by the end of his term?",
           "prob": 0.8214952872949982,
           "contrib": 6.6,
-          "severity": "geo",
-          "source": "manifold"
-        }
-      ],
-      "sources": [
-        "Manifold"
-      ]
-    },
-    "Israel": {
-      "score": 5,
-      "acled_score": 0,
-      "manifold_score": 5,
-      "manifold_markets": [
-        {
-          "title": "Will Israel attack Iran in July 2026?",
-          "prob": 0.5341277746210983,
-          "contrib": 4.3,
-          "severity": "geo",
-          "source": "manifold"
-        },
-        {
-          "title": "Assembly of  Experts hit by US or Israeli attack in 2026 and at least one cleric dies",
-          "prob": 0.06721001592463534,
-          "contrib": 0.5,
           "severity": "geo",
           "source": "manifold"
         }
