@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-22T11:05:05.986Z",
+  "timestamp": "2026-07-22T13:41:53.501Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -7,7 +7,7 @@
     },
     "manifold": {
       "configured": true,
-      "markets": 42
+      "markets": 41
     }
   },
   "countries": {
@@ -31,13 +31,6 @@
           "source": "manifold"
         },
         {
-          "title": "Will Russia and Ukraine agree to a ceasefire before August 1, 2026?",
-          "prob": 0.043070972879612986,
-          "contrib": 25.8,
-          "severity": "peace",
-          "source": "manifold"
-        },
-        {
           "title": "Will there be a presidential election in Ukraine, before a ceasefire between it and Russia occurs? (See description)",
           "prob": 0.11531203153747946,
           "contrib": 23.9,
@@ -48,6 +41,13 @@
           "title": "Russia x Ukraine ceasefire in 2026?",
           "prob": 0.25309542601183616,
           "contrib": 20.2,
+          "severity": "peace",
+          "source": "manifold"
+        },
+        {
+          "title": "By the time a ceasefire or peace treaty between Ukraine & Russia is signed, will UA partially control Crimea?",
+          "prob": 0.28981743296733586,
+          "contrib": 19.2,
           "severity": "peace",
           "source": "manifold"
         }
@@ -76,13 +76,6 @@
           "source": "manifold"
         },
         {
-          "title": "Will Russia and Ukraine agree to a ceasefire before August 1, 2026?",
-          "prob": 0.043070972879612986,
-          "contrib": 25.8,
-          "severity": "peace",
-          "source": "manifold"
-        },
-        {
           "title": "Will there be a presidential election in Ukraine, before a ceasefire between it and Russia occurs? (See description)",
           "prob": 0.11531203153747946,
           "contrib": 23.9,
@@ -93,6 +86,13 @@
           "title": "Russia x Ukraine ceasefire in 2026?",
           "prob": 0.25309542601183616,
           "contrib": 20.2,
+          "severity": "peace",
+          "source": "manifold"
+        },
+        {
+          "title": "By the time a ceasefire or peace treaty between Ukraine & Russia is signed, will UA partially control Crimea?",
+          "prob": 0.28981743296733586,
+          "contrib": 19.2,
           "severity": "peace",
           "source": "manifold"
         }
@@ -121,6 +121,13 @@
           "source": "manifold"
         },
         {
+          "title": "The US bomb Iran at least once during August?",
+          "prob": 0.7658230762696896,
+          "contrib": 20.7,
+          "severity": "conflict",
+          "source": "manifold"
+        },
+        {
           "title": "Will Iran sign a peace deal with the middle east countries",
           "prob": 0.2740598228667394,
           "contrib": 19.6,
@@ -132,13 +139,6 @@
           "prob": 0.4543893799086679,
           "contrib": 12.3,
           "severity": "conflict",
-          "source": "manifold"
-        },
-        {
-          "title": "Will the US invade Iran's Kharg Island  by the end of 2026?",
-          "prob": 0.15653277687108857,
-          "contrib": 7.8,
-          "severity": "major_war",
           "source": "manifold"
         }
       ],
@@ -204,10 +204,10 @@
           "source": "manifold"
         },
         {
-          "title": "Will China invade any territory of Taiwan before Trump leaves office?",
-          "prob": 0.39984544994042615,
-          "contrib": 20,
-          "severity": "major_war",
+          "title": "The US bomb Iran at least once during August?",
+          "prob": 0.7658230762696896,
+          "contrib": 20.7,
+          "severity": "conflict",
           "source": "manifold"
         }
       ],
@@ -346,8 +346,8 @@
       "manifold_markets": [
         {
           "title": "Will Trump attack Cuba by the end of his term?",
-          "prob": 0.8214952872949982,
-          "contrib": 6.6,
+          "prob": 0.8416261234315582,
+          "contrib": 6.7,
           "severity": "geo",
           "source": "manifold"
         }
