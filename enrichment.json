@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-23T04:11:56.581Z",
+  "timestamp": "2026-07-23T07:29:14.982Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -7,7 +7,7 @@
     },
     "manifold": {
       "configured": true,
-      "markets": 40
+      "markets": 41
     }
   },
   "countries": {
@@ -102,9 +102,9 @@
       ]
     },
     "United States": {
-      "score": 61,
+      "score": 63,
       "acled_score": 0,
-      "manifold_score": 61,
+      "manifold_score": 63,
       "manifold_markets": [
         {
           "title": "Will a nuclear weapon be detonated in a war during the 2nd Trump administration?",
@@ -115,9 +115,16 @@
         },
         {
           "title": "US x Iran permanent peace deal by December 31 ? [Not Polymarket]",
-          "prob": 0.22495183879382855,
-          "contrib": 20.9,
+          "prob": 0.22323167766545687,
+          "contrib": 21,
           "severity": "peace",
+          "source": "manifold"
+        },
+        {
+          "title": "The US bomb Iran at least once during August?",
+          "prob": 0.7658230762696896,
+          "contrib": 20.7,
+          "severity": "conflict",
           "source": "manifold"
         },
         {
@@ -132,13 +139,6 @@
           "prob": 0.2841435554814701,
           "contrib": 14.2,
           "severity": "major_war",
-          "source": "manifold"
-        },
-        {
-          "title": "Will the US and Iran be at war on January 1st, 2027?",
-          "prob": 0.5041444643946387,
-          "contrib": 13.6,
-          "severity": "conflict",
           "source": "manifold"
         }
       ],
@@ -164,15 +164,22 @@
       ]
     },
     "Iran": {
-      "score": 45,
+      "score": 51,
       "acled_score": 0,
-      "manifold_score": 45,
+      "manifold_score": 51,
       "manifold_markets": [
         {
           "title": "US x Iran permanent peace deal by December 31 ? [Not Polymarket]",
-          "prob": 0.22495183879382855,
-          "contrib": 20.9,
+          "prob": 0.22323167766545687,
+          "contrib": 21,
           "severity": "peace",
+          "source": "manifold"
+        },
+        {
+          "title": "The US bomb Iran at least once during August?",
+          "prob": 0.7658230762696896,
+          "contrib": 20.7,
+          "severity": "conflict",
           "source": "manifold"
         },
         {
@@ -193,13 +200,6 @@
           "title": "Will the US invade Iran's Kharg Island  by the end of 2026?",
           "prob": 0.17409182632474487,
           "contrib": 8.7,
-          "severity": "major_war",
-          "source": "manifold"
-        },
-        {
-          "title": "Will the US invade Iran's Kharg Island  by the end of 2026?",
-          "prob": 0.1659692856731227,
-          "contrib": 8.3,
           "severity": "major_war",
           "source": "manifold"
         }
@@ -339,8 +339,8 @@
       "manifold_markets": [
         {
           "title": "Will Israel attack Iran in July 2026?",
-          "prob": 0.4772415305321625,
-          "contrib": 3.8,
+          "prob": 0.46256165186057774,
+          "contrib": 3.7,
           "severity": "geo",
           "source": "manifold"
         },
