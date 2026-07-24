@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-24T14:51:35.964Z",
+  "timestamp": "2026-07-24T16:32:41.034Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -7,7 +7,7 @@
     },
     "manifold": {
       "configured": true,
-      "markets": 40
+      "markets": 42
     }
   },
   "countries": {
@@ -121,6 +121,13 @@
           "source": "manifold"
         },
         {
+          "title": "The US bomb Iran at least once during August?",
+          "prob": 0.7658230762696896,
+          "contrib": 20.7,
+          "severity": "conflict",
+          "source": "manifold"
+        },
+        {
           "title": "Will Iran sign a peace deal with the middle east countries",
           "prob": 0.2740598228667394,
           "contrib": 19.6,
@@ -132,13 +139,6 @@
           "prob": 0.5225406111426635,
           "contrib": 14.1,
           "severity": "conflict",
-          "source": "manifold"
-        },
-        {
-          "title": "Will the US invade Iran's Kharg Island  by the end of 2026?",
-          "prob": 0.16215218261338013,
-          "contrib": 8.1,
-          "severity": "major_war",
           "source": "manifold"
         }
       ],
@@ -204,16 +204,16 @@
           "source": "manifold"
         },
         {
-          "title": "Will China invade any territory of Taiwan before Trump leaves office?",
-          "prob": 0.39984544994042615,
-          "contrib": 20,
-          "severity": "major_war",
+          "title": "The US bomb Iran at least once during August?",
+          "prob": 0.7658230762696896,
+          "contrib": 20.7,
+          "severity": "conflict",
           "source": "manifold"
         },
         {
-          "title": "Will China invade the Kinmen Islands of Taiwan before Trump leaves office?",
-          "prob": 0.2841435554814701,
-          "contrib": 14.2,
+          "title": "Will China invade any territory of Taiwan before Trump leaves office?",
+          "prob": 0.39984544994042615,
+          "contrib": 20,
           "severity": "major_war",
           "source": "manifold"
         }
