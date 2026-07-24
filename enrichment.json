@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-24T12:23:55.356Z",
+  "timestamp": "2026-07-24T14:51:35.964Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -7,7 +7,7 @@
     },
     "manifold": {
       "configured": true,
-      "markets": 42
+      "markets": 40
     }
   },
   "countries": {
@@ -121,13 +121,6 @@
           "source": "manifold"
         },
         {
-          "title": "The US bomb Iran at least once during August?",
-          "prob": 0.7658230762696896,
-          "contrib": 20.7,
-          "severity": "conflict",
-          "source": "manifold"
-        },
-        {
           "title": "Will Iran sign a peace deal with the middle east countries",
           "prob": 0.2740598228667394,
           "contrib": 19.6,
@@ -139,6 +132,13 @@
           "prob": 0.5225406111426635,
           "contrib": 14.1,
           "severity": "conflict",
+          "source": "manifold"
+        },
+        {
+          "title": "Will the US invade Iran's Kharg Island  by the end of 2026?",
+          "prob": 0.16215218261338013,
+          "contrib": 8.1,
+          "severity": "major_war",
           "source": "manifold"
         }
       ],
@@ -160,8 +160,8 @@
         },
         {
           "title": "Will Israel attack Iran in July 2026?",
-          "prob": 0.4800098101497714,
-          "contrib": 3.8,
+          "prob": 0.4659243396162962,
+          "contrib": 3.7,
           "severity": "geo",
           "source": "manifold"
         },
@@ -190,9 +190,9 @@
           "source": "manifold"
         },
         {
-          "title": "Will the United States government detonate a nuclear weapon anywhere in 2026?",
-          "prob": 0.128708802222909,
-          "contrib": 30.9,
+          "title": "Will a nuclear weapon be detonated in a war during the 2nd Trump administration?",
+          "prob": 0.12575882830611307,
+          "contrib": 30.2,
           "severity": "catastrophic",
           "source": "manifold"
         },
@@ -204,16 +204,16 @@
           "source": "manifold"
         },
         {
-          "title": "The US bomb Iran at least once during August?",
-          "prob": 0.7658230762696896,
-          "contrib": 20.7,
-          "severity": "conflict",
-          "source": "manifold"
-        },
-        {
           "title": "Will China invade any territory of Taiwan before Trump leaves office?",
           "prob": 0.39984544994042615,
           "contrib": 20,
+          "severity": "major_war",
+          "source": "manifold"
+        },
+        {
+          "title": "Will China invade the Kinmen Islands of Taiwan before Trump leaves office?",
+          "prob": 0.2841435554814701,
+          "contrib": 14.2,
           "severity": "major_war",
           "source": "manifold"
         }
