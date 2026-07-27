@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-26T23:59:05.595Z",
+  "timestamp": "2026-07-27T03:44:11.579Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -46,8 +46,8 @@
         },
         {
           "title": "By the time a ceasefire or peace treaty between Ukraine & Russia is signed, will UA partially control Crimea?",
-          "prob": 0.29341694142677066,
-          "contrib": 19.1,
+          "prob": 0.2994483928203148,
+          "contrib": 18.9,
           "severity": "peace",
           "source": "manifold"
         }
@@ -91,70 +91,8 @@
         },
         {
           "title": "By the time a ceasefire or peace treaty between Ukraine & Russia is signed, will UA partially control Crimea?",
-          "prob": 0.29341694142677066,
-          "contrib": 19.1,
-          "severity": "peace",
-          "source": "manifold"
-        }
-      ],
-      "sources": [
-        "Manifold"
-      ]
-    },
-    "United States": {
-      "score": 62,
-      "acled_score": 0,
-      "manifold_score": 62,
-      "manifold_markets": [
-        {
-          "title": "Will the United States government detonate a nuclear weapon anywhere in 2026?",
-          "prob": 0.11299173184504342,
-          "contrib": 27.1,
-          "severity": "catastrophic",
-          "source": "manifold"
-        },
-        {
-          "title": "The US bomb Iran at least once during August?",
-          "prob": 0.8555047271845161,
-          "contrib": 23.1,
-          "severity": "conflict",
-          "source": "manifold"
-        },
-        {
-          "title": "US x Iran permanent peace deal by December 31 ? [Not Polymarket]",
-          "prob": 0.20211243938065515,
-          "contrib": 21.5,
-          "severity": "peace",
-          "source": "manifold"
-        },
-        {
-          "title": "Will China invade any territory of Taiwan before Trump leaves office?",
-          "prob": 0.39984544994042615,
-          "contrib": 20,
-          "severity": "major_war",
-          "source": "manifold"
-        },
-        {
-          "title": "Will China invade the Kinmen Islands of Taiwan before Trump leaves office?",
-          "prob": 0.2841435554814701,
-          "contrib": 14.2,
-          "severity": "major_war",
-          "source": "manifold"
-        }
-      ],
-      "sources": [
-        "Manifold"
-      ]
-    },
-    "South Korea": {
-      "score": 26,
-      "acled_score": 0,
-      "manifold_score": 26,
-      "manifold_markets": [
-        {
-          "title": "Will South Korea withdraw from the NPT by 2026?",
-          "prob": 0.029496570289628123,
-          "contrib": 26.2,
+          "prob": 0.2994483928203148,
+          "contrib": 18.9,
           "severity": "peace",
           "source": "manifold"
         }
@@ -164,10 +102,17 @@
       ]
     },
     "Iran": {
-      "score": 53,
+      "score": 100,
       "acled_score": 0,
-      "manifold_score": 53,
+      "manifold_score": 100,
       "manifold_markets": [
+        {
+          "title": "Will the US or Israel threaten to use nuclear weapons against Iran before 2029?",
+          "prob": 0.5830011239099497,
+          "contrib": 139.9,
+          "severity": "catastrophic",
+          "source": "manifold"
+        },
         {
           "title": "The US bomb Iran at least once during August?",
           "prob": 0.8555047271845161,
@@ -195,12 +140,98 @@
           "contrib": 12.8,
           "severity": "conflict",
           "source": "manifold"
+        }
+      ],
+      "sources": [
+        "Manifold"
+      ]
+    },
+    "Israel": {
+      "score": 100,
+      "acled_score": 0,
+      "manifold_score": 100,
+      "manifold_markets": [
+        {
+          "title": "Will the US or Israel threaten to use nuclear weapons against Iran before 2029?",
+          "prob": 0.5830011239099497,
+          "contrib": 139.9,
+          "severity": "catastrophic",
+          "source": "manifold"
         },
         {
-          "title": "Will the US invade Iran's Kharg Island  by the end of 2026?",
-          "prob": 0.1136199862112443,
-          "contrib": 5.7,
+          "title": "Will Israel attack Iran in July 2026?",
+          "prob": 0.22028859079737387,
+          "contrib": 1.8,
+          "severity": "geo",
+          "source": "manifold"
+        },
+        {
+          "title": "Assembly of  Experts hit by US or Israeli attack in 2026 and at least one cleric dies",
+          "prob": 0.06721001592463534,
+          "contrib": 0.5,
+          "severity": "geo",
+          "source": "manifold"
+        }
+      ],
+      "sources": [
+        "Manifold"
+      ]
+    },
+    "United States": {
+      "score": 100,
+      "acled_score": 0,
+      "manifold_score": 100,
+      "manifold_markets": [
+        {
+          "title": "Will the US or Israel threaten to use nuclear weapons against Iran before 2029?",
+          "prob": 0.5830011239099497,
+          "contrib": 139.9,
+          "severity": "catastrophic",
+          "source": "manifold"
+        },
+        {
+          "title": "Will the United States government detonate a nuclear weapon anywhere in 2026?",
+          "prob": 0.11299173184504342,
+          "contrib": 27.1,
+          "severity": "catastrophic",
+          "source": "manifold"
+        },
+        {
+          "title": "The US bomb Iran at least once during August?",
+          "prob": 0.8555047271845161,
+          "contrib": 23.1,
+          "severity": "conflict",
+          "source": "manifold"
+        },
+        {
+          "title": "US x Iran permanent peace deal by December 31 ? [Not Polymarket]",
+          "prob": 0.20211243938065515,
+          "contrib": 21.5,
+          "severity": "peace",
+          "source": "manifold"
+        },
+        {
+          "title": "Will China invade any territory of Taiwan before Trump leaves office?",
+          "prob": 0.39984544994042615,
+          "contrib": 20,
           "severity": "major_war",
+          "source": "manifold"
+        }
+      ],
+      "sources": [
+        "Manifold"
+      ]
+    },
+    "South Korea": {
+      "score": 26,
+      "acled_score": 0,
+      "manifold_score": 26,
+      "manifold_markets": [
+        {
+          "title": "Will South Korea withdraw from the NPT by 2026?",
+          "prob": 0.029496570289628123,
+          "contrib": 26.2,
+          "severity": "peace",
           "source": "manifold"
         }
       ],
@@ -316,38 +347,14 @@
       ]
     },
     "Cuba": {
-      "score": 7,
+      "score": 6,
       "acled_score": 0,
-      "manifold_score": 7,
+      "manifold_score": 6,
       "manifold_markets": [
         {
           "title": "Will Trump attack Cuba by the end of his term?",
-          "prob": 0.8416261234315582,
-          "contrib": 6.7,
-          "severity": "geo",
-          "source": "manifold"
-        }
-      ],
-      "sources": [
-        "Manifold"
-      ]
-    },
-    "Israel": {
-      "score": 2,
-      "acled_score": 0,
-      "manifold_score": 2,
-      "manifold_markets": [
-        {
-          "title": "Will Israel attack Iran in July 2026?",
-          "prob": 0.23332620718728736,
-          "contrib": 1.9,
-          "severity": "geo",
-          "source": "manifold"
-        },
-        {
-          "title": "Assembly of  Experts hit by US or Israeli attack in 2026 and at least one cleric dies",
-          "prob": 0.06721001592463534,
-          "contrib": 0.5,
+          "prob": 0.7527060100573414,
+          "contrib": 6,
           "severity": "geo",
           "source": "manifold"
         }
