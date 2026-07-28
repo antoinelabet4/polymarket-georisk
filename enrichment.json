@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-27T23:59:02.515Z",
+  "timestamp": "2026-07-28T03:13:06.560Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -102,9 +102,9 @@
       ]
     },
     "United States": {
-      "score": 61,
+      "score": 58,
       "acled_score": 0,
-      "manifold_score": 61,
+      "manifold_score": 58,
       "manifold_markets": [
         {
           "title": "Will the United States government detonate a nuclear weapon anywhere in 2026?",
@@ -121,13 +121,6 @@
           "source": "manifold"
         },
         {
-          "title": "The US bomb Iran at least once during August?",
-          "prob": 0.7781510237329966,
-          "contrib": 21,
-          "severity": "conflict",
-          "source": "manifold"
-        },
-        {
           "title": "Will China invade any territory of Taiwan before Trump leaves office?",
           "prob": 0.39984544994042615,
           "contrib": 20,
@@ -139,6 +132,13 @@
           "prob": 0.2841435554814701,
           "contrib": 14.2,
           "severity": "major_war",
+          "source": "manifold"
+        },
+        {
+          "title": "Will the US and Iran be at war on January 1st, 2027?",
+          "prob": 0.4728344825934978,
+          "contrib": 12.8,
+          "severity": "conflict",
           "source": "manifold"
         }
       ],
@@ -164,22 +164,15 @@
       ]
     },
     "Iran": {
-      "score": 51,
+      "score": 44,
       "acled_score": 0,
-      "manifold_score": 51,
+      "manifold_score": 44,
       "manifold_markets": [
         {
           "title": "US x Iran permanent peace deal by December 31 ? [Not Polymarket]",
           "prob": 0.20365711224082209,
           "contrib": 21.5,
           "severity": "peace",
-          "source": "manifold"
-        },
-        {
-          "title": "The US bomb Iran at least once during August?",
-          "prob": 0.7781510237329966,
-          "contrib": 21,
-          "severity": "conflict",
           "source": "manifold"
         },
         {
@@ -200,6 +193,13 @@
           "title": "Will the US invade Iran's Kharg Island  by the end of 2026?",
           "prob": 0.09663867479496455,
           "contrib": 4.8,
+          "severity": "major_war",
+          "source": "manifold"
+        },
+        {
+          "title": "Will the US invade Iran's Kharg Island  by the end of 2026?",
+          "prob": 0.08648786945383086,
+          "contrib": 4.3,
           "severity": "major_war",
           "source": "manifold"
         }
@@ -366,6 +366,30 @@
         "Manifold"
       ]
     },
+    "Israel": {
+      "score": 2,
+      "acled_score": 0,
+      "manifold_score": 2,
+      "manifold_markets": [
+        {
+          "title": "Will Israel attack Iran in July 2026?",
+          "prob": 0.20999999999999996,
+          "contrib": 1.7,
+          "severity": "geo",
+          "source": "manifold"
+        },
+        {
+          "title": "Assembly of  Experts hit by US or Israeli attack in 2026 and at least one cleric dies",
+          "prob": 0.06721001592463534,
+          "contrib": 0.5,
+          "severity": "geo",
+          "source": "manifold"
+        }
+      ],
+      "sources": [
+        "Manifold"
+      ]
+    },
     "Ethiopia": {
       "score": 1,
       "acled_score": 0,
@@ -409,23 +433,6 @@
           "title": "Will Hamas actually disarm in 2026?",
           "prob": 0.07149444007389431,
           "contrib": 0.6,
-          "severity": "geo",
-          "source": "manifold"
-        }
-      ],
-      "sources": [
-        "Manifold"
-      ]
-    },
-    "Israel": {
-      "score": 1,
-      "acled_score": 0,
-      "manifold_score": 1,
-      "manifold_markets": [
-        {
-          "title": "Assembly of  Experts hit by US or Israeli attack in 2026 and at least one cleric dies",
-          "prob": 0.06721001592463534,
-          "contrib": 0.5,
           "severity": "geo",
           "source": "manifold"
         }
