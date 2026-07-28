@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-28T16:03:30.924Z",
+  "timestamp": "2026-07-28T18:10:22.813Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -101,94 +101,11 @@
         "Manifold"
       ]
     },
-    "Iran": {
-      "score": 100,
-      "acled_score": 0,
-      "manifold_score": 100,
-      "manifold_markets": [
-        {
-          "title": "Will the US or Israel threaten to use nuclear weapons against Iran before 2029?",
-          "prob": 0.5830011239099497,
-          "contrib": 139.9,
-          "severity": "catastrophic",
-          "source": "manifold"
-        },
-        {
-          "title": "US x Iran permanent peace deal by December 31 ? [Not Polymarket]",
-          "prob": 0.20365711224082209,
-          "contrib": 21.5,
-          "severity": "peace",
-          "source": "manifold"
-        },
-        {
-          "title": "The US bomb Iran at least once during August?",
-          "prob": 0.7679819350018205,
-          "contrib": 20.7,
-          "severity": "conflict",
-          "source": "manifold"
-        },
-        {
-          "title": "Will the US and Iran be at war on January 1st, 2027?",
-          "prob": 0.4728344825934978,
-          "contrib": 12.8,
-          "severity": "conflict",
-          "source": "manifold"
-        },
-        {
-          "title": "Will the US invade Iran's Kharg Island  by the end of 2026?",
-          "prob": 0.09663867479496455,
-          "contrib": 4.8,
-          "severity": "major_war",
-          "source": "manifold"
-        }
-      ],
-      "sources": [
-        "Manifold"
-      ]
-    },
-    "Israel": {
-      "score": 100,
-      "acled_score": 0,
-      "manifold_score": 100,
-      "manifold_markets": [
-        {
-          "title": "Will the US or Israel threaten to use nuclear weapons against Iran before 2029?",
-          "prob": 0.5830011239099497,
-          "contrib": 139.9,
-          "severity": "catastrophic",
-          "source": "manifold"
-        },
-        {
-          "title": "Will Israel attack Iran in July 2026?",
-          "prob": 0.16182625942756973,
-          "contrib": 1.3,
-          "severity": "geo",
-          "source": "manifold"
-        },
-        {
-          "title": "Assembly of  Experts hit by US or Israeli attack in 2026 and at least one cleric dies",
-          "prob": 0.06721001592463534,
-          "contrib": 0.5,
-          "severity": "geo",
-          "source": "manifold"
-        }
-      ],
-      "sources": [
-        "Manifold"
-      ]
-    },
     "United States": {
-      "score": 100,
+      "score": 61,
       "acled_score": 0,
-      "manifold_score": 100,
+      "manifold_score": 61,
       "manifold_markets": [
-        {
-          "title": "Will the US or Israel threaten to use nuclear weapons against Iran before 2029?",
-          "prob": 0.5830011239099497,
-          "contrib": 139.9,
-          "severity": "catastrophic",
-          "source": "manifold"
-        },
         {
           "title": "Will the United States government detonate a nuclear weapon anywhere in 2026?",
           "prob": 0.11299173184504342,
@@ -216,6 +133,13 @@
           "contrib": 20,
           "severity": "major_war",
           "source": "manifold"
+        },
+        {
+          "title": "Will China invade the Kinmen Islands of Taiwan before Trump leaves office?",
+          "prob": 0.2841435554814701,
+          "contrib": 14.2,
+          "severity": "major_war",
+          "source": "manifold"
         }
       ],
       "sources": [
@@ -232,6 +156,51 @@
           "prob": 0.029496570289628123,
           "contrib": 26.2,
           "severity": "peace",
+          "source": "manifold"
+        }
+      ],
+      "sources": [
+        "Manifold"
+      ]
+    },
+    "Iran": {
+      "score": 51,
+      "acled_score": 0,
+      "manifold_score": 51,
+      "manifold_markets": [
+        {
+          "title": "US x Iran permanent peace deal by December 31 ? [Not Polymarket]",
+          "prob": 0.20365711224082209,
+          "contrib": 21.5,
+          "severity": "peace",
+          "source": "manifold"
+        },
+        {
+          "title": "The US bomb Iran at least once during August?",
+          "prob": 0.7679819350018205,
+          "contrib": 20.7,
+          "severity": "conflict",
+          "source": "manifold"
+        },
+        {
+          "title": "Will Iran sign a peace deal with the middle east countries",
+          "prob": 0.2740598228667394,
+          "contrib": 19.6,
+          "severity": "peace",
+          "source": "manifold"
+        },
+        {
+          "title": "Will the US and Iran be at war on January 1st, 2027?",
+          "prob": 0.4728344825934978,
+          "contrib": 12.8,
+          "severity": "conflict",
+          "source": "manifold"
+        },
+        {
+          "title": "Will the US invade Iran's Kharg Island  by the end of 2026?",
+          "prob": 0.12570369586274086,
+          "contrib": 6.3,
+          "severity": "major_war",
           "source": "manifold"
         }
       ],
@@ -397,6 +366,30 @@
         "Manifold"
       ]
     },
+    "Israel": {
+      "score": 1,
+      "acled_score": 0,
+      "manifold_score": 1,
+      "manifold_markets": [
+        {
+          "title": "Will Israel attack Iran in July 2026?",
+          "prob": 0.13150713162484956,
+          "contrib": 1.1,
+          "severity": "geo",
+          "source": "manifold"
+        },
+        {
+          "title": "Assembly of  Experts hit by US or Israeli attack in 2026 and at least one cleric dies",
+          "prob": 0.06721001592463534,
+          "contrib": 0.5,
+          "severity": "geo",
+          "source": "manifold"
+        }
+      ],
+      "sources": [
+        "Manifold"
+      ]
+    },
     "Ethiopia": {
       "score": 1,
       "acled_score": 0,
@@ -404,8 +397,8 @@
       "manifold_markets": [
         {
           "title": "Will armed conflict break out between Ethiopia and Eritrea by December 31, 2026?",
-          "prob": 0.17734459563222715,
-          "contrib": 1.4,
+          "prob": 0.09135518385668367,
+          "contrib": 0.7,
           "severity": "geo",
           "source": "manifold"
         }
@@ -421,8 +414,8 @@
       "manifold_markets": [
         {
           "title": "Will armed conflict break out between Ethiopia and Eritrea by December 31, 2026?",
-          "prob": 0.17734459563222715,
-          "contrib": 1.4,
+          "prob": 0.09135518385668367,
+          "contrib": 0.7,
           "severity": "geo",
           "source": "manifold"
         }
