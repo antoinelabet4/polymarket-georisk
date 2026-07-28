@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-28T13:55:09.543Z",
+  "timestamp": "2026-07-28T16:03:30.924Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -128,17 +128,17 @@
           "source": "manifold"
         },
         {
-          "title": "Will Iran sign a peace deal with the middle east countries",
-          "prob": 0.2740598228667394,
-          "contrib": 19.6,
-          "severity": "peace",
-          "source": "manifold"
-        },
-        {
           "title": "Will the US and Iran be at war on January 1st, 2027?",
           "prob": 0.4728344825934978,
           "contrib": 12.8,
           "severity": "conflict",
+          "source": "manifold"
+        },
+        {
+          "title": "Will the US invade Iran's Kharg Island  by the end of 2026?",
+          "prob": 0.09663867479496455,
+          "contrib": 4.8,
+          "severity": "major_war",
           "source": "manifold"
         }
       ],
@@ -370,7 +370,7 @@
       "manifold_markets": [
         {
           "title": "Will India settle their Kashmir conflict with Pakistan before January 1st 2035?",
-          "prob": 0.26817084878347247,
+          "prob": 0.26473489471604944,
           "contrib": 2.1,
           "severity": "geo",
           "source": "manifold"
@@ -387,7 +387,7 @@
       "manifold_markets": [
         {
           "title": "Will India settle their Kashmir conflict with Pakistan before January 1st 2035?",
-          "prob": 0.26817084878347247,
+          "prob": 0.26473489471604944,
           "contrib": 2.1,
           "severity": "geo",
           "source": "manifold"
