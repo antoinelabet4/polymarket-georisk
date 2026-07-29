@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-28T23:09:02.689Z",
+  "timestamp": "2026-07-29T02:10:32.391Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -7,7 +7,7 @@
     },
     "manifold": {
       "configured": true,
-      "markets": 41
+      "markets": 40
     }
   },
   "countries": {
@@ -159,15 +159,15 @@
           "source": "manifold"
         },
         {
-          "title": "Will Israel attack Iran in July 2026?",
-          "prob": 0.08199536829080087,
-          "contrib": 0.7,
+          "title": "Assembly of  Experts hit by US or Israeli attack in 2026 and at least one cleric dies",
+          "prob": 0.06721001592463534,
+          "contrib": 0.5,
           "severity": "geo",
           "source": "manifold"
         },
         {
-          "title": "Assembly of  Experts hit by US or Israeli attack in 2026 and at least one cleric dies",
-          "prob": 0.06721001592463534,
+          "title": "Will Israel attack Iran in July 2026?",
+          "prob": 0.06734668725910783,
           "contrib": 0.5,
           "severity": "geo",
           "source": "manifold"
@@ -190,13 +190,6 @@
           "source": "manifold"
         },
         {
-          "title": "Will the United States government detonate a nuclear weapon anywhere in 2026?",
-          "prob": 0.11299173184504342,
-          "contrib": 27.1,
-          "severity": "catastrophic",
-          "source": "manifold"
-        },
-        {
           "title": "US x Iran permanent peace deal by December 31 ? [Not Polymarket]",
           "prob": 0.20365711224082209,
           "contrib": 21.5,
@@ -214,6 +207,13 @@
           "title": "Will China invade any territory of Taiwan before Trump leaves office?",
           "prob": 0.39984544994042615,
           "contrib": 20,
+          "severity": "major_war",
+          "source": "manifold"
+        },
+        {
+          "title": "Will China invade the Kinmen Islands of Taiwan before Trump leaves office?",
+          "prob": 0.2841435554814701,
+          "contrib": 14.2,
           "severity": "major_war",
           "source": "manifold"
         }
