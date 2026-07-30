@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-30T11:48:23.586Z",
+  "timestamp": "2026-07-30T13:49:08.073Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -7,7 +7,7 @@
     },
     "manifold": {
       "configured": true,
-      "markets": 41
+      "markets": 42
     }
   },
   "countries": {
@@ -114,17 +114,17 @@
           "source": "manifold"
         },
         {
+          "title": "The US bomb Iran at least once during August?",
+          "prob": 0.8432442741218629,
+          "contrib": 22.8,
+          "severity": "conflict",
+          "source": "manifold"
+        },
+        {
           "title": "US x Iran permanent peace deal by December 31 ? [Not Polymarket]",
           "prob": 0.20365711224082209,
           "contrib": 21.5,
           "severity": "peace",
-          "source": "manifold"
-        },
-        {
-          "title": "The US bomb Iran at least once during August?",
-          "prob": 0.7679819350018205,
-          "contrib": 20.7,
-          "severity": "conflict",
           "source": "manifold"
         },
         {
@@ -197,17 +197,17 @@
           "source": "manifold"
         },
         {
+          "title": "The US bomb Iran at least once during August?",
+          "prob": 0.8432442741218629,
+          "contrib": 22.8,
+          "severity": "conflict",
+          "source": "manifold"
+        },
+        {
           "title": "US x Iran permanent peace deal by December 31 ? [Not Polymarket]",
           "prob": 0.20365711224082209,
           "contrib": 21.5,
           "severity": "peace",
-          "source": "manifold"
-        },
-        {
-          "title": "The US bomb Iran at least once during August?",
-          "prob": 0.7679819350018205,
-          "contrib": 20.7,
-          "severity": "conflict",
           "source": "manifold"
         },
         {
