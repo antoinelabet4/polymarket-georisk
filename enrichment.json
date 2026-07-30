@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-30T03:53:05.816Z",
+  "timestamp": "2026-07-30T06:23:17.796Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -128,17 +128,17 @@
           "source": "manifold"
         },
         {
+          "title": "Will Iran sign a peace deal with the middle east countries",
+          "prob": 0.2740598228667394,
+          "contrib": 19.6,
+          "severity": "peace",
+          "source": "manifold"
+        },
+        {
           "title": "Will the US and Iran be at war on January 1st, 2027?",
           "prob": 0.4728344825934978,
           "contrib": 12.8,
           "severity": "conflict",
-          "source": "manifold"
-        },
-        {
-          "title": "Will the US invade Iran's Kharg Island  by the end of 2026?",
-          "prob": 0.13468266002784635,
-          "contrib": 6.7,
-          "severity": "major_war",
           "source": "manifold"
         }
       ],
@@ -160,8 +160,8 @@
         },
         {
           "title": "Will Israel attack Iran in July 2026?",
-          "prob": 0.08412682348562978,
-          "contrib": 0.7,
+          "prob": 0.10481814717759892,
+          "contrib": 0.8,
           "severity": "geo",
           "source": "manifold"
         },
@@ -267,8 +267,8 @@
         },
         {
           "title": "Will China invade the Kinmen Islands of Taiwan before Trump leaves office?",
-          "prob": 0.2841435554814701,
-          "contrib": 14.2,
+          "prob": 0.27799468318249415,
+          "contrib": 13.9,
           "severity": "major_war",
           "source": "manifold"
         },
@@ -312,8 +312,8 @@
         },
         {
           "title": "Will China invade the Kinmen Islands of Taiwan before Trump leaves office?",
-          "prob": 0.2841435554814701,
-          "contrib": 14.2,
+          "prob": 0.27799468318249415,
+          "contrib": 13.9,
           "severity": "major_war",
           "source": "manifold"
         },
