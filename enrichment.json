@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-31T06:07:46.710Z",
+  "timestamp": "2026-07-31T09:40:37.191Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -159,15 +159,15 @@
           "source": "manifold"
         },
         {
-          "title": "Will Israel attack Iran in July 2026?",
-          "prob": 0.07934085767396512,
-          "contrib": 0.6,
+          "title": "Assembly of  Experts hit by US or Israeli attack in 2026 and at least one cleric dies",
+          "prob": 0.06721001592463534,
+          "contrib": 0.5,
           "severity": "geo",
           "source": "manifold"
         },
         {
-          "title": "Assembly of  Experts hit by US or Israeli attack in 2026 and at least one cleric dies",
-          "prob": 0.06721001592463534,
+          "title": "Will Israel attack Iran in July 2026?",
+          "prob": 0.06436320997835741,
           "contrib": 0.5,
           "severity": "geo",
           "source": "manifold"
@@ -190,9 +190,9 @@
           "source": "manifold"
         },
         {
-          "title": "Will the United States government detonate a nuclear weapon anywhere in 2026?",
-          "prob": 0.11299173184504342,
-          "contrib": 27.1,
+          "title": "Will a nuclear weapon be detonated in a war during the 2nd Trump administration?",
+          "prob": 0.12575882830611307,
+          "contrib": 30.2,
           "severity": "catastrophic",
           "source": "manifold"
         },
