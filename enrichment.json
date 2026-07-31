@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-31T21:00:02.575Z",
+  "timestamp": "2026-07-31T22:12:00.909Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -100,6 +100,13 @@
           "source": "manifold"
         },
         {
+          "title": "Will the United States government detonate a nuclear weapon anywhere in 2026?",
+          "prob": 0.11299173184504342,
+          "contrib": 27.1,
+          "severity": "catastrophic",
+          "source": "manifold"
+        },
+        {
           "title": "The US bomb Iran at least once during August?",
           "prob": 0.8432442741218629,
           "contrib": 22.8,
@@ -117,13 +124,6 @@
           "title": "Will China invade any territory of Taiwan before Trump leaves office?",
           "prob": 0.39984544994042615,
           "contrib": 20,
-          "severity": "major_war",
-          "source": "manifold"
-        },
-        {
-          "title": "Will China invade the Kinmen Islands of Taiwan before Trump leaves office?",
-          "prob": 0.27799468318249415,
-          "contrib": 13.9,
           "severity": "major_war",
           "source": "manifold"
         }
