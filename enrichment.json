@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-01T17:08:49.495Z",
+  "timestamp": "2026-08-01T19:02:20.770Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -132,8 +132,8 @@
       "manifold_markets": [
         {
           "title": "Will part of the agreed ceasefire deal between Russia and Ukraine involve a minimum 10 year block on joining NATO or EU?",
-          "prob": 0.5958282050661089,
-          "contrib": 143,
+          "prob": 0.6036718989937535,
+          "contrib": 144.9,
           "severity": "catastrophic",
           "source": "manifold"
         },
@@ -177,8 +177,8 @@
       "manifold_markets": [
         {
           "title": "Will part of the agreed ceasefire deal between Russia and Ukraine involve a minimum 10 year block on joining NATO or EU?",
-          "prob": 0.5958282050661089,
-          "contrib": 143,
+          "prob": 0.6036718989937535,
+          "contrib": 144.9,
           "severity": "catastrophic",
           "source": "manifold"
         },
