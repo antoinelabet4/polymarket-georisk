@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-01T11:13:15.557Z",
+  "timestamp": "2026-08-01T13:09:22.309Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -18,8 +18,8 @@
       "manifold_markets": [
         {
           "title": "Will the US or Israel threaten to use nuclear weapons against Iran before 2029?",
-          "prob": 0.6716098412707993,
-          "contrib": 161.2,
+          "prob": 0.6101984812071233,
+          "contrib": 146.4,
           "severity": "catastrophic",
           "source": "manifold"
         },
@@ -63,8 +63,8 @@
       "manifold_markets": [
         {
           "title": "Will the US or Israel threaten to use nuclear weapons against Iran before 2029?",
-          "prob": 0.6716098412707993,
-          "contrib": 161.2,
+          "prob": 0.6101984812071233,
+          "contrib": 146.4,
           "severity": "catastrophic",
           "source": "manifold"
         },
@@ -87,8 +87,8 @@
       "manifold_markets": [
         {
           "title": "Will the US or Israel threaten to use nuclear weapons against Iran before 2029?",
-          "prob": 0.6716098412707993,
-          "contrib": 161.2,
+          "prob": 0.6101984812071233,
+          "contrib": 146.4,
           "severity": "catastrophic",
           "source": "manifold"
         },
