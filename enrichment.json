@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-05T03:56:53.808Z",
+  "timestamp": "2026-08-05T06:27:43.917Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -25,8 +25,8 @@
         },
         {
           "title": "The US bomb Iran at least once during August?",
-          "prob": 0.8638916816915694,
-          "contrib": 23.3,
+          "prob": 0.872789044041337,
+          "contrib": 23.6,
           "severity": "conflict",
           "source": "manifold"
         },
@@ -94,8 +94,8 @@
         },
         {
           "title": "The US bomb Iran at least once during August?",
-          "prob": 0.8638916816915694,
-          "contrib": 23.3,
+          "prob": 0.872789044041337,
+          "contrib": 23.6,
           "severity": "conflict",
           "source": "manifold"
         },
