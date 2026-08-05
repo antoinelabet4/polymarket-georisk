@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-05T14:01:29.179Z",
+  "timestamp": "2026-08-05T16:28:34.515Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -46,8 +46,8 @@
         },
         {
           "title": "Will the US and Iran be at war on January 1st, 2027?",
-          "prob": 0.4728344825934978,
-          "contrib": 12.8,
+          "prob": 0.4529092375821891,
+          "contrib": 12.2,
           "severity": "conflict",
           "source": "manifold"
         }
@@ -431,8 +431,8 @@
       "manifold_markets": [
         {
           "title": "Will Hamas actually disarm in 2026?",
-          "prob": 0.08421800042983339,
-          "contrib": 0.7,
+          "prob": 0.07341750328601358,
+          "contrib": 0.6,
           "severity": "geo",
           "source": "manifold"
         }
