@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-07T15:51:58.580Z",
+  "timestamp": "2026-08-07T16:49:30.769Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -7,7 +7,7 @@
     },
     "manifold": {
       "configured": true,
-      "markets": 41
+      "markets": 42
     }
   },
   "countries": {
@@ -397,7 +397,7 @@
       "manifold_markets": [
         {
           "title": "Will armed conflict break out between Ethiopia and Eritrea by December 31, 2026?",
-          "prob": 0.09135518385668367,
+          "prob": 0.08630331076375665,
           "contrib": 0.7,
           "severity": "geo",
           "source": "manifold"
@@ -414,7 +414,7 @@
       "manifold_markets": [
         {
           "title": "Will armed conflict break out between Ethiopia and Eritrea by December 31, 2026?",
-          "prob": 0.09135518385668367,
+          "prob": 0.08630331076375665,
           "contrib": 0.7,
           "severity": "geo",
           "source": "manifold"
