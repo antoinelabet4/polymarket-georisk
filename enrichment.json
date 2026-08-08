@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-08T17:24:52.963Z",
+  "timestamp": "2026-08-08T18:31:04.633Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -7,7 +7,7 @@
     },
     "manifold": {
       "configured": true,
-      "markets": 43
+      "markets": 44
     }
   },
   "countries": {
@@ -153,8 +153,8 @@
         },
         {
           "title": "Russia x Ukraine ceasefire in 2026?",
-          "prob": 0.19503445149220458,
-          "contrib": 21.7,
+          "prob": 0.18039697722545253,
+          "contrib": 22.1,
           "severity": "peace",
           "source": "manifold"
         },
@@ -198,8 +198,8 @@
         },
         {
           "title": "Russia x Ukraine ceasefire in 2026?",
-          "prob": 0.19503445149220458,
-          "contrib": 21.7,
+          "prob": 0.18039697722545253,
+          "contrib": 22.1,
           "severity": "peace",
           "source": "manifold"
         },
