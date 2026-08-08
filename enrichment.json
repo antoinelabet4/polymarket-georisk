@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-07T23:29:33.302Z",
+  "timestamp": "2026-08-08T01:15:12.428Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -7,7 +7,7 @@
     },
     "manifold": {
       "configured": true,
-      "markets": 43
+      "markets": 44
     }
   },
   "countries": {
