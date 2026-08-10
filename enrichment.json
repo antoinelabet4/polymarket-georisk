@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-10T07:23:27.827Z",
+  "timestamp": "2026-08-10T09:14:37.616Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -7,10 +7,124 @@
     },
     "manifold": {
       "configured": true,
-      "markets": 41
+      "markets": 42
     }
   },
   "countries": {
+    "Iran": {
+      "score": 100,
+      "acled_score": 0,
+      "manifold_score": 100,
+      "manifold_markets": [
+        {
+          "title": "Will the US or Israel threaten to use nuclear weapons against Iran before 2029?",
+          "prob": 0.6101984812071233,
+          "contrib": 146.4,
+          "severity": "catastrophic",
+          "source": "manifold"
+        },
+        {
+          "title": "The US bomb Iran at least once during August?",
+          "prob": 0.872789044041337,
+          "contrib": 23.6,
+          "severity": "conflict",
+          "source": "manifold"
+        },
+        {
+          "title": "US x Iran permanent peace deal by December 31 ? [Not Polymarket]",
+          "prob": 0.20365711224082209,
+          "contrib": 21.5,
+          "severity": "peace",
+          "source": "manifold"
+        },
+        {
+          "title": "Will Iran sign a peace deal with the middle east countries",
+          "prob": 0.2740598228667394,
+          "contrib": 19.6,
+          "severity": "peace",
+          "source": "manifold"
+        },
+        {
+          "title": "Will the US and Iran be at war on January 1st, 2027?",
+          "prob": 0.5625264611979723,
+          "contrib": 15.2,
+          "severity": "conflict",
+          "source": "manifold"
+        }
+      ],
+      "sources": [
+        "Manifold"
+      ]
+    },
+    "Israel": {
+      "score": 100,
+      "acled_score": 0,
+      "manifold_score": 100,
+      "manifold_markets": [
+        {
+          "title": "Will the US or Israel threaten to use nuclear weapons against Iran before 2029?",
+          "prob": 0.6101984812071233,
+          "contrib": 146.4,
+          "severity": "catastrophic",
+          "source": "manifold"
+        },
+        {
+          "title": "Assembly of  Experts hit by US or Israeli attack in 2026 and at least one cleric dies",
+          "prob": 0.06721001592463534,
+          "contrib": 0.5,
+          "severity": "geo",
+          "source": "manifold"
+        }
+      ],
+      "sources": [
+        "Manifold"
+      ]
+    },
+    "United States": {
+      "score": 100,
+      "acled_score": 0,
+      "manifold_score": 100,
+      "manifold_markets": [
+        {
+          "title": "Will the US or Israel threaten to use nuclear weapons against Iran before 2029?",
+          "prob": 0.6101984812071233,
+          "contrib": 146.4,
+          "severity": "catastrophic",
+          "source": "manifold"
+        },
+        {
+          "title": "The US bomb Iran at least once during August?",
+          "prob": 0.872789044041337,
+          "contrib": 23.6,
+          "severity": "conflict",
+          "source": "manifold"
+        },
+        {
+          "title": "US x Iran permanent peace deal by December 31 ? [Not Polymarket]",
+          "prob": 0.20365711224082209,
+          "contrib": 21.5,
+          "severity": "peace",
+          "source": "manifold"
+        },
+        {
+          "title": "Will China invade any territory of Taiwan before Trump leaves office?",
+          "prob": 0.39984544994042615,
+          "contrib": 20,
+          "severity": "major_war",
+          "source": "manifold"
+        },
+        {
+          "title": "Will the US and Iran be at war on January 1st, 2027?",
+          "prob": 0.5625264611979723,
+          "contrib": 15.2,
+          "severity": "conflict",
+          "source": "manifold"
+        }
+      ],
+      "sources": [
+        "Manifold"
+      ]
+    },
     "Ukraine": {
       "score": 100,
       "acled_score": 0,
@@ -111,96 +225,6 @@
           "prob": 0.03035875540501285,
           "contrib": 26.2,
           "severity": "peace",
-          "source": "manifold"
-        }
-      ],
-      "sources": [
-        "Manifold"
-      ]
-    },
-    "Iran": {
-      "score": 55,
-      "acled_score": 0,
-      "manifold_score": 55,
-      "manifold_markets": [
-        {
-          "title": "The US bomb Iran at least once during August?",
-          "prob": 0.872789044041337,
-          "contrib": 23.6,
-          "severity": "conflict",
-          "source": "manifold"
-        },
-        {
-          "title": "US x Iran permanent peace deal by December 31 ? [Not Polymarket]",
-          "prob": 0.20365711224082209,
-          "contrib": 21.5,
-          "severity": "peace",
-          "source": "manifold"
-        },
-        {
-          "title": "Will Iran sign a peace deal with the middle east countries",
-          "prob": 0.2740598228667394,
-          "contrib": 19.6,
-          "severity": "peace",
-          "source": "manifold"
-        },
-        {
-          "title": "Will the US and Iran be at war on January 1st, 2027?",
-          "prob": 0.5625264611979723,
-          "contrib": 15.2,
-          "severity": "conflict",
-          "source": "manifold"
-        },
-        {
-          "title": "Will the US and Iran be at war on January 1st, 2027?",
-          "prob": 0.5458393826262178,
-          "contrib": 14.7,
-          "severity": "conflict",
-          "source": "manifold"
-        }
-      ],
-      "sources": [
-        "Manifold"
-      ]
-    },
-    "United States": {
-      "score": 55,
-      "acled_score": 0,
-      "manifold_score": 55,
-      "manifold_markets": [
-        {
-          "title": "The US bomb Iran at least once during August?",
-          "prob": 0.872789044041337,
-          "contrib": 23.6,
-          "severity": "conflict",
-          "source": "manifold"
-        },
-        {
-          "title": "US x Iran permanent peace deal by December 31 ? [Not Polymarket]",
-          "prob": 0.20365711224082209,
-          "contrib": 21.5,
-          "severity": "peace",
-          "source": "manifold"
-        },
-        {
-          "title": "Will China invade any territory of Taiwan before Trump leaves office?",
-          "prob": 0.39984544994042615,
-          "contrib": 20,
-          "severity": "major_war",
-          "source": "manifold"
-        },
-        {
-          "title": "Will the US and Iran be at war on January 1st, 2027?",
-          "prob": 0.5625264611979723,
-          "contrib": 15.2,
-          "severity": "conflict",
-          "source": "manifold"
-        },
-        {
-          "title": "Will the US and Iran be at war on January 1st, 2027?",
-          "prob": 0.5458393826262178,
-          "contrib": 14.7,
-          "severity": "conflict",
           "source": "manifold"
         }
       ],
@@ -408,23 +432,6 @@
         {
           "title": "Will Hamas actually disarm in 2026?",
           "prob": 0.06468508860583803,
-          "contrib": 0.5,
-          "severity": "geo",
-          "source": "manifold"
-        }
-      ],
-      "sources": [
-        "Manifold"
-      ]
-    },
-    "Israel": {
-      "score": 1,
-      "acled_score": 0,
-      "manifold_score": 1,
-      "manifold_markets": [
-        {
-          "title": "Assembly of  Experts hit by US or Israeli attack in 2026 and at least one cleric dies",
-          "prob": 0.06721001592463534,
           "contrib": 0.5,
           "severity": "geo",
           "source": "manifold"
