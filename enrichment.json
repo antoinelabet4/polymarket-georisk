@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-10T21:36:49.353Z",
+  "timestamp": "2026-08-10T22:32:22.167Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -7,7 +7,7 @@
     },
     "manifold": {
       "configured": true,
-      "markets": 43
+      "markets": 44
     }
   },
   "countries": {
@@ -25,8 +25,8 @@
         },
         {
           "title": "The US bomb Iran at least once during August?",
-          "prob": 0.872789044041337,
-          "contrib": 23.6,
+          "prob": 0.8669359591736037,
+          "contrib": 23.4,
           "severity": "conflict",
           "source": "manifold"
         },
@@ -46,8 +46,8 @@
         },
         {
           "title": "Will the US and Iran be at war on January 1st, 2027?",
-          "prob": 0.5569374245047525,
-          "contrib": 15,
+          "prob": 0.5227757195802912,
+          "contrib": 14.1,
           "severity": "conflict",
           "source": "manifold"
         }
@@ -108,8 +108,8 @@
         },
         {
           "title": "The US bomb Iran at least once during August?",
-          "prob": 0.872789044041337,
-          "contrib": 23.6,
+          "prob": 0.8669359591736037,
+          "contrib": 23.4,
           "severity": "conflict",
           "source": "manifold"
         },
