@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-14T22:17:37.465Z",
+  "timestamp": "2026-08-14T23:17:06.619Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -222,7 +222,7 @@
       "manifold_markets": [
         {
           "title": "Will South Korea withdraw from the NPT by 2026?",
-          "prob": 0.03035875540501285,
+          "prob": 0.03025595775914184,
           "contrib": 26.2,
           "severity": "peace",
           "source": "manifold"
