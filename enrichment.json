@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-14T14:14:24.660Z",
+  "timestamp": "2026-08-14T15:45:55.803Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -153,15 +153,15 @@
         },
         {
           "title": "Russia x Ukraine ceasefire in 2026?",
-          "prob": 0.17970562851878386,
-          "contrib": 22.1,
+          "prob": 0.17299060499916913,
+          "contrib": 22.3,
           "severity": "peace",
           "source": "manifold"
         },
         {
-          "title": "By the time a ceasefire or peace treaty between Ukraine & Russia is signed, will UA partially control Crimea?",
-          "prob": 0.2994483928203148,
-          "contrib": 18.9,
+          "title": "Russia x Ukraine ceasefire agreement by Dec 31? [Polymarket]",
+          "prob": 0.2675909448328234,
+          "contrib": 19.8,
           "severity": "peace",
           "source": "manifold"
         }
@@ -198,15 +198,15 @@
         },
         {
           "title": "Russia x Ukraine ceasefire in 2026?",
-          "prob": 0.17970562851878386,
-          "contrib": 22.1,
+          "prob": 0.17299060499916913,
+          "contrib": 22.3,
           "severity": "peace",
           "source": "manifold"
         },
         {
-          "title": "By the time a ceasefire or peace treaty between Ukraine & Russia is signed, will UA partially control Crimea?",
-          "prob": 0.2994483928203148,
-          "contrib": 18.9,
+          "title": "Russia x Ukraine ceasefire agreement by Dec 31? [Polymarket]",
+          "prob": 0.2675909448328234,
+          "contrib": 19.8,
           "severity": "peace",
           "source": "manifold"
         }
