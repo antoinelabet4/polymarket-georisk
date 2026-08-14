@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-14T15:45:55.803Z",
+  "timestamp": "2026-08-14T16:48:31.856Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -153,8 +153,8 @@
         },
         {
           "title": "Russia x Ukraine ceasefire in 2026?",
-          "prob": 0.17299060499916913,
-          "contrib": 22.3,
+          "prob": 0.15940198042755355,
+          "contrib": 22.7,
           "severity": "peace",
           "source": "manifold"
         },
@@ -198,8 +198,8 @@
         },
         {
           "title": "Russia x Ukraine ceasefire in 2026?",
-          "prob": 0.17299060499916913,
-          "contrib": 22.3,
+          "prob": 0.15940198042755355,
+          "contrib": 22.7,
           "severity": "peace",
           "source": "manifold"
         },
@@ -260,8 +260,8 @@
         },
         {
           "title": "Will China invade the Kinmen Islands of Taiwan before Trump leaves office?",
-          "prob": 0.27799468318249415,
-          "contrib": 13.9,
+          "prob": 0.2755863863320864,
+          "contrib": 13.8,
           "severity": "major_war",
           "source": "manifold"
         },
@@ -305,8 +305,8 @@
         },
         {
           "title": "Will China invade the Kinmen Islands of Taiwan before Trump leaves office?",
-          "prob": 0.27799468318249415,
-          "contrib": 13.9,
+          "prob": 0.2755863863320864,
+          "contrib": 13.8,
           "severity": "major_war",
           "source": "manifold"
         },
