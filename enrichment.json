@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-16T18:21:14.582Z",
+  "timestamp": "2026-08-16T19:17:41.831Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -115,8 +115,8 @@
         },
         {
           "title": "Will China invade any territory of Taiwan before Trump leaves office?",
-          "prob": 0.3808101767837886,
-          "contrib": 19,
+          "prob": 0.37531065111037804,
+          "contrib": 18.8,
           "severity": "major_war",
           "source": "manifold"
         }
@@ -233,14 +233,14 @@
       ]
     },
     "China": {
-      "score": 46,
+      "score": 45,
       "acled_score": 0,
-      "manifold_score": 46,
+      "manifold_score": 45,
       "manifold_markets": [
         {
           "title": "Will China invade any territory of Taiwan before Trump leaves office?",
-          "prob": 0.3808101767837886,
-          "contrib": 19,
+          "prob": 0.37531065111037804,
+          "contrib": 18.8,
           "severity": "major_war",
           "source": "manifold"
         },
@@ -278,14 +278,14 @@
       ]
     },
     "Taiwan": {
-      "score": 46,
+      "score": 45,
       "acled_score": 0,
-      "manifold_score": 46,
+      "manifold_score": 45,
       "manifold_markets": [
         {
           "title": "Will China invade any territory of Taiwan before Trump leaves office?",
-          "prob": 0.3808101767837886,
-          "contrib": 19,
+          "prob": 0.37531065111037804,
+          "contrib": 18.8,
           "severity": "major_war",
           "source": "manifold"
         },
