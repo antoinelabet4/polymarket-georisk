@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-18T16:25:25.815Z",
+  "timestamp": "2026-08-18T17:22:08.072Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -7,7 +7,7 @@
     },
     "manifold": {
       "configured": true,
-      "markets": 41
+      "markets": 43
     }
   },
   "countries": {
@@ -39,15 +39,15 @@
         },
         {
           "title": "Russia x Ukraine ceasefire in 2026?",
-          "prob": 0.15940198042755355,
-          "contrib": 22.7,
+          "prob": 0.15371771160825093,
+          "contrib": 22.8,
           "severity": "peace",
           "source": "manifold"
         },
         {
           "title": "Russia x Ukraine ceasefire agreement by Dec 31? [Polymarket]",
-          "prob": 0.2230879048665681,
-          "contrib": 21,
+          "prob": 0.1974378595659153,
+          "contrib": 21.7,
           "severity": "peace",
           "source": "manifold"
         }
@@ -84,16 +84,61 @@
         },
         {
           "title": "Russia x Ukraine ceasefire in 2026?",
-          "prob": 0.15940198042755355,
-          "contrib": 22.7,
+          "prob": 0.15371771160825093,
+          "contrib": 22.8,
           "severity": "peace",
           "source": "manifold"
         },
         {
           "title": "Russia x Ukraine ceasefire agreement by Dec 31? [Polymarket]",
-          "prob": 0.2230879048665681,
-          "contrib": 21,
+          "prob": 0.1974378595659153,
+          "contrib": 21.7,
           "severity": "peace",
+          "source": "manifold"
+        }
+      ],
+      "sources": [
+        "Manifold"
+      ]
+    },
+    "United States": {
+      "score": 65,
+      "acled_score": 0,
+      "manifold_score": 65,
+      "manifold_markets": [
+        {
+          "title": "Will a nuclear weapon be detonated in a war during the 2nd Trump administration?",
+          "prob": 0.12575882830611307,
+          "contrib": 30.2,
+          "severity": "catastrophic",
+          "source": "manifold"
+        },
+        {
+          "title": "Will the United States government detonate a nuclear weapon anywhere in 2026?",
+          "prob": 0.09695920460153169,
+          "contrib": 23.3,
+          "severity": "catastrophic",
+          "source": "manifold"
+        },
+        {
+          "title": "US x Iran permanent peace deal by December 31 ? [Not Polymarket]",
+          "prob": 0.20365711224082209,
+          "contrib": 21.5,
+          "severity": "peace",
+          "source": "manifold"
+        },
+        {
+          "title": "Will China invade any territory of Taiwan before Trump leaves office?",
+          "prob": 0.37531065111037804,
+          "contrib": 18.8,
+          "severity": "major_war",
+          "source": "manifold"
+        },
+        {
+          "title": "Will the US and Iran be at war on January 1st, 2027?",
+          "prob": 0.5123392954828988,
+          "contrib": 13.8,
+          "severity": "conflict",
           "source": "manifold"
         }
       ],
@@ -156,51 +201,6 @@
           "prob": 0.5165593828058503,
           "contrib": 4.1,
           "severity": "geo",
-          "source": "manifold"
-        }
-      ],
-      "sources": [
-        "Manifold"
-      ]
-    },
-    "United States": {
-      "score": 48,
-      "acled_score": 0,
-      "manifold_score": 48,
-      "manifold_markets": [
-        {
-          "title": "US x Iran permanent peace deal by December 31 ? [Not Polymarket]",
-          "prob": 0.20365711224082209,
-          "contrib": 21.5,
-          "severity": "peace",
-          "source": "manifold"
-        },
-        {
-          "title": "Will China invade any territory of Taiwan before Trump leaves office?",
-          "prob": 0.37531065111037804,
-          "contrib": 18.8,
-          "severity": "major_war",
-          "source": "manifold"
-        },
-        {
-          "title": "Will the US and Iran be at war on January 1st, 2027?",
-          "prob": 0.5123392954828988,
-          "contrib": 13.8,
-          "severity": "conflict",
-          "source": "manifold"
-        },
-        {
-          "title": "Will China invade the Kinmen Islands of Taiwan before Trump leaves office?",
-          "prob": 0.2755863863320864,
-          "contrib": 13.8,
-          "severity": "major_war",
-          "source": "manifold"
-        },
-        {
-          "title": "Will the US and Iran be at war on January 1st, 2027?",
-          "prob": 0.49400605700199857,
-          "contrib": 13.3,
-          "severity": "conflict",
           "source": "manifold"
         }
       ],
