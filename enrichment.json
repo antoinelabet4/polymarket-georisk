@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-18T04:30:35.868Z",
+  "timestamp": "2026-08-18T05:23:42.303Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -7,7 +7,7 @@
     },
     "manifold": {
       "configured": true,
-      "markets": 43
+      "markets": 42
     }
   },
   "countries": {
@@ -102,21 +102,14 @@
       ]
     },
     "United States": {
-      "score": 65,
+      "score": 61,
       "acled_score": 0,
-      "manifold_score": 65,
+      "manifold_score": 61,
       "manifold_markets": [
         {
           "title": "Will a nuclear weapon be detonated in a war during the 2nd Trump administration?",
           "prob": 0.12575882830611307,
           "contrib": 30.2,
-          "severity": "catastrophic",
-          "source": "manifold"
-        },
-        {
-          "title": "Will the United States government detonate a nuclear weapon anywhere in 2026?",
-          "prob": 0.09695920460153169,
-          "contrib": 23.3,
           "severity": "catastrophic",
           "source": "manifold"
         },
@@ -138,6 +131,13 @@
           "title": "Will the US and Iran be at war on January 1st, 2027?",
           "prob": 0.5333987720487857,
           "contrib": 14.4,
+          "severity": "conflict",
+          "source": "manifold"
+        },
+        {
+          "title": "Will the US and Iran be at war on January 1st, 2027?",
+          "prob": 0.5253442082066426,
+          "contrib": 14.2,
           "severity": "conflict",
           "source": "manifold"
         }
