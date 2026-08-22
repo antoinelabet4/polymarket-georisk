@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-22T18:22:08.715Z",
+  "timestamp": "2026-08-22T19:19:03.815Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -7,7 +7,7 @@
     },
     "manifold": {
       "configured": true,
-      "markets": 45
+      "markets": 44
     }
   },
   "countries": {
@@ -100,13 +100,6 @@
           "source": "manifold"
         },
         {
-          "title": "Will the United States government detonate a nuclear weapon anywhere in 2026?",
-          "prob": 0.09695920460153169,
-          "contrib": 23.3,
-          "severity": "catastrophic",
-          "source": "manifold"
-        },
-        {
           "title": "US x Iran permanent peace deal by December 31 ? [Not Polymarket]",
           "prob": 0.20365711224082209,
           "contrib": 21.5,
@@ -118,6 +111,13 @@
           "prob": 0.37531065111037804,
           "contrib": 18.8,
           "severity": "major_war",
+          "source": "manifold"
+        },
+        {
+          "title": "Will the US and Iran be at war on January 1st, 2027?",
+          "prob": 0.5123392954828988,
+          "contrib": 13.8,
+          "severity": "conflict",
           "source": "manifold"
         }
       ],
