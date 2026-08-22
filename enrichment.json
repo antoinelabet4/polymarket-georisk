@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-22T16:18:00.562Z",
+  "timestamp": "2026-08-22T17:16:21.194Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -7,7 +7,7 @@
     },
     "manifold": {
       "configured": true,
-      "markets": 45
+      "markets": 40
     }
   },
   "countries": {
@@ -21,13 +21,6 @@
           "prob": 0.6101984812071233,
           "contrib": 146.4,
           "severity": "catastrophic",
-          "source": "manifold"
-        },
-        {
-          "title": "US x Iran permanent peace deal by December 31 ? [Not Polymarket]",
-          "prob": 0.20365711224082209,
-          "contrib": 21.5,
-          "severity": "peace",
           "source": "manifold"
         },
         {
@@ -49,6 +42,13 @@
           "prob": 0.5064987691283516,
           "contrib": 13.7,
           "severity": "conflict",
+          "source": "manifold"
+        },
+        {
+          "title": "Will J.D. Vance publicly criticize the decision to attack Iran before 2029?",
+          "prob": 0.5165593828058503,
+          "contrib": 4.1,
+          "severity": "geo",
           "source": "manifold"
         }
       ],
@@ -100,16 +100,16 @@
           "source": "manifold"
         },
         {
-          "title": "US x Iran permanent peace deal by December 31 ? [Not Polymarket]",
-          "prob": 0.20365711224082209,
-          "contrib": 21.5,
-          "severity": "peace",
-          "source": "manifold"
-        },
-        {
           "title": "Will China invade any territory of Taiwan before Trump leaves office?",
           "prob": 0.37531065111037804,
           "contrib": 18.8,
+          "severity": "major_war",
+          "source": "manifold"
+        },
+        {
+          "title": "Will China invade the Kinmen Islands of Taiwan before Trump leaves office?",
+          "prob": 0.2755863863320864,
+          "contrib": 13.8,
           "severity": "major_war",
           "source": "manifold"
         },
@@ -365,91 +365,6 @@
           "title": "Will Trump attack Cuba by the end of his term?",
           "prob": 0.7394535635043598,
           "contrib": 5.9,
-          "severity": "geo",
-          "source": "manifold"
-        }
-      ],
-      "sources": [
-        "Manifold"
-      ]
-    },
-    "India": {
-      "score": 2,
-      "acled_score": 0,
-      "manifold_score": 2,
-      "manifold_markets": [
-        {
-          "title": "Will India settle their Kashmir conflict with Pakistan before January 1st 2035?",
-          "prob": 0.26473489471604944,
-          "contrib": 2.1,
-          "severity": "geo",
-          "source": "manifold"
-        }
-      ],
-      "sources": [
-        "Manifold"
-      ]
-    },
-    "Pakistan": {
-      "score": 2,
-      "acled_score": 0,
-      "manifold_score": 2,
-      "manifold_markets": [
-        {
-          "title": "Will India settle their Kashmir conflict with Pakistan before January 1st 2035?",
-          "prob": 0.26473489471604944,
-          "contrib": 2.1,
-          "severity": "geo",
-          "source": "manifold"
-        }
-      ],
-      "sources": [
-        "Manifold"
-      ]
-    },
-    "Ethiopia": {
-      "score": 1,
-      "acled_score": 0,
-      "manifold_score": 1,
-      "manifold_markets": [
-        {
-          "title": "Will armed conflict break out between Ethiopia and Eritrea by December 31, 2026?",
-          "prob": 0.08630331076375665,
-          "contrib": 0.7,
-          "severity": "geo",
-          "source": "manifold"
-        }
-      ],
-      "sources": [
-        "Manifold"
-      ]
-    },
-    "Eritrea": {
-      "score": 1,
-      "acled_score": 0,
-      "manifold_score": 1,
-      "manifold_markets": [
-        {
-          "title": "Will armed conflict break out between Ethiopia and Eritrea by December 31, 2026?",
-          "prob": 0.08630331076375665,
-          "contrib": 0.7,
-          "severity": "geo",
-          "source": "manifold"
-        }
-      ],
-      "sources": [
-        "Manifold"
-      ]
-    },
-    "Palestine": {
-      "score": 1,
-      "acled_score": 0,
-      "manifold_score": 1,
-      "manifold_markets": [
-        {
-          "title": "Will Hamas actually disarm in 2026?",
-          "prob": 0.06355422843017929,
-          "contrib": 0.5,
           "severity": "geo",
           "source": "manifold"
         }
