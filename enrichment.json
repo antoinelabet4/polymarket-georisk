@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-23T14:18:22.407Z",
+  "timestamp": "2026-08-23T15:17:23.144Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -7,7 +7,7 @@
     },
     "manifold": {
       "configured": true,
-      "markets": 43
+      "markets": 44
     }
   },
   "countries": {
@@ -102,14 +102,21 @@
       ]
     },
     "United States": {
-      "score": 61,
+      "score": 65,
       "acled_score": 0,
-      "manifold_score": 61,
+      "manifold_score": 65,
       "manifold_markets": [
         {
           "title": "Will a nuclear weapon be detonated in a war during the 2nd Trump administration?",
           "prob": 0.12575882830611307,
           "contrib": 30.2,
+          "severity": "catastrophic",
+          "source": "manifold"
+        },
+        {
+          "title": "Will the United States government detonate a nuclear weapon anywhere in 2026?",
+          "prob": 0.09695920460153169,
+          "contrib": 23.3,
           "severity": "catastrophic",
           "source": "manifold"
         },
@@ -132,13 +139,6 @@
           "prob": 0.5123392954828988,
           "contrib": 13.8,
           "severity": "conflict",
-          "source": "manifold"
-        },
-        {
-          "title": "Will China invade the Kinmen Islands of Taiwan before Trump leaves office?",
-          "prob": 0.2755863863320864,
-          "contrib": 13.8,
-          "severity": "major_war",
           "source": "manifold"
         }
       ],
