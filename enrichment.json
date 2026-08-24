@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-24T01:01:20.182Z",
+  "timestamp": "2026-08-24T02:58:21.806Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -7,7 +7,7 @@
     },
     "manifold": {
       "configured": true,
-      "markets": 44
+      "markets": 45
     }
   },
   "countries": {
@@ -322,23 +322,6 @@
         "Manifold"
       ]
     },
-    "North Korea": {
-      "score": 9,
-      "acled_score": 0,
-      "manifold_score": 9,
-      "manifold_markets": [
-        {
-          "title": "Will North Korea launch another ballistic missile before September 1, 2026?",
-          "prob": 0.31367853592352024,
-          "contrib": 8.5,
-          "severity": "conflict",
-          "source": "manifold"
-        }
-      ],
-      "sources": [
-        "Manifold"
-      ]
-    },
     "Venezuela": {
       "score": 7,
       "acled_score": 0,
@@ -349,6 +332,23 @@
           "prob": 0.9150140872771414,
           "contrib": 7.3,
           "severity": "geo",
+          "source": "manifold"
+        }
+      ],
+      "sources": [
+        "Manifold"
+      ]
+    },
+    "North Korea": {
+      "score": 7,
+      "acled_score": 0,
+      "manifold_score": 7,
+      "manifold_markets": [
+        {
+          "title": "Will North Korea launch another ballistic missile before September 1, 2026?",
+          "prob": 0.25651344664443926,
+          "contrib": 6.9,
+          "severity": "conflict",
           "source": "manifold"
         }
       ],
