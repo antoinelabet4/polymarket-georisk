@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-25T15:37:32.117Z",
+  "timestamp": "2026-08-25T16:31:13.188Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -39,8 +39,8 @@
         },
         {
           "title": "Will the US and Iran be at war on January 1st, 2027?",
-          "prob": 0.5186792296836273,
-          "contrib": 14,
+          "prob": 0.5094405949860232,
+          "contrib": 13.8,
           "severity": "conflict",
           "source": "manifold"
         },
@@ -153,8 +153,8 @@
         },
         {
           "title": "Russia x Ukraine ceasefire in 2026?",
-          "prob": 0.15371771160825093,
-          "contrib": 22.8,
+          "prob": 0.1483149641618257,
+          "contrib": 23,
           "severity": "peace",
           "source": "manifold"
         },
@@ -198,8 +198,8 @@
         },
         {
           "title": "Russia x Ukraine ceasefire in 2026?",
-          "prob": 0.15371771160825093,
-          "contrib": 22.8,
+          "prob": 0.1483149641618257,
+          "contrib": 23,
           "severity": "peace",
           "source": "manifold"
         },
