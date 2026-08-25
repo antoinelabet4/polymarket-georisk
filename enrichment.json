@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-25T20:22:54.118Z",
+  "timestamp": "2026-08-25T21:22:45.031Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -253,8 +253,8 @@
         },
         {
           "title": "Will China invade Taiwan before 2030?",
-          "prob": 0.31,
-          "contrib": 15.5,
+          "prob": 0.3170666544978211,
+          "contrib": 15.9,
           "severity": "major_war",
           "source": "manifold"
         },
@@ -298,8 +298,8 @@
         },
         {
           "title": "Will China invade Taiwan before 2030?",
-          "prob": 0.31,
-          "contrib": 15.5,
+          "prob": 0.3170666544978211,
+          "contrib": 15.9,
           "severity": "major_war",
           "source": "manifold"
         },
