@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-25T11:22:27.671Z",
+  "timestamp": "2026-08-25T12:38:35.752Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -346,7 +346,7 @@
       "manifold_markets": [
         {
           "title": "Will North Korea launch another ballistic missile before September 1, 2026?",
-          "prob": 0.25651344664443926,
+          "prob": 0.25412880152023254,
           "contrib": 6.9,
           "severity": "conflict",
           "source": "manifold"
