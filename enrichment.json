@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-25T16:31:13.188Z",
+  "timestamp": "2026-08-25T17:27:02.123Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -222,7 +222,7 @@
       "manifold_markets": [
         {
           "title": "Will South Korea withdraw from the NPT by 2026?",
-          "prob": 0.03025595775914184,
+          "prob": 0.030355630359727676,
           "contrib": 26.2,
           "severity": "peace",
           "source": "manifold"
@@ -260,8 +260,8 @@
         },
         {
           "title": "Will China invade the Kinmen Islands of Taiwan before Trump leaves office?",
-          "prob": 0.2755863863320864,
-          "contrib": 13.8,
+          "prob": 0.2773260049237956,
+          "contrib": 13.9,
           "severity": "major_war",
           "source": "manifold"
         },
@@ -305,8 +305,8 @@
         },
         {
           "title": "Will China invade the Kinmen Islands of Taiwan before Trump leaves office?",
-          "prob": 0.2755863863320864,
-          "contrib": 13.8,
+          "prob": 0.2773260049237956,
+          "contrib": 13.9,
           "severity": "major_war",
           "source": "manifold"
         },
