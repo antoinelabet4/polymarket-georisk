@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-26T01:02:13.579Z",
+  "timestamp": "2026-08-26T02:59:58.968Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -100,13 +100,6 @@
           "source": "manifold"
         },
         {
-          "title": "Will the United States government detonate a nuclear weapon anywhere in 2026?",
-          "prob": 0.09695920460153169,
-          "contrib": 23.3,
-          "severity": "catastrophic",
-          "source": "manifold"
-        },
-        {
           "title": "US x Iran permanent peace deal by December 31 ? [Not Polymarket]",
           "prob": 0.20365711224082209,
           "contrib": 21.5,
@@ -117,6 +110,13 @@
           "title": "Will China invade any territory of Taiwan before Trump leaves office?",
           "prob": 0.37531065111037804,
           "contrib": 18.8,
+          "severity": "major_war",
+          "source": "manifold"
+        },
+        {
+          "title": "Will China invade the Kinmen Islands of Taiwan before Trump leaves office?",
+          "prob": 0.2773260049237956,
+          "contrib": 13.9,
           "severity": "major_war",
           "source": "manifold"
         }
