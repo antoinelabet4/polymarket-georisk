@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-26T08:37:28.453Z",
+  "timestamp": "2026-08-26T09:36:10.219Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -25,8 +25,8 @@
         },
         {
           "title": "Will Iran strike anything before October 2026?",
-          "prob": 0.8616946286789775,
-          "contrib": 23.3,
+          "prob": 0.8,
+          "contrib": 21.6,
           "severity": "conflict",
           "source": "manifold"
         },
