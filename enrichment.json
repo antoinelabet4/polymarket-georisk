@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-26T03:58:04.473Z",
+  "timestamp": "2026-08-26T04:42:25.876Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -7,7 +7,7 @@
     },
     "manifold": {
       "configured": true,
-      "markets": 43
+      "markets": 44
     }
   },
   "countries": {
@@ -31,13 +31,6 @@
           "source": "manifold"
         },
         {
-          "title": "Will Iran sign a peace deal with the middle east countries",
-          "prob": 0.2740598228667394,
-          "contrib": 19.6,
-          "severity": "peace",
-          "source": "manifold"
-        },
-        {
           "title": "Will the US and Iran be at war on January 1st, 2027?",
           "prob": 0.5094405949860232,
           "contrib": 13.8,
@@ -49,6 +42,13 @@
           "prob": 0.5123392954828988,
           "contrib": 13.8,
           "severity": "conflict",
+          "source": "manifold"
+        },
+        {
+          "title": "Will J.D. Vance publicly criticize the decision to attack Iran before 2029?",
+          "prob": 0.5165593828058503,
+          "contrib": 4.1,
+          "severity": "geo",
           "source": "manifold"
         }
       ],
