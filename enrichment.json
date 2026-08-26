@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-26T06:39:58.821Z",
+  "timestamp": "2026-08-26T07:41:22.459Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -24,17 +24,17 @@
           "source": "manifold"
         },
         {
+          "title": "Will Iran strike anything before October 2026?",
+          "prob": 0.8345696768609662,
+          "contrib": 22.5,
+          "severity": "conflict",
+          "source": "manifold"
+        },
+        {
           "title": "US x Iran permanent peace deal by December 31 ? [Not Polymarket]",
           "prob": 0.20365711224082209,
           "contrib": 21.5,
           "severity": "peace",
-          "source": "manifold"
-        },
-        {
-          "title": "Will Iran strike anything before October 2026?",
-          "prob": 0.7911095205264472,
-          "contrib": 21.4,
-          "severity": "conflict",
           "source": "manifold"
         },
         {
