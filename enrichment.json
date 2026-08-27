@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-27T02:50:24.114Z",
+  "timestamp": "2026-08-27T13:40:26.209Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -7,7 +7,7 @@
     },
     "manifold": {
       "configured": true,
-      "markets": 43
+      "markets": 44
     }
   },
   "countries": {
@@ -46,8 +46,8 @@
         },
         {
           "title": "Will the US and Iran be at war on January 1st, 2027?",
-          "prob": 0.5320570401852796,
-          "contrib": 14.4,
+          "prob": 0.5481000402028311,
+          "contrib": 14.8,
           "severity": "conflict",
           "source": "manifold"
         }
@@ -115,8 +115,8 @@
         },
         {
           "title": "Will the US and Iran be at war on January 1st, 2027?",
-          "prob": 0.5320570401852796,
-          "contrib": 14.4,
+          "prob": 0.5481000402028311,
+          "contrib": 14.8,
           "severity": "conflict",
           "source": "manifold"
         }
