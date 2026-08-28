@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-28T08:47:04.536Z",
+  "timestamp": "2026-08-28T20:38:53.590Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -46,7 +46,7 @@
         },
         {
           "title": "Will the US and Iran be at war on January 1st, 2027?",
-          "prob": 0.5481000402028311,
+          "prob": 0.5464655513826726,
           "contrib": 14.8,
           "severity": "conflict",
           "source": "manifold"
