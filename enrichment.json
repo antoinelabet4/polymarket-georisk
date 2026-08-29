@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-29T03:02:14.457Z",
+  "timestamp": "2026-08-29T10:42:19.725Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -24,13 +24,6 @@
           "source": "manifold"
         },
         {
-          "title": "Will Iran strike anything before October 2026?",
-          "prob": 0.8151571164510164,
-          "contrib": 22,
-          "severity": "conflict",
-          "source": "manifold"
-        },
-        {
           "title": "Will Iran sign a peace deal with the middle east countries",
           "prob": 0.2740598228667394,
           "contrib": 19.6,
@@ -41,6 +34,13 @@
           "title": "US x Iran permanent peace deal by December 31 ? [Not Polymarket]",
           "prob": 0.28215235116911846,
           "contrib": 19.4,
+          "severity": "peace",
+          "source": "manifold"
+        },
+        {
+          "title": "What lasting peace deal will come first? Russia's or Iran's?",
+          "prob": 0.40384052337731846,
+          "contrib": 16.1,
           "severity": "peace",
           "source": "manifold"
         },
