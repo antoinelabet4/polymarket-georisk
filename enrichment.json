@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-30T06:23:26.584Z",
+  "timestamp": "2026-08-30T12:32:52.617Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -24,6 +24,13 @@
           "source": "manifold"
         },
         {
+          "title": "Will Iran strike anything before October 2026?",
+          "prob": 0.8151571164510164,
+          "contrib": 22,
+          "severity": "conflict",
+          "source": "manifold"
+        },
+        {
           "title": "Will Iran sign a peace deal with the middle east countries",
           "prob": 0.2740598228667394,
           "contrib": 19.6,
@@ -42,13 +49,6 @@
           "prob": 0.2822805846962729,
           "contrib": 19.4,
           "severity": "peace",
-          "source": "manifold"
-        },
-        {
-          "title": "Will the US and Iran be at war on January 1st, 2027?",
-          "prob": 0.5576030160384576,
-          "contrib": 15.1,
-          "severity": "conflict",
           "source": "manifold"
         }
       ],
@@ -115,8 +115,8 @@
         },
         {
           "title": "Will the US and Iran be at war on January 1st, 2027?",
-          "prob": 0.5576030160384576,
-          "contrib": 15.1,
+          "prob": 0.5564961931647084,
+          "contrib": 15,
           "severity": "conflict",
           "source": "manifold"
         }
