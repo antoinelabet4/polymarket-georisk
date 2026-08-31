@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-31T10:25:24.203Z",
+  "timestamp": "2026-08-31T17:49:11.758Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -7,7 +7,7 @@
     },
     "manifold": {
       "configured": true,
-      "markets": 42
+      "markets": 44
     }
   },
   "countries": {
@@ -21,6 +21,13 @@
           "prob": 0.6101984812071233,
           "contrib": 146.4,
           "severity": "catastrophic",
+          "source": "manifold"
+        },
+        {
+          "title": "Will Iran strike anything before October 2026?",
+          "prob": 0.9,
+          "contrib": 24.3,
+          "severity": "conflict",
           "source": "manifold"
         },
         {
@@ -42,13 +49,6 @@
           "prob": 0.2822805846962729,
           "contrib": 19.4,
           "severity": "peace",
-          "source": "manifold"
-        },
-        {
-          "title": "Will the US and Iran be at war on January 1st, 2027?",
-          "prob": 0.5724599031454127,
-          "contrib": 15.5,
-          "severity": "conflict",
           "source": "manifold"
         }
       ],
@@ -93,6 +93,20 @@
           "source": "manifold"
         },
         {
+          "title": "Will a nuclear weapon be detonated in a war during the 2nd Trump administration?",
+          "prob": 0.12575882830611307,
+          "contrib": 30.2,
+          "severity": "catastrophic",
+          "source": "manifold"
+        },
+        {
+          "title": "Will the United States government detonate a nuclear weapon anywhere in 2026?",
+          "prob": 0.09695920460153169,
+          "contrib": 23.3,
+          "severity": "catastrophic",
+          "source": "manifold"
+        },
+        {
           "title": "US x Iran permanent peace deal by December 31 ? [Not Polymarket]",
           "prob": 0.28215235116911846,
           "contrib": 19.4,
@@ -104,20 +118,6 @@
           "prob": 0.37531065111037804,
           "contrib": 18.8,
           "severity": "major_war",
-          "source": "manifold"
-        },
-        {
-          "title": "Will the US and Iran be at war on January 1st, 2027?",
-          "prob": 0.5724599031454127,
-          "contrib": 15.5,
-          "severity": "conflict",
-          "source": "manifold"
-        },
-        {
-          "title": "Will the US and Iran be at war on January 1st, 2027?",
-          "prob": 0.5571731295234319,
-          "contrib": 15,
-          "severity": "conflict",
           "source": "manifold"
         }
       ],
@@ -329,8 +329,8 @@
       "manifold_markets": [
         {
           "title": "Will Venezuela continue submissive to american demands in 2026?",
-          "prob": 0.9150140872771414,
-          "contrib": 7.3,
+          "prob": 0.9265998661684819,
+          "contrib": 7.4,
           "severity": "geo",
           "source": "manifold"
         }
