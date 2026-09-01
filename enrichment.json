@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-01T17:32:36.758Z",
+  "timestamp": "2026-09-01T20:27:31.493Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -7,7 +7,7 @@
     },
     "manifold": {
       "configured": true,
-      "markets": 40
+      "markets": 41
     }
   },
   "countries": {
@@ -107,16 +107,16 @@
           "source": "manifold"
         },
         {
-          "title": "Will the US and Iran be at war on January 1st, 2027?",
-          "prob": 0.5724599031454127,
-          "contrib": 15.5,
-          "severity": "conflict",
+          "title": "Will the United States government detonate a nuclear weapon anywhere in 2026?",
+          "prob": 0.06552389679504295,
+          "contrib": 15.7,
+          "severity": "catastrophic",
           "source": "manifold"
         },
         {
           "title": "Will the US and Iran be at war on January 1st, 2027?",
-          "prob": 0.5571731295234319,
-          "contrib": 15,
+          "prob": 0.5724599031454127,
+          "contrib": 15.5,
           "severity": "conflict",
           "source": "manifold"
         }
