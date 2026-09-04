@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-03T22:11:45.097Z",
+  "timestamp": "2026-09-04T00:41:07.743Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -7,7 +7,7 @@
     },
     "manifold": {
       "configured": true,
-      "markets": 41
+      "markets": 42
     }
   },
   "countries": {
@@ -93,6 +93,13 @@
           "source": "manifold"
         },
         {
+          "title": "Will a nuclear weapon be detonated in a war during the 2nd Trump administration?",
+          "prob": 0.12575882830611307,
+          "contrib": 30.2,
+          "severity": "catastrophic",
+          "source": "manifold"
+        },
+        {
           "title": "US x Iran permanent peace deal by December 31 ? [Not Polymarket]",
           "prob": 0.28215235116911846,
           "contrib": 19.4,
@@ -111,13 +118,6 @@
           "prob": 0.07,
           "contrib": 16.8,
           "severity": "catastrophic",
-          "source": "manifold"
-        },
-        {
-          "title": "Will the US and Iran be at war on January 1st, 2027?",
-          "prob": 0.5817403143273492,
-          "contrib": 15.7,
-          "severity": "conflict",
           "source": "manifold"
         }
       ],
