@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-04T14:43:58.609Z",
+  "timestamp": "2026-09-04T18:01:23.261Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -24,16 +24,16 @@
           "source": "manifold"
         },
         {
-          "title": "Will Iran sign a peace deal with the middle east countries",
-          "prob": 0.2740598228667394,
-          "contrib": 19.6,
+          "title": "US x Iran permanent peace deal by December 31 ? [Not Polymarket]",
+          "prob": 0.22806067963422463,
+          "contrib": 20.8,
           "severity": "peace",
           "source": "manifold"
         },
         {
-          "title": "US x Iran permanent peace deal by December 31 ? [Not Polymarket]",
-          "prob": 0.28215235116911846,
-          "contrib": 19.4,
+          "title": "Will Iran sign a peace deal with the middle east countries",
+          "prob": 0.2740598228667394,
+          "contrib": 19.6,
           "severity": "peace",
           "source": "manifold"
         },
@@ -94,8 +94,8 @@
         },
         {
           "title": "US x Iran permanent peace deal by December 31 ? [Not Polymarket]",
-          "prob": 0.28215235116911846,
-          "contrib": 19.4,
+          "prob": 0.22806067963422463,
+          "contrib": 20.8,
           "severity": "peace",
           "source": "manifold"
         },
