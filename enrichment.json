@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-09T12:40:27.527Z",
+  "timestamp": "2026-09-09T16:59:32.504Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -7,7 +7,7 @@
     },
     "manifold": {
       "configured": true,
-      "markets": 41
+      "markets": 42
     }
   },
   "countries": {
@@ -69,6 +69,13 @@
           "source": "manifold"
         },
         {
+          "title": "Will the US or Israel strike Iran’s Pickaxe Mountain nuclear site before Oct 1, 2027?",
+          "prob": 0.47562425683709864,
+          "contrib": 12.8,
+          "severity": "conflict",
+          "source": "manifold"
+        },
+        {
           "title": "Assembly of  Experts hit by US or Israeli attack in 2026 and at least one cleric dies",
           "prob": 0.06721001592463534,
           "contrib": 0.5,
@@ -93,6 +100,13 @@
           "source": "manifold"
         },
         {
+          "title": "Will a nuclear weapon be detonated in a war during the 2nd Trump administration?",
+          "prob": 0.12575882830611307,
+          "contrib": 30.2,
+          "severity": "catastrophic",
+          "source": "manifold"
+        },
+        {
           "title": "US x Iran permanent peace deal by December 31 ? [Not Polymarket]",
           "prob": 0.23010828032310807,
           "contrib": 20.8,
@@ -110,13 +124,6 @@
           "title": "Will the US and Iran be at war on January 1st, 2027?",
           "prob": 0.5599999999999999,
           "contrib": 15.1,
-          "severity": "conflict",
-          "source": "manifold"
-        },
-        {
-          "title": "Will the US and Iran be at war on January 1st, 2027?",
-          "prob": 0.5416655020188096,
-          "contrib": 14.6,
           "severity": "conflict",
           "source": "manifold"
         }
@@ -160,8 +167,8 @@
         },
         {
           "title": "Russia x Ukraine ceasefire agreement by Dec 31? [Polymarket]",
-          "prob": 0.22999999999999995,
-          "contrib": 20.8,
+          "prob": 0.20743110627601755,
+          "contrib": 21.4,
           "severity": "peace",
           "source": "manifold"
         }
@@ -205,8 +212,8 @@
         },
         {
           "title": "Russia x Ukraine ceasefire agreement by Dec 31? [Polymarket]",
-          "prob": 0.22999999999999995,
-          "contrib": 20.8,
+          "prob": 0.20743110627601755,
+          "contrib": 21.4,
           "severity": "peace",
           "source": "manifold"
         }
