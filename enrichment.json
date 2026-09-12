@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-12T16:41:52.602Z",
+  "timestamp": "2026-09-12T18:54:35.765Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -153,8 +153,8 @@
         },
         {
           "title": "Russia x Ukraine ceasefire in 2026?",
-          "prob": 0.12471786916093724,
-          "contrib": 23.6,
+          "prob": 0.1351880895731316,
+          "contrib": 23.3,
           "severity": "peace",
           "source": "manifold"
         },
@@ -167,8 +167,8 @@
         },
         {
           "title": "Russia x Ukraine ceasefire agreement by Dec 31? [Polymarket]",
-          "prob": 0.19924889613375293,
-          "contrib": 21.6,
+          "prob": 0.25999999999999995,
+          "contrib": 20,
           "severity": "peace",
           "source": "manifold"
         }
@@ -198,8 +198,8 @@
         },
         {
           "title": "Russia x Ukraine ceasefire in 2026?",
-          "prob": 0.12471786916093724,
-          "contrib": 23.6,
+          "prob": 0.1351880895731316,
+          "contrib": 23.3,
           "severity": "peace",
           "source": "manifold"
         },
@@ -212,8 +212,8 @@
         },
         {
           "title": "Russia x Ukraine ceasefire agreement by Dec 31? [Polymarket]",
-          "prob": 0.19924889613375293,
-          "contrib": 21.6,
+          "prob": 0.25999999999999995,
+          "contrib": 20,
           "severity": "peace",
           "source": "manifold"
         }
@@ -243,8 +243,8 @@
         },
         {
           "title": "Will China invade Taiwan before 2030?",
-          "prob": 0.31,
-          "contrib": 15.5,
+          "prob": 0.3170666544978211,
+          "contrib": 15.9,
           "severity": "major_war",
           "source": "manifold"
         },
@@ -288,8 +288,8 @@
         },
         {
           "title": "Will China invade Taiwan before 2030?",
-          "prob": 0.31,
-          "contrib": 15.5,
+          "prob": 0.3170666544978211,
+          "contrib": 15.9,
           "severity": "major_war",
           "source": "manifold"
         },
