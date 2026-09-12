@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-12T18:54:35.765Z",
+  "timestamp": "2026-09-12T21:09:14.843Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -31,6 +31,13 @@
           "source": "manifold"
         },
         {
+          "title": "Will the US and Iran be at war on January 1st, 2027?",
+          "prob": 0.7211117026690271,
+          "contrib": 19.5,
+          "severity": "conflict",
+          "source": "manifold"
+        },
+        {
           "title": "What lasting peace deal will come first? Russia's or Iran's?",
           "prob": 0.28775915023380455,
           "contrib": 19.2,
@@ -39,15 +46,8 @@
         },
         {
           "title": "Will the US and Iran be at war on January 1st, 2027?",
-          "prob": 0.6695640886659109,
-          "contrib": 18.1,
-          "severity": "conflict",
-          "source": "manifold"
-        },
-        {
-          "title": "Will the US and Iran be at war on January 1st, 2027?",
-          "prob": 0.6559272958224202,
-          "contrib": 17.7,
+          "prob": 0.7055241745790625,
+          "contrib": 19,
           "severity": "conflict",
           "source": "manifold"
         }
@@ -107,24 +107,24 @@
           "source": "manifold"
         },
         {
+          "title": "Will the US and Iran be at war on January 1st, 2027?",
+          "prob": 0.7211117026690271,
+          "contrib": 19.5,
+          "severity": "conflict",
+          "source": "manifold"
+        },
+        {
+          "title": "Will the US and Iran be at war on January 1st, 2027?",
+          "prob": 0.7055241745790625,
+          "contrib": 19,
+          "severity": "conflict",
+          "source": "manifold"
+        },
+        {
           "title": "Will China invade any territory of Taiwan before Trump leaves office?",
           "prob": 0.37531065111037804,
           "contrib": 18.8,
           "severity": "major_war",
-          "source": "manifold"
-        },
-        {
-          "title": "Will the US and Iran be at war on January 1st, 2027?",
-          "prob": 0.6695640886659109,
-          "contrib": 18.1,
-          "severity": "conflict",
-          "source": "manifold"
-        },
-        {
-          "title": "Will the US and Iran be at war on January 1st, 2027?",
-          "prob": 0.6559272958224202,
-          "contrib": 17.7,
-          "severity": "conflict",
           "source": "manifold"
         }
       ],
@@ -153,8 +153,8 @@
         },
         {
           "title": "Russia x Ukraine ceasefire in 2026?",
-          "prob": 0.1351880895731316,
-          "contrib": 23.3,
+          "prob": 0.12471786916093724,
+          "contrib": 23.6,
           "severity": "peace",
           "source": "manifold"
         },
@@ -167,8 +167,8 @@
         },
         {
           "title": "Russia x Ukraine ceasefire agreement by Dec 31? [Polymarket]",
-          "prob": 0.25999999999999995,
-          "contrib": 20,
+          "prob": 0.19924889613375293,
+          "contrib": 21.6,
           "severity": "peace",
           "source": "manifold"
         }
@@ -198,8 +198,8 @@
         },
         {
           "title": "Russia x Ukraine ceasefire in 2026?",
-          "prob": 0.1351880895731316,
-          "contrib": 23.3,
+          "prob": 0.12471786916093724,
+          "contrib": 23.6,
           "severity": "peace",
           "source": "manifold"
         },
@@ -212,8 +212,8 @@
         },
         {
           "title": "Russia x Ukraine ceasefire agreement by Dec 31? [Polymarket]",
-          "prob": 0.25999999999999995,
-          "contrib": 20,
+          "prob": 0.19924889613375293,
+          "contrib": 21.6,
           "severity": "peace",
           "source": "manifold"
         }
@@ -243,8 +243,8 @@
         },
         {
           "title": "Will China invade Taiwan before 2030?",
-          "prob": 0.3170666544978211,
-          "contrib": 15.9,
+          "prob": 0.31,
+          "contrib": 15.5,
           "severity": "major_war",
           "source": "manifold"
         },
@@ -288,8 +288,8 @@
         },
         {
           "title": "Will China invade Taiwan before 2030?",
-          "prob": 0.3170666544978211,
-          "contrib": 15.9,
+          "prob": 0.31,
+          "contrib": 15.5,
           "severity": "major_war",
           "source": "manifold"
         },
