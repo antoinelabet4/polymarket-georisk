@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-13T07:56:59.002Z",
+  "timestamp": "2026-09-13T13:08:41.994Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -31,24 +31,24 @@
           "source": "manifold"
         },
         {
-          "title": "Will the US and Iran be at war on January 1st, 2027?",
-          "prob": 0.7075789911518047,
-          "contrib": 19.1,
-          "severity": "conflict",
-          "source": "manifold"
-        },
-        {
-          "title": "Will the US and Iran be at war on January 1st, 2027?",
-          "prob": 0.7055241745790625,
-          "contrib": 19,
-          "severity": "conflict",
-          "source": "manifold"
-        },
-        {
           "title": "What lasting peace deal will come first? Russia's or Iran's?",
           "prob": 0.29603274782267663,
           "contrib": 19,
           "severity": "peace",
+          "source": "manifold"
+        },
+        {
+          "title": "Will the US and Iran be at war on January 1st, 2027?",
+          "prob": 0.6923010704713913,
+          "contrib": 18.7,
+          "severity": "conflict",
+          "source": "manifold"
+        },
+        {
+          "title": "Will the US and Iran be at war on January 1st, 2027?",
+          "prob": 0.6770096824995635,
+          "contrib": 18.3,
+          "severity": "conflict",
           "source": "manifold"
         }
       ],
@@ -107,24 +107,24 @@
           "source": "manifold"
         },
         {
-          "title": "Will the US and Iran be at war on January 1st, 2027?",
-          "prob": 0.7075789911518047,
-          "contrib": 19.1,
-          "severity": "conflict",
-          "source": "manifold"
-        },
-        {
-          "title": "Will the US and Iran be at war on January 1st, 2027?",
-          "prob": 0.7055241745790625,
-          "contrib": 19,
-          "severity": "conflict",
-          "source": "manifold"
-        },
-        {
           "title": "Will China invade any territory of Taiwan before Trump leaves office?",
           "prob": 0.37531065111037804,
           "contrib": 18.8,
           "severity": "major_war",
+          "source": "manifold"
+        },
+        {
+          "title": "Will the US and Iran be at war on January 1st, 2027?",
+          "prob": 0.6923010704713913,
+          "contrib": 18.7,
+          "severity": "conflict",
+          "source": "manifold"
+        },
+        {
+          "title": "Will the US and Iran be at war on January 1st, 2027?",
+          "prob": 0.6770096824995635,
+          "contrib": 18.3,
+          "severity": "conflict",
           "source": "manifold"
         }
       ],
