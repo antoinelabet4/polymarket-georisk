@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-12T23:40:35.307Z",
+  "timestamp": "2026-09-13T02:52:25.116Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -25,23 +25,16 @@
         },
         {
           "title": "US x Iran permanent peace deal by December 31 ? [Not Polymarket]",
-          "prob": 0.23010828032310807,
-          "contrib": 20.8,
+          "prob": 0.23779670731313957,
+          "contrib": 20.6,
           "severity": "peace",
           "source": "manifold"
         },
         {
           "title": "Will the US and Iran be at war on January 1st, 2027?",
-          "prob": 0.7211117026690271,
+          "prob": 0.7204842730818515,
           "contrib": 19.5,
           "severity": "conflict",
-          "source": "manifold"
-        },
-        {
-          "title": "What lasting peace deal will come first? Russia's or Iran's?",
-          "prob": 0.28775915023380455,
-          "contrib": 19.2,
-          "severity": "peace",
           "source": "manifold"
         },
         {
@@ -49,6 +42,13 @@
           "prob": 0.7055241745790625,
           "contrib": 19,
           "severity": "conflict",
+          "source": "manifold"
+        },
+        {
+          "title": "What lasting peace deal will come first? Russia's or Iran's?",
+          "prob": 0.29603274782267663,
+          "contrib": 19,
+          "severity": "peace",
           "source": "manifold"
         }
       ],
@@ -70,8 +70,8 @@
         },
         {
           "title": "Will the US or Israel strike Iran’s Pickaxe Mountain nuclear site before Oct 1, 2027?",
-          "prob": 0.5384949497564026,
-          "contrib": 14.5,
+          "prob": 0.5492443079376572,
+          "contrib": 14.8,
           "severity": "conflict",
           "source": "manifold"
         },
@@ -101,14 +101,14 @@
         },
         {
           "title": "US x Iran permanent peace deal by December 31 ? [Not Polymarket]",
-          "prob": 0.23010828032310807,
-          "contrib": 20.8,
+          "prob": 0.23779670731313957,
+          "contrib": 20.6,
           "severity": "peace",
           "source": "manifold"
         },
         {
           "title": "Will the US and Iran be at war on January 1st, 2027?",
-          "prob": 0.7211117026690271,
+          "prob": 0.7204842730818515,
           "contrib": 19.5,
           "severity": "conflict",
           "source": "manifold"
