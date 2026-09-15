@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-15T15:27:41.096Z",
+  "timestamp": "2026-09-15T19:28:40.029Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -167,8 +167,8 @@
         },
         {
           "title": "Russia x Ukraine ceasefire agreement by Dec 31? [Polymarket]",
-          "prob": 0.19924889613375293,
-          "contrib": 21.6,
+          "prob": 0.19150414687788564,
+          "contrib": 21.8,
           "severity": "peace",
           "source": "manifold"
         }
@@ -212,8 +212,8 @@
         },
         {
           "title": "Russia x Ukraine ceasefire agreement by Dec 31? [Polymarket]",
-          "prob": 0.19924889613375293,
-          "contrib": 21.6,
+          "prob": 0.19150414687788564,
+          "contrib": 21.8,
           "severity": "peace",
           "source": "manifold"
         }
