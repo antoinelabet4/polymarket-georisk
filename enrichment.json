@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-18T07:59:10.842Z",
+  "timestamp": "2026-09-18T12:52:04.037Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -70,8 +70,8 @@
         },
         {
           "title": "Will the US or Israel strike Iran’s Pickaxe Mountain nuclear site before Oct 1, 2027?",
-          "prob": 0.5492443079376572,
-          "contrib": 14.8,
+          "prob": 0.4970508560917992,
+          "contrib": 13.4,
           "severity": "conflict",
           "source": "manifold"
         },
