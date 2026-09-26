@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-26T03:15:15.724Z",
+  "timestamp": "2026-09-26T09:01:33.570Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -32,8 +32,15 @@
         },
         {
           "title": "Will the US and Iran be at war on January 1st, 2027?",
-          "prob": 0.712117393890239,
-          "contrib": 19.2,
+          "prob": 0.7172476762043171,
+          "contrib": 19.4,
+          "severity": "conflict",
+          "source": "manifold"
+        },
+        {
+          "title": "Will the US and Iran be at war on January 1st, 2027?",
+          "prob": 0.7062562801754272,
+          "contrib": 19.1,
           "severity": "conflict",
           "source": "manifold"
         },
@@ -42,13 +49,6 @@
           "prob": 0.29603274782267675,
           "contrib": 19,
           "severity": "peace",
-          "source": "manifold"
-        },
-        {
-          "title": "Will the US and Iran be at war on January 1st, 2027?",
-          "prob": 0.6923010704713913,
-          "contrib": 18.7,
-          "severity": "conflict",
           "source": "manifold"
         }
       ],
@@ -108,8 +108,15 @@
         },
         {
           "title": "Will the US and Iran be at war on January 1st, 2027?",
-          "prob": 0.712117393890239,
-          "contrib": 19.2,
+          "prob": 0.7172476762043171,
+          "contrib": 19.4,
+          "severity": "conflict",
+          "source": "manifold"
+        },
+        {
+          "title": "Will the US and Iran be at war on January 1st, 2027?",
+          "prob": 0.7062562801754272,
+          "contrib": 19.1,
           "severity": "conflict",
           "source": "manifold"
         },
@@ -118,13 +125,6 @@
           "prob": 0.37531065111037804,
           "contrib": 18.8,
           "severity": "major_war",
-          "source": "manifold"
-        },
-        {
-          "title": "Will the US and Iran be at war on January 1st, 2027?",
-          "prob": 0.6923010704713913,
-          "contrib": 18.7,
-          "severity": "conflict",
           "source": "manifold"
         }
       ],
