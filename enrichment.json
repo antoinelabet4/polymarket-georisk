@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-01T01:46:38.093Z",
+  "timestamp": "2026-10-01T08:14:06.333Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -421,8 +421,8 @@
       "manifold_markets": [
         {
           "title": "Will Hamas actually disarm in 2026?",
-          "prob": 0.03883147597680709,
-          "contrib": 0.3,
+          "prob": 0.05089160680448722,
+          "contrib": 0.4,
           "severity": "geo",
           "source": "manifold"
         }
