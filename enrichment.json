@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-03T07:30:56.660Z",
+  "timestamp": "2026-10-03T12:59:32.502Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -31,16 +31,16 @@
           "source": "manifold"
         },
         {
-          "title": "Russia x Ukraine ceasefire agreement by Dec 31? [Polymarket]",
-          "prob": 0.12941317533063182,
-          "contrib": 23.5,
+          "title": "Will Russia publicly commit to an energy-infrastructure ceasefire with Ukraine before Nov 20, 2026?",
+          "prob": 0.12298861844950393,
+          "contrib": 23.7,
           "severity": "peace",
           "source": "manifold"
         },
         {
-          "title": "Will Russia publicly commit to an energy-infrastructure ceasefire with Ukraine before Nov 20, 2026?",
-          "prob": 0.1358333513499695,
-          "contrib": 23.3,
+          "title": "Russia x Ukraine ceasefire agreement by Dec 31? [Polymarket]",
+          "prob": 0.12941317533063182,
+          "contrib": 23.5,
           "severity": "peace",
           "source": "manifold"
         },
@@ -76,16 +76,16 @@
           "source": "manifold"
         },
         {
-          "title": "Russia x Ukraine ceasefire agreement by Dec 31? [Polymarket]",
-          "prob": 0.12941317533063182,
-          "contrib": 23.5,
+          "title": "Will Russia publicly commit to an energy-infrastructure ceasefire with Ukraine before Nov 20, 2026?",
+          "prob": 0.12298861844950393,
+          "contrib": 23.7,
           "severity": "peace",
           "source": "manifold"
         },
         {
-          "title": "Will Russia publicly commit to an energy-infrastructure ceasefire with Ukraine before Nov 20, 2026?",
-          "prob": 0.1358333513499695,
-          "contrib": 23.3,
+          "title": "Russia x Ukraine ceasefire agreement by Dec 31? [Polymarket]",
+          "prob": 0.12941317533063182,
+          "contrib": 23.5,
           "severity": "peace",
           "source": "manifold"
         },
