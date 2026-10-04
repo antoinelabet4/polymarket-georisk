@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-03T23:29:17.149Z",
+  "timestamp": "2026-10-04T04:03:35.908Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -7,7 +7,7 @@
     },
     "manifold": {
       "configured": true,
-      "markets": 43
+      "markets": 44
     }
   },
   "countries": {
@@ -31,16 +31,16 @@
           "source": "manifold"
         },
         {
-          "title": "Will Russia publicly commit to an energy-infrastructure ceasefire with Ukraine before Nov 20, 2026?",
-          "prob": 0.12298861844950393,
-          "contrib": 23.7,
+          "title": "Russia x Ukraine ceasefire agreement by Dec 31? [Polymarket]",
+          "prob": 0.12000000000000005,
+          "contrib": 23.8,
           "severity": "peace",
           "source": "manifold"
         },
         {
-          "title": "Russia x Ukraine ceasefire agreement by Dec 31? [Polymarket]",
-          "prob": 0.12941317533063182,
-          "contrib": 23.5,
+          "title": "Will Russia publicly commit to an energy-infrastructure ceasefire with Ukraine before Nov 20, 2026?",
+          "prob": 0.12298861844950393,
+          "contrib": 23.7,
           "severity": "peace",
           "source": "manifold"
         },
@@ -76,16 +76,16 @@
           "source": "manifold"
         },
         {
-          "title": "Will Russia publicly commit to an energy-infrastructure ceasefire with Ukraine before Nov 20, 2026?",
-          "prob": 0.12298861844950393,
-          "contrib": 23.7,
+          "title": "Russia x Ukraine ceasefire agreement by Dec 31? [Polymarket]",
+          "prob": 0.12000000000000005,
+          "contrib": 23.8,
           "severity": "peace",
           "source": "manifold"
         },
         {
-          "title": "Russia x Ukraine ceasefire agreement by Dec 31? [Polymarket]",
-          "prob": 0.12941317533063182,
-          "contrib": 23.5,
+          "title": "Will Russia publicly commit to an energy-infrastructure ceasefire with Ukraine before Nov 20, 2026?",
+          "prob": 0.12298861844950393,
+          "contrib": 23.7,
           "severity": "peace",
           "source": "manifold"
         },
@@ -249,16 +249,16 @@
           "source": "manifold"
         },
         {
-          "title": "Will China invade the main island of Taiwan before Trump leaves office?",
-          "prob": 0.24534989920676217,
-          "contrib": 12.3,
+          "title": "Will China invade Taiwan by EOY 2030",
+          "prob": 0.2847685880806144,
+          "contrib": 14.2,
           "severity": "major_war",
           "source": "manifold"
         },
         {
-          "title": "Will China invade the Kinmen Islands of Taiwan before Trump leaves office?",
-          "prob": 0.23721420086259165,
-          "contrib": 11.9,
+          "title": "Will China invade the main island of Taiwan before Trump leaves office?",
+          "prob": 0.24534989920676217,
+          "contrib": 12.3,
           "severity": "major_war",
           "source": "manifold"
         }
@@ -294,16 +294,16 @@
           "source": "manifold"
         },
         {
-          "title": "Will China invade the main island of Taiwan before Trump leaves office?",
-          "prob": 0.24534989920676217,
-          "contrib": 12.3,
+          "title": "Will China invade Taiwan by EOY 2030",
+          "prob": 0.2847685880806144,
+          "contrib": 14.2,
           "severity": "major_war",
           "source": "manifold"
         },
         {
-          "title": "Will China invade the Kinmen Islands of Taiwan before Trump leaves office?",
-          "prob": 0.23721420086259165,
-          "contrib": 11.9,
+          "title": "Will China invade the main island of Taiwan before Trump leaves office?",
+          "prob": 0.24534989920676217,
+          "contrib": 12.3,
           "severity": "major_war",
           "source": "manifold"
         }
