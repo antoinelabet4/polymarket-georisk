@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-06T04:35:44.934Z",
+  "timestamp": "2026-10-06T11:43:23.075Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -31,6 +31,13 @@
           "source": "manifold"
         },
         {
+          "title": "Will Russia publicly commit to an energy-infrastructure ceasefire with Ukraine before Nov 20, 2026?",
+          "prob": 0.11605766599635006,
+          "contrib": 23.9,
+          "severity": "peace",
+          "source": "manifold"
+        },
+        {
           "title": "Russia x Ukraine ceasefire agreement by Dec 31? [Polymarket]",
           "prob": 0.12000000000000005,
           "contrib": 23.8,
@@ -40,13 +47,6 @@
         {
           "title": "Russia x Ukraine ceasefire in 2026?",
           "prob": 0.12375822174091729,
-          "contrib": 23.7,
-          "severity": "peace",
-          "source": "manifold"
-        },
-        {
-          "title": "Will Russia publicly commit to an energy-infrastructure ceasefire with Ukraine before Nov 20, 2026?",
-          "prob": 0.12298861844950393,
           "contrib": 23.7,
           "severity": "peace",
           "source": "manifold"
@@ -76,6 +76,13 @@
           "source": "manifold"
         },
         {
+          "title": "Will Russia publicly commit to an energy-infrastructure ceasefire with Ukraine before Nov 20, 2026?",
+          "prob": 0.11605766599635006,
+          "contrib": 23.9,
+          "severity": "peace",
+          "source": "manifold"
+        },
+        {
           "title": "Russia x Ukraine ceasefire agreement by Dec 31? [Polymarket]",
           "prob": 0.12000000000000005,
           "contrib": 23.8,
@@ -85,13 +92,6 @@
         {
           "title": "Russia x Ukraine ceasefire in 2026?",
           "prob": 0.12375822174091729,
-          "contrib": 23.7,
-          "severity": "peace",
-          "source": "manifold"
-        },
-        {
-          "title": "Will Russia publicly commit to an energy-infrastructure ceasefire with Ukraine before Nov 20, 2026?",
-          "prob": 0.12298861844950393,
           "contrib": 23.7,
           "severity": "peace",
           "source": "manifold"
