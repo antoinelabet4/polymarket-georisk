@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-07T09:42:16.975Z",
+  "timestamp": "2026-10-07T17:11:35.118Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -136,8 +136,8 @@
         },
         {
           "title": "What lasting peace deal will come first? Russia's or Iran's?",
-          "prob": 0.29603274782267675,
-          "contrib": 19,
+          "prob": 0.29999999999999993,
+          "contrib": 18.9,
           "severity": "peace",
           "source": "manifold"
         }
