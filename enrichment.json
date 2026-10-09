@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-09T02:42:50.479Z",
+  "timestamp": "2026-10-09T09:56:48.703Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -38,16 +38,16 @@
           "source": "manifold"
         },
         {
-          "title": "Russia x Ukraine ceasefire agreement by Dec 31? [Polymarket]",
-          "prob": 0.11000000000000001,
-          "contrib": 24,
+          "title": "Will Russia publicly commit to an energy-infrastructure ceasefire with Ukraine before Nov 20, 2026?",
+          "prob": 0.11605766599635006,
+          "contrib": 23.9,
           "severity": "peace",
           "source": "manifold"
         },
         {
-          "title": "Will Russia publicly commit to an energy-infrastructure ceasefire with Ukraine before Nov 20, 2026?",
-          "prob": 0.11605766599635006,
-          "contrib": 23.9,
+          "title": "Russia x Ukraine ceasefire agreement by Dec 31? [Polymarket]",
+          "prob": 0.14000000000000004,
+          "contrib": 23.2,
           "severity": "peace",
           "source": "manifold"
         }
@@ -83,16 +83,16 @@
           "source": "manifold"
         },
         {
-          "title": "Russia x Ukraine ceasefire agreement by Dec 31? [Polymarket]",
-          "prob": 0.11000000000000001,
-          "contrib": 24,
+          "title": "Will Russia publicly commit to an energy-infrastructure ceasefire with Ukraine before Nov 20, 2026?",
+          "prob": 0.11605766599635006,
+          "contrib": 23.9,
           "severity": "peace",
           "source": "manifold"
         },
         {
-          "title": "Will Russia publicly commit to an energy-infrastructure ceasefire with Ukraine before Nov 20, 2026?",
-          "prob": 0.11605766599635006,
-          "contrib": 23.9,
+          "title": "Russia x Ukraine ceasefire agreement by Dec 31? [Polymarket]",
+          "prob": 0.14000000000000004,
+          "contrib": 23.2,
           "severity": "peace",
           "source": "manifold"
         }
@@ -122,15 +122,8 @@
         },
         {
           "title": "Will the US and Iran be at war on January 1st, 2027?",
-          "prob": 0.7353748460049068,
-          "contrib": 19.9,
-          "severity": "conflict",
-          "source": "manifold"
-        },
-        {
-          "title": "Will the US and Iran be at war on January 1st, 2027?",
-          "prob": 0.7173475201322607,
-          "contrib": 19.4,
+          "prob": 0.7086090229543979,
+          "contrib": 19.1,
           "severity": "conflict",
           "source": "manifold"
         },
@@ -139,6 +132,13 @@
           "prob": 0.29999999999999993,
           "contrib": 18.9,
           "severity": "peace",
+          "source": "manifold"
+        },
+        {
+          "title": "Will the US and Iran be at war on January 1st, 2027?",
+          "prob": 0.6902683856908408,
+          "contrib": 18.6,
+          "severity": "conflict",
           "source": "manifold"
         }
       ],
@@ -198,15 +198,8 @@
         },
         {
           "title": "Will the US and Iran be at war on January 1st, 2027?",
-          "prob": 0.7353748460049068,
-          "contrib": 19.9,
-          "severity": "conflict",
-          "source": "manifold"
-        },
-        {
-          "title": "Will the US and Iran be at war on January 1st, 2027?",
-          "prob": 0.7173475201322607,
-          "contrib": 19.4,
+          "prob": 0.7086090229543979,
+          "contrib": 19.1,
           "severity": "conflict",
           "source": "manifold"
         },
@@ -215,6 +208,13 @@
           "prob": 0.37531065111037804,
           "contrib": 18.8,
           "severity": "major_war",
+          "source": "manifold"
+        },
+        {
+          "title": "Will the US and Iran be at war on January 1st, 2027?",
+          "prob": 0.6902683856908408,
+          "contrib": 18.6,
+          "severity": "conflict",
           "source": "manifold"
         }
       ],
@@ -329,14 +329,14 @@
         "Manifold"
       ]
     },
-    "Cuba": {
+    "Ethiopia": {
       "score": 6,
       "acled_score": 0,
       "manifold_score": 6,
       "manifold_markets": [
         {
-          "title": "Will Trump attack Cuba by the end of his term?",
-          "prob": 0.7394535635043598,
+          "title": "Will armed conflict break out between Ethiopia and Eritrea by December 31, 2026?",
+          "prob": 0.7414105055433793,
           "contrib": 5.9,
           "severity": "geo",
           "source": "manifold"
@@ -346,15 +346,15 @@
         "Manifold"
       ]
     },
-    "Ethiopia": {
-      "score": 5,
+    "Eritrea": {
+      "score": 6,
       "acled_score": 0,
-      "manifold_score": 5,
+      "manifold_score": 6,
       "manifold_markets": [
         {
           "title": "Will armed conflict break out between Ethiopia and Eritrea by December 31, 2026?",
-          "prob": 0.6599999999999999,
-          "contrib": 5.3,
+          "prob": 0.7414105055433793,
+          "contrib": 5.9,
           "severity": "geo",
           "source": "manifold"
         }
@@ -363,15 +363,15 @@
         "Manifold"
       ]
     },
-    "Eritrea": {
-      "score": 5,
+    "Cuba": {
+      "score": 6,
       "acled_score": 0,
-      "manifold_score": 5,
+      "manifold_score": 6,
       "manifold_markets": [
         {
-          "title": "Will armed conflict break out between Ethiopia and Eritrea by December 31, 2026?",
-          "prob": 0.6599999999999999,
-          "contrib": 5.3,
+          "title": "Will Trump attack Cuba by the end of his term?",
+          "prob": 0.7394535635043598,
+          "contrib": 5.9,
           "severity": "geo",
           "source": "manifold"
         }
