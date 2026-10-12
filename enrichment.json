@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-12T06:53:31.146Z",
+  "timestamp": "2026-10-12T16:25:57.635Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -31,13 +31,6 @@
           "source": "manifold"
         },
         {
-          "title": "Russia x Ukraine ceasefire agreement by Dec 31? [Polymarket]",
-          "prob": 0.06545829770739894,
-          "contrib": 25.2,
-          "severity": "peace",
-          "source": "manifold"
-        },
-        {
           "title": "Russia x Ukraine ceasefire in 2026?",
           "prob": 0.07538303342602921,
           "contrib": 25,
@@ -46,8 +39,15 @@
         },
         {
           "title": "Will Russia publicly commit to an energy-infrastructure ceasefire with Ukraine before Nov 20, 2026?",
-          "prob": 0.1378439103997172,
-          "contrib": 23.3,
+          "prob": 0.10000000000000002,
+          "contrib": 24.3,
+          "severity": "peace",
+          "source": "manifold"
+        },
+        {
+          "title": "Will there be a presidential election in Ukraine, before a ceasefire between it and Russia occurs? (See description)",
+          "prob": 0.1612492028296952,
+          "contrib": 22.6,
           "severity": "peace",
           "source": "manifold"
         }
@@ -76,13 +76,6 @@
           "source": "manifold"
         },
         {
-          "title": "Russia x Ukraine ceasefire agreement by Dec 31? [Polymarket]",
-          "prob": 0.06545829770739894,
-          "contrib": 25.2,
-          "severity": "peace",
-          "source": "manifold"
-        },
-        {
           "title": "Russia x Ukraine ceasefire in 2026?",
           "prob": 0.07538303342602921,
           "contrib": 25,
@@ -91,8 +84,15 @@
         },
         {
           "title": "Will Russia publicly commit to an energy-infrastructure ceasefire with Ukraine before Nov 20, 2026?",
-          "prob": 0.1378439103997172,
-          "contrib": 23.3,
+          "prob": 0.10000000000000002,
+          "contrib": 24.3,
+          "severity": "peace",
+          "source": "manifold"
+        },
+        {
+          "title": "Will there be a presidential election in Ukraine, before a ceasefire between it and Russia occurs? (See description)",
+          "prob": 0.1612492028296952,
+          "contrib": 22.6,
           "severity": "peace",
           "source": "manifold"
         }
@@ -115,8 +115,8 @@
         },
         {
           "title": "US x Iran permanent peace deal by December 31 ? [Not Polymarket]",
-          "prob": 0.2287226888728064,
-          "contrib": 20.8,
+          "prob": 0.21192292759319856,
+          "contrib": 21.3,
           "severity": "peace",
           "source": "manifold"
         },
@@ -191,8 +191,8 @@
         },
         {
           "title": "US x Iran permanent peace deal by December 31 ? [Not Polymarket]",
-          "prob": 0.2287226888728064,
-          "contrib": 20.8,
+          "prob": 0.21192292759319856,
+          "contrib": 21.3,
           "severity": "peace",
           "source": "manifold"
         },
@@ -381,14 +381,14 @@
       ]
     },
     "India": {
-      "score": 2,
+      "score": 3,
       "acled_score": 0,
-      "manifold_score": 2,
+      "manifold_score": 3,
       "manifold_markets": [
         {
           "title": "Will India settle their Kashmir conflict with Pakistan before January 1st 2035?",
-          "prob": 0.23840764878850432,
-          "contrib": 1.9,
+          "prob": 0.37952972064446777,
+          "contrib": 3,
           "severity": "geo",
           "source": "manifold"
         }
@@ -398,14 +398,14 @@
       ]
     },
     "Pakistan": {
-      "score": 2,
+      "score": 3,
       "acled_score": 0,
-      "manifold_score": 2,
+      "manifold_score": 3,
       "manifold_markets": [
         {
           "title": "Will India settle their Kashmir conflict with Pakistan before January 1st 2035?",
-          "prob": 0.23840764878850432,
-          "contrib": 1.9,
+          "prob": 0.37952972064446777,
+          "contrib": 3,
           "severity": "geo",
           "source": "manifold"
         }
