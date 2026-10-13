@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-13T05:13:19.179Z",
+  "timestamp": "2026-10-13T13:26:33.763Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -7,7 +7,7 @@
     },
     "manifold": {
       "configured": true,
-      "markets": 43
+      "markets": 44
     }
   },
   "countries": {
@@ -46,7 +46,7 @@
         },
         {
           "title": "Russia x Ukraine ceasefire agreement by Dec 31? [Polymarket]",
-          "prob": 0.16000000000000003,
+          "prob": 0.15999999999999998,
           "contrib": 22.7,
           "severity": "peace",
           "source": "manifold"
@@ -91,7 +91,7 @@
         },
         {
           "title": "Russia x Ukraine ceasefire agreement by Dec 31? [Polymarket]",
-          "prob": 0.16000000000000003,
+          "prob": 0.15999999999999998,
           "contrib": 22.7,
           "severity": "peace",
           "source": "manifold"
@@ -121,13 +121,6 @@
           "source": "manifold"
         },
         {
-          "title": "Will the US and Iran be at war on January 1st, 2027?",
-          "prob": 0.7086090229543979,
-          "contrib": 19.1,
-          "severity": "conflict",
-          "source": "manifold"
-        },
-        {
           "title": "What lasting peace deal will come first? Russia's or Iran's?",
           "prob": 0.29999999999999993,
           "contrib": 18.9,
@@ -136,8 +129,15 @@
         },
         {
           "title": "Will the US and Iran be at war on January 1st, 2027?",
-          "prob": 0.6902683856908408,
-          "contrib": 18.6,
+          "prob": 0.6953609063931483,
+          "contrib": 18.8,
+          "severity": "conflict",
+          "source": "manifold"
+        },
+        {
+          "title": "Will the US and Iran be at war on January 1st, 2027?",
+          "prob": 0.6790369265089082,
+          "contrib": 18.3,
           "severity": "conflict",
           "source": "manifold"
         }
@@ -198,8 +198,8 @@
         },
         {
           "title": "Will the US and Iran be at war on January 1st, 2027?",
-          "prob": 0.7086090229543979,
-          "contrib": 19.1,
+          "prob": 0.6953609063931483,
+          "contrib": 18.8,
           "severity": "conflict",
           "source": "manifold"
         },
@@ -212,8 +212,8 @@
         },
         {
           "title": "Will the US and Iran be at war on January 1st, 2027?",
-          "prob": 0.6902683856908408,
-          "contrib": 18.6,
+          "prob": 0.6790369265089082,
+          "contrib": 18.3,
           "severity": "conflict",
           "source": "manifold"
         }
@@ -372,6 +372,40 @@
           "title": "Will armed conflict break out between Ethiopia and Eritrea by December 31, 2026?",
           "prob": 0.6800000000000002,
           "contrib": 5.4,
+          "severity": "geo",
+          "source": "manifold"
+        }
+      ],
+      "sources": [
+        "Manifold"
+      ]
+    },
+    "India": {
+      "score": 2,
+      "acled_score": 0,
+      "manifold_score": 2,
+      "manifold_markets": [
+        {
+          "title": "Will India settle their Kashmir conflict with Pakistan before January 1st 2035?",
+          "prob": 0.23788865237801537,
+          "contrib": 1.9,
+          "severity": "geo",
+          "source": "manifold"
+        }
+      ],
+      "sources": [
+        "Manifold"
+      ]
+    },
+    "Pakistan": {
+      "score": 2,
+      "acled_score": 0,
+      "manifold_score": 2,
+      "manifold_markets": [
+        {
+          "title": "Will India settle their Kashmir conflict with Pakistan before January 1st 2035?",
+          "prob": 0.23788865237801537,
+          "contrib": 1.9,
           "severity": "geo",
           "source": "manifold"
         }
