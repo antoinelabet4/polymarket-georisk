@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-17T20:00:57.179Z",
+  "timestamp": "2026-10-17T22:50:28.000Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -7,7 +7,7 @@
     },
     "manifold": {
       "configured": true,
-      "markets": 43
+      "markets": 44
     }
   },
   "countries": {
@@ -305,6 +305,23 @@
           "prob": 0.24534989920676217,
           "contrib": 12.3,
           "severity": "major_war",
+          "source": "manifold"
+        }
+      ],
+      "sources": [
+        "Manifold"
+      ]
+    },
+    "Venezuela": {
+      "score": 7,
+      "acled_score": 0,
+      "manifold_score": 7,
+      "manifold_markets": [
+        {
+          "title": "Will Venezuela continue submissive to american demands in 2026?",
+          "prob": 0.9265998661684819,
+          "contrib": 7.4,
+          "severity": "geo",
           "source": "manifold"
         }
       ],
