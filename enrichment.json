@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-19T11:57:49.668Z",
+  "timestamp": "2026-10-19T18:29:55.336Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -38,15 +38,15 @@
           "source": "manifold"
         },
         {
-          "title": "Russia x Ukraine ceasefire agreement by Dec 31? [Polymarket]",
-          "prob": 0.11000000000000003,
-          "contrib": 24,
+          "title": "Will Russia publicly commit to an energy-infrastructure ceasefire with Ukraine before Nov 20, 2026?",
+          "prob": 0.08633771753950212,
+          "contrib": 24.7,
           "severity": "peace",
           "source": "manifold"
         },
         {
-          "title": "Will Russia publicly commit to an energy-infrastructure ceasefire with Ukraine before Nov 20, 2026?",
-          "prob": 0.11110030214251711,
+          "title": "Russia x Ukraine ceasefire agreement by Dec 31? [Polymarket]",
+          "prob": 0.11000000000000003,
           "contrib": 24,
           "severity": "peace",
           "source": "manifold"
@@ -83,15 +83,15 @@
           "source": "manifold"
         },
         {
-          "title": "Russia x Ukraine ceasefire agreement by Dec 31? [Polymarket]",
-          "prob": 0.11000000000000003,
-          "contrib": 24,
+          "title": "Will Russia publicly commit to an energy-infrastructure ceasefire with Ukraine before Nov 20, 2026?",
+          "prob": 0.08633771753950212,
+          "contrib": 24.7,
           "severity": "peace",
           "source": "manifold"
         },
         {
-          "title": "Will Russia publicly commit to an energy-infrastructure ceasefire with Ukraine before Nov 20, 2026?",
-          "prob": 0.11110030214251711,
+          "title": "Russia x Ukraine ceasefire agreement by Dec 31? [Polymarket]",
+          "prob": 0.11000000000000003,
           "contrib": 24,
           "severity": "peace",
           "source": "manifold"
@@ -115,8 +115,8 @@
         },
         {
           "title": "US x Iran permanent peace deal by December 31 ? [Not Polymarket]",
-          "prob": 0.21192292759319856,
-          "contrib": 21.3,
+          "prob": 0.1967520386812552,
+          "contrib": 21.7,
           "severity": "peace",
           "source": "manifold"
         },
@@ -191,8 +191,8 @@
         },
         {
           "title": "US x Iran permanent peace deal by December 31 ? [Not Polymarket]",
-          "prob": 0.21192292759319856,
-          "contrib": 21.3,
+          "prob": 0.1967520386812552,
+          "contrib": 21.7,
           "severity": "peace",
           "source": "manifold"
         },
