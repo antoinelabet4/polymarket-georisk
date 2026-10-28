@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-28T13:46:39.924Z",
+  "timestamp": "2026-10-28T19:17:40.091Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -212,8 +212,8 @@
         },
         {
           "title": "Will China invade any territory of Taiwan before Trump leaves office?",
-          "prob": 0.34755025789046673,
-          "contrib": 17.4,
+          "prob": 0.31632460471998525,
+          "contrib": 15.8,
           "severity": "major_war",
           "source": "manifold"
         }
@@ -223,9 +223,9 @@
       ]
     },
     "China": {
-      "score": 45,
+      "score": 43,
       "acled_score": 0,
-      "manifold_score": 45,
+      "manifold_score": 43,
       "manifold_markets": [
         {
           "title": "Will China invade Taiwan by 2035?",
@@ -236,15 +236,15 @@
         },
         {
           "title": "Will China invade any territory of Taiwan before Trump leaves office?",
-          "prob": 0.34755025789046673,
-          "contrib": 17.4,
+          "prob": 0.31632460471998525,
+          "contrib": 15.8,
           "severity": "major_war",
           "source": "manifold"
         },
         {
           "title": "Will China invade Taiwan before 2030?",
-          "prob": 0.31318036664521226,
-          "contrib": 15.7,
+          "prob": 0.2836569129235491,
+          "contrib": 14.2,
           "severity": "major_war",
           "source": "manifold"
         },
@@ -268,9 +268,9 @@
       ]
     },
     "Taiwan": {
-      "score": 45,
+      "score": 43,
       "acled_score": 0,
-      "manifold_score": 45,
+      "manifold_score": 43,
       "manifold_markets": [
         {
           "title": "Will China invade Taiwan by 2035?",
@@ -281,15 +281,15 @@
         },
         {
           "title": "Will China invade any territory of Taiwan before Trump leaves office?",
-          "prob": 0.34755025789046673,
-          "contrib": 17.4,
+          "prob": 0.31632460471998525,
+          "contrib": 15.8,
           "severity": "major_war",
           "source": "manifold"
         },
         {
           "title": "Will China invade Taiwan before 2030?",
-          "prob": 0.31318036664521226,
-          "contrib": 15.7,
+          "prob": 0.2836569129235491,
+          "contrib": 14.2,
           "severity": "major_war",
           "source": "manifold"
         },
