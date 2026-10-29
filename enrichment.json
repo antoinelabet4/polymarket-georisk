@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-29T11:15:29.627Z",
+  "timestamp": "2026-10-29T17:57:21.231Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -387,7 +387,7 @@
       "manifold_markets": [
         {
           "title": "Will India settle their Kashmir conflict with Pakistan before January 1st 2035?",
-          "prob": 0.23788865237801537,
+          "prob": 0.24104008923281434,
           "contrib": 1.9,
           "severity": "geo",
           "source": "manifold"
@@ -404,7 +404,7 @@
       "manifold_markets": [
         {
           "title": "Will India settle their Kashmir conflict with Pakistan before January 1st 2035?",
-          "prob": 0.23788865237801537,
+          "prob": 0.24104008923281434,
           "contrib": 1.9,
           "severity": "geo",
           "source": "manifold"
