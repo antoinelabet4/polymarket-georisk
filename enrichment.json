@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-28T23:50:40.366Z",
+  "timestamp": "2026-10-29T04:07:16.928Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -7,7 +7,7 @@
     },
     "manifold": {
       "configured": true,
-      "markets": 43
+      "markets": 42
     }
   },
   "countries": {
@@ -223,9 +223,9 @@
       ]
     },
     "China": {
-      "score": 43,
+      "score": 42,
       "acled_score": 0,
-      "manifold_score": 43,
+      "manifold_score": 42,
       "manifold_markets": [
         {
           "title": "Will China invade Taiwan by 2035?",
@@ -249,16 +249,16 @@
           "source": "manifold"
         },
         {
-          "title": "Will China invade Taiwan by EOY 2030",
-          "prob": 0.2847685880806144,
-          "contrib": 14.2,
+          "title": "Will China invade the main island of Taiwan before Trump leaves office?",
+          "prob": 0.24534989920676217,
+          "contrib": 12.3,
           "severity": "major_war",
           "source": "manifold"
         },
         {
-          "title": "Will China invade the main island of Taiwan before Trump leaves office?",
-          "prob": 0.24534989920676217,
-          "contrib": 12.3,
+          "title": "Will China invade the Kinmen Islands of Taiwan before Trump leaves office?",
+          "prob": 0.23721420086259165,
+          "contrib": 11.9,
           "severity": "major_war",
           "source": "manifold"
         }
@@ -268,9 +268,9 @@
       ]
     },
     "Taiwan": {
-      "score": 43,
+      "score": 42,
       "acled_score": 0,
-      "manifold_score": 43,
+      "manifold_score": 42,
       "manifold_markets": [
         {
           "title": "Will China invade Taiwan by 2035?",
@@ -294,16 +294,16 @@
           "source": "manifold"
         },
         {
-          "title": "Will China invade Taiwan by EOY 2030",
-          "prob": 0.2847685880806144,
-          "contrib": 14.2,
+          "title": "Will China invade the main island of Taiwan before Trump leaves office?",
+          "prob": 0.24534989920676217,
+          "contrib": 12.3,
           "severity": "major_war",
           "source": "manifold"
         },
         {
-          "title": "Will China invade the main island of Taiwan before Trump leaves office?",
-          "prob": 0.24534989920676217,
-          "contrib": 12.3,
+          "title": "Will China invade the Kinmen Islands of Taiwan before Trump leaves office?",
+          "prob": 0.23721420086259165,
+          "contrib": 11.9,
           "severity": "major_war",
           "source": "manifold"
         }
