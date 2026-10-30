@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-29T22:31:11.182Z",
+  "timestamp": "2026-10-30T02:22:13.634Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -312,6 +312,40 @@
         "Manifold"
       ]
     },
+    "Ethiopia": {
+      "score": 7,
+      "acled_score": 0,
+      "manifold_score": 7,
+      "manifold_markets": [
+        {
+          "title": "Will armed conflict break out between Ethiopia and Eritrea by December 31, 2026?",
+          "prob": 0.9220275036348623,
+          "contrib": 7.4,
+          "severity": "geo",
+          "source": "manifold"
+        }
+      ],
+      "sources": [
+        "Manifold"
+      ]
+    },
+    "Eritrea": {
+      "score": 7,
+      "acled_score": 0,
+      "manifold_score": 7,
+      "manifold_markets": [
+        {
+          "title": "Will armed conflict break out between Ethiopia and Eritrea by December 31, 2026?",
+          "prob": 0.9220275036348623,
+          "contrib": 7.4,
+          "severity": "geo",
+          "source": "manifold"
+        }
+      ],
+      "sources": [
+        "Manifold"
+      ]
+    },
     "Venezuela": {
       "score": 7,
       "acled_score": 0,
@@ -338,40 +372,6 @@
           "title": "Will Trump attack Cuba by the end of his term?",
           "prob": 0.7394535635043598,
           "contrib": 5.9,
-          "severity": "geo",
-          "source": "manifold"
-        }
-      ],
-      "sources": [
-        "Manifold"
-      ]
-    },
-    "Ethiopia": {
-      "score": 5,
-      "acled_score": 0,
-      "manifold_score": 5,
-      "manifold_markets": [
-        {
-          "title": "Will armed conflict break out between Ethiopia and Eritrea by December 31, 2026?",
-          "prob": 0.6800000000000002,
-          "contrib": 5.4,
-          "severity": "geo",
-          "source": "manifold"
-        }
-      ],
-      "sources": [
-        "Manifold"
-      ]
-    },
-    "Eritrea": {
-      "score": 5,
-      "acled_score": 0,
-      "manifold_score": 5,
-      "manifold_markets": [
-        {
-          "title": "Will armed conflict break out between Ethiopia and Eritrea by December 31, 2026?",
-          "prob": 0.6800000000000002,
-          "contrib": 5.4,
           "severity": "geo",
           "source": "manifold"
         }
