@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-30T02:22:13.634Z",
+  "timestamp": "2026-10-30T09:31:31.312Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -46,8 +46,8 @@
         },
         {
           "title": "Russia x Ukraine ceasefire agreement by Dec 31? [Polymarket]",
-          "prob": 0.13980613567830485,
-          "contrib": 23.2,
+          "prob": 0.1300000000000001,
+          "contrib": 23.5,
           "severity": "peace",
           "source": "manifold"
         }
@@ -91,8 +91,8 @@
         },
         {
           "title": "Russia x Ukraine ceasefire agreement by Dec 31? [Polymarket]",
-          "prob": 0.13980613567830485,
-          "contrib": 23.2,
+          "prob": 0.1300000000000001,
+          "contrib": 23.5,
           "severity": "peace",
           "source": "manifold"
         }
@@ -312,6 +312,23 @@
         "Manifold"
       ]
     },
+    "Venezuela": {
+      "score": 7,
+      "acled_score": 0,
+      "manifold_score": 7,
+      "manifold_markets": [
+        {
+          "title": "Will Venezuela continue submissive to american demands in 2026?",
+          "prob": 0.9265998661684819,
+          "contrib": 7.4,
+          "severity": "geo",
+          "source": "manifold"
+        }
+      ],
+      "sources": [
+        "Manifold"
+      ]
+    },
     "Ethiopia": {
       "score": 7,
       "acled_score": 0,
@@ -319,8 +336,8 @@
       "manifold_markets": [
         {
           "title": "Will armed conflict break out between Ethiopia and Eritrea by December 31, 2026?",
-          "prob": 0.9220275036348623,
-          "contrib": 7.4,
+          "prob": 0.8199999999999998,
+          "contrib": 6.6,
           "severity": "geo",
           "source": "manifold"
         }
@@ -336,25 +353,8 @@
       "manifold_markets": [
         {
           "title": "Will armed conflict break out between Ethiopia and Eritrea by December 31, 2026?",
-          "prob": 0.9220275036348623,
-          "contrib": 7.4,
-          "severity": "geo",
-          "source": "manifold"
-        }
-      ],
-      "sources": [
-        "Manifold"
-      ]
-    },
-    "Venezuela": {
-      "score": 7,
-      "acled_score": 0,
-      "manifold_score": 7,
-      "manifold_markets": [
-        {
-          "title": "Will Venezuela continue submissive to american demands in 2026?",
-          "prob": 0.9265998661684819,
-          "contrib": 7.4,
+          "prob": 0.8199999999999998,
+          "contrib": 6.6,
           "severity": "geo",
           "source": "manifold"
         }
