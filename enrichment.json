@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-02T17:44:23.339Z",
+  "timestamp": "2026-11-03T00:25:38.027Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -121,6 +121,13 @@
           "source": "manifold"
         },
         {
+          "title": "Will the US and Iran be at war on January 1st, 2027?",
+          "prob": 0.7419224673593316,
+          "contrib": 20,
+          "severity": "conflict",
+          "source": "manifold"
+        },
+        {
           "title": "What lasting peace deal will come first? Russia's or Iran's?",
           "prob": 0.29999999999999993,
           "contrib": 18.9,
@@ -131,13 +138,6 @@
           "title": "Will the US and Iran be at war on January 1st, 2027?",
           "prob": 0.6822270902480286,
           "contrib": 18.4,
-          "severity": "conflict",
-          "source": "manifold"
-        },
-        {
-          "title": "Will the US and Iran be at war on January 1st, 2027?",
-          "prob": 0.6740452352786983,
-          "contrib": 18.2,
           "severity": "conflict",
           "source": "manifold"
         }
@@ -198,15 +198,15 @@
         },
         {
           "title": "Will the US and Iran be at war on January 1st, 2027?",
-          "prob": 0.6822270902480286,
-          "contrib": 18.4,
+          "prob": 0.7419224673593316,
+          "contrib": 20,
           "severity": "conflict",
           "source": "manifold"
         },
         {
           "title": "Will the US and Iran be at war on January 1st, 2027?",
-          "prob": 0.6740452352786983,
-          "contrib": 18.2,
+          "prob": 0.6822270902480286,
+          "contrib": 18.4,
           "severity": "conflict",
           "source": "manifold"
         },
