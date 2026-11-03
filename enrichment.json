@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-03T15:46:04.405Z",
+  "timestamp": "2026-11-03T21:27:54.827Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -32,8 +32,8 @@
         },
         {
           "title": "Russia x Ukraine ceasefire in 2026?",
-          "prob": 0.06800182637448696,
-          "contrib": 25.2,
+          "prob": 0.058734222563615386,
+          "contrib": 25.4,
           "severity": "peace",
           "source": "manifold"
         },
@@ -77,8 +77,8 @@
         },
         {
           "title": "Russia x Ukraine ceasefire in 2026?",
-          "prob": 0.06800182637448696,
-          "contrib": 25.2,
+          "prob": 0.058734222563615386,
+          "contrib": 25.4,
           "severity": "peace",
           "source": "manifold"
         },
@@ -381,14 +381,14 @@
       ]
     },
     "India": {
-      "score": 3,
+      "score": 2,
       "acled_score": 0,
-      "manifold_score": 3,
+      "manifold_score": 2,
       "manifold_markets": [
         {
           "title": "Will India settle their Kashmir conflict with Pakistan before January 1st 2035?",
-          "prob": 0.3795240776812509,
-          "contrib": 3,
+          "prob": 0.30064053015384373,
+          "contrib": 2.4,
           "severity": "geo",
           "source": "manifold"
         }
@@ -398,14 +398,14 @@
       ]
     },
     "Pakistan": {
-      "score": 3,
+      "score": 2,
       "acled_score": 0,
-      "manifold_score": 3,
+      "manifold_score": 2,
       "manifold_markets": [
         {
           "title": "Will India settle their Kashmir conflict with Pakistan before January 1st 2035?",
-          "prob": 0.3795240776812509,
-          "contrib": 3,
+          "prob": 0.30064053015384373,
+          "contrib": 2.4,
           "severity": "geo",
           "source": "manifold"
         }
