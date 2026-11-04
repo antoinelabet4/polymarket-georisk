@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-04T16:47:35.779Z",
+  "timestamp": "2026-11-04T22:23:04.813Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -46,8 +46,8 @@
         },
         {
           "title": "Russia x Ukraine ceasefire agreement by Dec 31? [Polymarket]",
-          "prob": 0.12000000000000004,
-          "contrib": 23.8,
+          "prob": 0.10999999999999999,
+          "contrib": 24,
           "severity": "peace",
           "source": "manifold"
         }
@@ -91,8 +91,8 @@
         },
         {
           "title": "Russia x Ukraine ceasefire agreement by Dec 31? [Polymarket]",
-          "prob": 0.12000000000000004,
-          "contrib": 23.8,
+          "prob": 0.10999999999999999,
+          "contrib": 24,
           "severity": "peace",
           "source": "manifold"
         }
@@ -114,6 +114,13 @@
           "source": "manifold"
         },
         {
+          "title": "Will the US and Iran be at war on January 1st, 2027?",
+          "prob": 0.9309966692340015,
+          "contrib": 25.1,
+          "severity": "conflict",
+          "source": "manifold"
+        },
+        {
           "title": "US x Iran permanent peace deal by December 31 ? [Not Polymarket]",
           "prob": 0.15695209951210232,
           "contrib": 22.8,
@@ -125,13 +132,6 @@
           "prob": 0.29999999999999993,
           "contrib": 18.9,
           "severity": "peace",
-          "source": "manifold"
-        },
-        {
-          "title": "Will the US and Iran be at war on January 1st, 2027?",
-          "prob": 0.6801337130740452,
-          "contrib": 18.4,
-          "severity": "conflict",
           "source": "manifold"
         },
         {
@@ -190,17 +190,17 @@
           "source": "manifold"
         },
         {
+          "title": "Will the US and Iran be at war on January 1st, 2027?",
+          "prob": 0.9309966692340015,
+          "contrib": 25.1,
+          "severity": "conflict",
+          "source": "manifold"
+        },
+        {
           "title": "US x Iran permanent peace deal by December 31 ? [Not Polymarket]",
           "prob": 0.15695209951210232,
           "contrib": 22.8,
           "severity": "peace",
-          "source": "manifold"
-        },
-        {
-          "title": "Will the US and Iran be at war on January 1st, 2027?",
-          "prob": 0.6801337130740452,
-          "contrib": 18.4,
-          "severity": "conflict",
           "source": "manifold"
         },
         {
@@ -336,8 +336,8 @@
       "manifold_markets": [
         {
           "title": "Will Trump attack Cuba by the end of his term?",
-          "prob": 0.9063759599337755,
-          "contrib": 7.3,
+          "prob": 0.8492035425308962,
+          "contrib": 6.8,
           "severity": "geo",
           "source": "manifold"
         }
