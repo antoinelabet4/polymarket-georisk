@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-04T22:23:04.813Z",
+  "timestamp": "2026-11-05T03:04:39.701Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -336,8 +336,8 @@
       "manifold_markets": [
         {
           "title": "Will Trump attack Cuba by the end of his term?",
-          "prob": 0.8492035425308962,
-          "contrib": 6.8,
+          "prob": 0.8430978885657192,
+          "contrib": 6.7,
           "severity": "geo",
           "source": "manifold"
         }
@@ -421,7 +421,7 @@
       "manifold_markets": [
         {
           "title": "Will Hamas actually disarm in 2026?",
-          "prob": 0.05089160680448722,
+          "prob": 0.05066863358024868,
           "contrib": 0.4,
           "severity": "geo",
           "source": "manifold"
