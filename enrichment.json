@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-07T19:50:09.644Z",
+  "timestamp": "2026-11-07T23:22:30.042Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -329,23 +329,6 @@
         "Manifold"
       ]
     },
-    "Cuba": {
-      "score": 7,
-      "acled_score": 0,
-      "manifold_score": 7,
-      "manifold_markets": [
-        {
-          "title": "Will Trump attack Cuba by the end of his term?",
-          "prob": 0.8430978885657192,
-          "contrib": 6.7,
-          "severity": "geo",
-          "source": "manifold"
-        }
-      ],
-      "sources": [
-        "Manifold"
-      ]
-    },
     "Ethiopia": {
       "score": 7,
       "acled_score": 0,
@@ -372,6 +355,23 @@
           "title": "Will armed conflict break out between Ethiopia and Eritrea by December 31, 2026?",
           "prob": 0.8199999999999998,
           "contrib": 6.6,
+          "severity": "geo",
+          "source": "manifold"
+        }
+      ],
+      "sources": [
+        "Manifold"
+      ]
+    },
+    "Cuba": {
+      "score": 6,
+      "acled_score": 0,
+      "manifold_score": 6,
+      "manifold_markets": [
+        {
+          "title": "Will Trump attack Cuba by the end of his term?",
+          "prob": 0.7439293540020053,
+          "contrib": 6,
           "severity": "geo",
           "source": "manifold"
         }
