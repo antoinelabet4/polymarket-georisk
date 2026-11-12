@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-12T01:51:06.432Z",
+  "timestamp": "2026-11-12T09:10:43.488Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -223,21 +223,14 @@
       ]
     },
     "China": {
-      "score": 43,
+      "score": 42,
       "acled_score": 0,
-      "manifold_score": 43,
+      "manifold_score": 42,
       "manifold_markets": [
         {
           "title": "Will China invade Taiwan by 2035?",
           "prob": 0.3690882874455302,
           "contrib": 18.5,
-          "severity": "major_war",
-          "source": "manifold"
-        },
-        {
-          "title": "Will China invade any territory of Taiwan before Trump leaves office?",
-          "prob": 0.31632460471998525,
-          "contrib": 15.8,
           "severity": "major_war",
           "source": "manifold"
         },
@@ -252,6 +245,13 @@
           "title": "Will China invade Taiwan by EOY 2030",
           "prob": 0.2847685880806144,
           "contrib": 14.2,
+          "severity": "major_war",
+          "source": "manifold"
+        },
+        {
+          "title": "Will China invade any territory of Taiwan before Trump leaves office?",
+          "prob": 0.2758733808828078,
+          "contrib": 13.8,
           "severity": "major_war",
           "source": "manifold"
         },
@@ -268,21 +268,14 @@
       ]
     },
     "Taiwan": {
-      "score": 43,
+      "score": 42,
       "acled_score": 0,
-      "manifold_score": 43,
+      "manifold_score": 42,
       "manifold_markets": [
         {
           "title": "Will China invade Taiwan by 2035?",
           "prob": 0.3690882874455302,
           "contrib": 18.5,
-          "severity": "major_war",
-          "source": "manifold"
-        },
-        {
-          "title": "Will China invade any territory of Taiwan before Trump leaves office?",
-          "prob": 0.31632460471998525,
-          "contrib": 15.8,
           "severity": "major_war",
           "source": "manifold"
         },
@@ -297,6 +290,13 @@
           "title": "Will China invade Taiwan by EOY 2030",
           "prob": 0.2847685880806144,
           "contrib": 14.2,
+          "severity": "major_war",
+          "source": "manifold"
+        },
+        {
+          "title": "Will China invade any territory of Taiwan before Trump leaves office?",
+          "prob": 0.2758733808828078,
+          "contrib": 13.8,
           "severity": "major_war",
           "source": "manifold"
         },
