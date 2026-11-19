@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-18T19:53:41.054Z",
+  "timestamp": "2026-11-19T01:39:23.896Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -46,7 +46,7 @@
         },
         {
           "title": "Will Russia publicly commit to an energy-infrastructure ceasefire with Ukraine before Nov 20, 2026?",
-          "prob": 0.05857975625701264,
+          "prob": 0.05756674348898707,
           "contrib": 25.4,
           "severity": "peace",
           "source": "manifold"
@@ -91,7 +91,7 @@
         },
         {
           "title": "Will Russia publicly commit to an energy-infrastructure ceasefire with Ukraine before Nov 20, 2026?",
-          "prob": 0.05857975625701264,
+          "prob": 0.05756674348898707,
           "contrib": 25.4,
           "severity": "peace",
           "source": "manifold"
@@ -160,8 +160,8 @@
         },
         {
           "title": "Will the US or Israel strike Iran’s Pickaxe Mountain nuclear site before Oct 1, 2027?",
-          "prob": 0.5877852862402407,
-          "contrib": 15.9,
+          "prob": 0.6224935865849163,
+          "contrib": 16.8,
           "severity": "conflict",
           "source": "manifold"
         },
@@ -212,8 +212,8 @@
         },
         {
           "title": "Will the US or Israel strike Iran’s Pickaxe Mountain nuclear site before Oct 1, 2027?",
-          "prob": 0.5877852862402407,
-          "contrib": 15.9,
+          "prob": 0.6224935865849163,
+          "contrib": 16.8,
           "severity": "conflict",
           "source": "manifold"
         }
