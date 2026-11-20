@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-20T08:19:55.521Z",
+  "timestamp": "2026-11-20T17:29:12.831Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -31,6 +31,13 @@
           "source": "manifold"
         },
         {
+          "title": "Will Russia publicly commit to an energy-infrastructure ceasefire with Ukraine before Nov 20, 2026?",
+          "prob": 0.02187422547204966,
+          "contrib": 26.4,
+          "severity": "peace",
+          "source": "manifold"
+        },
+        {
           "title": "Russia x Ukraine ceasefire agreement by Dec 31? [Polymarket]",
           "prob": 0.03566333808844527,
           "contrib": 26,
@@ -41,13 +48,6 @@
           "title": "Russia x Ukraine ceasefire in 2026?",
           "prob": 0.04353950905500044,
           "contrib": 25.8,
-          "severity": "peace",
-          "source": "manifold"
-        },
-        {
-          "title": "Will Russia publicly commit to an energy-infrastructure ceasefire with Ukraine before Nov 20, 2026?",
-          "prob": 0.0532672175157036,
-          "contrib": 25.6,
           "severity": "peace",
           "source": "manifold"
         }
@@ -76,6 +76,13 @@
           "source": "manifold"
         },
         {
+          "title": "Will Russia publicly commit to an energy-infrastructure ceasefire with Ukraine before Nov 20, 2026?",
+          "prob": 0.02187422547204966,
+          "contrib": 26.4,
+          "severity": "peace",
+          "source": "manifold"
+        },
+        {
           "title": "Russia x Ukraine ceasefire agreement by Dec 31? [Polymarket]",
           "prob": 0.03566333808844527,
           "contrib": 26,
@@ -86,13 +93,6 @@
           "title": "Russia x Ukraine ceasefire in 2026?",
           "prob": 0.04353950905500044,
           "contrib": 25.8,
-          "severity": "peace",
-          "source": "manifold"
-        },
-        {
-          "title": "Will Russia publicly commit to an energy-infrastructure ceasefire with Ukraine before Nov 20, 2026?",
-          "prob": 0.0532672175157036,
-          "contrib": 25.6,
           "severity": "peace",
           "source": "manifold"
         }
@@ -129,8 +129,8 @@
         },
         {
           "title": "Will the US and Iran be at war on January 1st, 2027?",
-          "prob": 0.7019195098451301,
-          "contrib": 19,
+          "prob": 0.7119347881213268,
+          "contrib": 19.2,
           "severity": "conflict",
           "source": "manifold"
         },
@@ -198,8 +198,8 @@
         },
         {
           "title": "Will the US and Iran be at war on January 1st, 2027?",
-          "prob": 0.7019195098451301,
-          "contrib": 19,
+          "prob": 0.7119347881213268,
+          "contrib": 19.2,
           "severity": "conflict",
           "source": "manifold"
         },
