@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-19T18:48:02.289Z",
+  "timestamp": "2026-11-20T00:59:42.374Z",
   "sources": {
     "acled": {
       "configured": true,
@@ -46,8 +46,8 @@
         },
         {
           "title": "Will Russia publicly commit to an energy-infrastructure ceasefire with Ukraine before Nov 20, 2026?",
-          "prob": 0.05756674348898707,
-          "contrib": 25.4,
+          "prob": 0.0532672175157036,
+          "contrib": 25.6,
           "severity": "peace",
           "source": "manifold"
         }
@@ -91,8 +91,8 @@
         },
         {
           "title": "Will Russia publicly commit to an energy-infrastructure ceasefire with Ukraine before Nov 20, 2026?",
-          "prob": 0.05756674348898707,
-          "contrib": 25.4,
+          "prob": 0.0532672175157036,
+          "contrib": 25.6,
           "severity": "peace",
           "source": "manifold"
         }
